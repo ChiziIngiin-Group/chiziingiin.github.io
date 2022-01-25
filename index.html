@@ -39,7 +39,7 @@ mx.js will be permanently open source for everyone to learn and use
 </head>
 
 <body>
-  <div id="app" class="wrap" >
+  <div id="app" class="wrap">
 
     <!-- 大画面区域 -->
     <div id="homepanel" class="head-panel">
@@ -69,7 +69,7 @@ mx.js will be permanently open source for everyone to learn and use
             <ul class="nav-right">
               <li class="nav-item">
                 <div class="nav-search-bar">
-                  <form class="nav-search-box" action="https://munox.github.io/search">
+                  <form class="nav-search-box" action="https://munox.github.io/search/">
                     <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
                       aria-label="搜索" />
                     <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
@@ -89,44 +89,41 @@ mx.js will be permanently open source for everyone to learn and use
     </div>
     <!-- 内容区域 -->
     <div id="content" class="content -nav-fixed">
-        <!-- 活动内容 -->
-        <div class="box-container">
-          <section class="home-panel bb" style="background-color: #241b1b;">
-            <div class="container">
-              <h3>新活动！！！</h3>
-              <div class="panel-wrap">
-                
+      <!-- 活动内容 -->
+      <!-- <div class="box-container"> <section class="home-panel bb" style="background-color: #241b1b;"> <div class="container"> <h3>新活动！！！</h3> <div class="panel-wrap"> </div> </div> </section>banner </div> -->
+      <!-- 产品介绍 -->
+      <div class="box-container">
+        <section class="home-panel">
+          <div class="container">
+            <h3>简，致不凡</h3>
+            <div class="panel-wrap">
+              <div style="width:600px;">
+                <div style="border:1px solid #ededed;width:600;height:440px;"></div>
               </div>
             </div>
-          </section>banner
-        </div>
-        <!-- 产品介绍 -->
-        <div class="box-container">
-          <section class="home-panel">
-            <div class="container">
-              <h3>简，致不凡</h3>
-              <div class="panel-wrap">
-                <div style="width:600px;"><div style="border:1px solid #ededed;width:600;height:440px;"></div></div>
+          </div>
+        </section>
+        <section class="home-panel">
+          <div class="container">
+            <h3>快，一搜即达</h3>
+            <div class="panel-wrap">
+              <div style="width:600px;">
+                <div style="border:1px solid #ededed;width:100;height:440px;"></div>
               </div>
             </div>
-          </section>
-          <section class="home-panel">
-            <div class="container">
-              <h3>快，一搜即达</h3>
-              <div class="panel-wrap">
-                <div style="width:600px;"><div style="border:1px solid #ededed;width:100;height:440px;"></div></div>
+          </div>
+        </section>
+        <section class="home-panel">
+          <div class="container">
+            <h3>准，直达热点</h3>
+            <div class="panel-wrap">
+              <div style="width:600px;">
+                <div style="border:1px solid #ededed;width:100;height:440px;"></div>
               </div>
             </div>
-          </section>
-          <section class="home-panel">
-            <div class="container">
-              <h3>准，直达热点</h3>
-              <div class="panel-wrap">
-                <div style="width:600px;"><div style="border:1px solid #ededed;width:100;height:440px;"></div></div>
-              </div>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
+      </div>
     </div>
     <!-- 页脚区域 -->
     <div id="foot" class="foot">
@@ -149,12 +146,13 @@ mx.js will be permanently open source for everyone to learn and use
           </div>
         </div>
       </div>
-      <div class="copyright"><span><span>©CHZIINGIIN(munox.github.io)</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="copyright"><span><span>©CHZIINGIIN(munox.github.io)</span><span><a href=""
+              title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
 
   <style>
-    body{
+    body {
       background-color: rgb(21, 19, 27);
     }
 
@@ -171,8 +169,20 @@ mx.js will be permanently open source for everyone to learn and use
       height: 50px;
     }
 
-    .head-panel{
+    .head-panel {
       margin-bottom: -60px;
+    }
+    .foot .foot-content{
+      background-color: rgb(21, 19, 27);;
+    }
+    .footer-list>li a{
+      color:#fffb
+    }
+    .footer-text div{
+      color:#fffd
+    }
+    .copyright * {
+      color:#fff9
     }
   </style>
 
@@ -183,10 +193,10 @@ mx.js will be permanently open source for everyone to learn and use
       $("#homepanel").css({ height: window.innerHeight });
       $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
     }
-    $(window).scroll(function() {
-      if($(window).scrollTop()>window.innerHeight){
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > window.innerHeight) {
         $("nav.nav").removeClass("hide")
-      }else{
+      } else {
         $("nav.nav").addClass("hide")
       }
     })
