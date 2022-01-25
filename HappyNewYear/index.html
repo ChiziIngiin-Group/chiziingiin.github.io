@@ -396,7 +396,7 @@
 			}
 			draw(particles[t])
 			t++;
-			var rand = function(rMi, rMa) { return ~((Math.random() * (rMa - rMi + 1)) + rMi); }
+			var rand = function(rMi, rMa) { return ~~((Math.random() * (rMa - rMi + 1)) + rMi); }
 			if(t % 5 == 0) {
 				fworks.currentHue = rand(0, 360);
 				fworks.createFireworks($(window).innerWidth() / 2, $(window).innerHeight(), particles[t].pos.x, particles[t].pos.y);
