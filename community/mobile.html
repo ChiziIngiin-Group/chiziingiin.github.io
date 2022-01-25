@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title>八六政协网</title>
+  <meta name="description" content="八年六班政治协商委员会官方网站" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vue.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <!-- Share -->
+  <!-- 暂未开放 -->
+</head>
+
+<body>
+  <div id="app2">
+    <div class="content">
+      <div class="containerg">
+        <ul class="wrap_list">
+          <li class="wrap_item" v-for="item in n">
+            <div class="wrap_user">
+              <img v-bind:src="item.user.imgurl"/>
+            </div>
+            <div class="wrap_content">
+              <div class="user">
+                <div class="username"><span>{{item.user.name}}</span>
+                  <i v-if="item.user.rz" src=""></i>
+                  <r>·</r>
+                  <r2>{{item.passage.overtime}}</r2>
+                </div>
+                <div class="userinfo">{{item.user.info}}</div>
+              </div>
+              <div class="text">
+                <span>{{item.passage.text}}</span>
+                <img v-if="item.passage.image" v-bind:src="item.passage.imgurl"/>
+              </div>
+              <div class="wrap_foot">
+                <i class="iconfont2 icon-pinglun"></i>
+                <i class="iconfont2 icon-like"></i>
+                <i class="iconfont2 icon-share"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    仅供娱乐，切勿当真！！！
+  </div>
+
+  <style>
+    body {
+      background-color: #fff;
+    }
+  </style>
+  <script>
+    var app = new Vue({
+      el: '#app2',
+      data: {
+        n: [
+          {
+            user: { name: "八年六班委员会", rz: true, overtime: "11月17日", imgurl: "", info: "@GQTBL" },
+            passage: { overtime: "11月17日", text: "“学习新思想、争做新青年”我司开展青年大学习主题团课活动", image: true, imgurl: "../image/df0000.png" }
+          },
+          {
+            user: { name: "八年六班政治协商委员会", rz: true, overtime: "10月4日", imgurl: "", info: "@BLZXRZ" },
+            passage: { overtime: "10月3日", text: "我司发布《关于进一步做好体育课人员管理的通知》", image: false, imgurl: "" }
+          },
+          {
+            user: { name: "赤子英金", rz: true, overtime: "10月3日", imgurl: "https://wx.qlogo.cn/finderhead/ajNVdqHZLLAAlSp6PLA50NYiaiak9orIjCLF2qulh87iaNUsnicExmgXOA/0", info: "@ChiziIngiin" },
+            passage: { overtime: "10月3日", text: "The Communist Party of China adheres to the people-centered development thought, takes improving people's lives and improving people's well-being as the starting point and foothold, and constantly improves people's Sense of gain, happiness and security." }
+          },
+          {
+            user: { name: "赤子英金", rz: true, imgurl: "https://wx.qlogo.cn/finderhead/ajNVdqHZLLAAlSp6PLA50NYiaiak9orIjCLF2qulh87iaNUsnicExmgXOA/0", info: "@ChiziIngiin" },
+            passage: { text: "Happy China's National Day!", overtime: "10月1日" }
+          }
+        ]
+      }
+    })
+  </script>
+</body>
+
+</html>

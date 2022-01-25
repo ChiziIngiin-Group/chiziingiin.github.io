@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英金社区 - 登录</title>
+  <script src="/main.js"></script>
+  <script src="/js/md5.js"></script>
+</head>
+<body>
+  <p>加载中...</p>
+  <script>
+
+    function GetQueryString(name) {
+      var thref1 = window.location.href;
+      if (thref1) var thref2 = thref1.split("?")[1];
+      if (thref2) var thref3 = thref2.split(name + "=")[1];
+      if (thref3) var thref4 = thref3.split("&")[0];
+      if (thref4) var thref5 = thref4;
+      if (thref4) for (var i = 0; i < thref4.length; i++) { if (thref4) thref5 = thref5.replace('+', '%20'); }
+      if (thref5) var href = thref5;
+      if (href) return href;
+      return null;
+    }
+
+    var u = GetQueryString("u");
+    var p = GetQueryString("p");
+    var l = GetQueryString("l");
+    var url = GetQueryString("url");
+    var href = ""
+    if(url != "null" && url != "" && url != null){
+      href = url
+    }
+
+    var userinfo = [
+      {
+        uname:"Admin",
+        uid:"urejf87e98xbeei",
+        uimg:"",
+        u:md5("a"),
+        p:md5("a"),
+        k:1,
+        tel:"18847631778",
+        sign:"The dreams",
+        id:"1504***********017"
+      },
+    ]
+
+    var n;
+    for(var i = 0;i<userinfo.length;i++){
+      if(u == userinfo[i].u && p == userinfo[i].p){
+        n=userinfo[i];
+        break;
+      }
+    }
+
+    if(n){
+      localStorage.setItem("userinfo",JSON.stringify(userinfo[i]));
+      location.href = l + "?k=success&url=" + href;
+    }else{
+      localStorage.setItem("userinfo","fail");
+      location.href = l + "?k=fail";
+    }
+
+
+  </script>
+</body>
+</html>

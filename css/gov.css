@@ -1,0 +1,46 @@
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  color:inherit;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  margin: 0;
+  background-color: #f1f4fa;
+  background-color: var(--PageBg);
+  min-height: 100%;
+  font-size: 14px;
+  color: #222;
+  color: var(--PageTx);
+}
+li, ol, ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  list-style: none;
+}
+#app{
+  font-family: 'Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
+}
+
+.top_wrap{
+  margin: auto;
+  width: 1200px;
+  margin-top: 10px;
+  font-size: 45px;
+  font-weight: 900;
+  color:rgb(213,22,25);
+  letter-spacing: 2px;
+  line-height: 80px;
+}

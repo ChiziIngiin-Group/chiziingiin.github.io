@@ -1,0 +1,76 @@
+<!-- 
+
+These codes are of historical significance to ChiziIngiin——
+This is the first real website project of ChiziIngiin
+He condensed the result of the unremitting efforts of the whole team of ChiziIngiin
+The smooth birth of this project is inseparable from oschina, gitee, jQuery, Vue and more open source components, and the support of developers
+mx.js will be permanently open source for everyone to learn and use
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title>赤子英金 - 页面编辑器</title>
+  <meta name="description" content="赤子英金" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <!-- Preload -->
+  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <!-- Share -->
+  <!-- 暂未开放 -->
+</head>
+
+<body>
+  <div id="app" class="wrap" >
+    <!-- 内容区域 -->
+    <div id="content" class="content">
+      <div id="sharepage" style="position: fixed;width:100%;height:100%;background-color: rgb(204,83,72);padding:60px 28px;">
+        <div style="width: 100%;height:100%;background-color: #fff;border-radius:8px;padding:10px;">
+          <div style="position: relative;border:1px solid rgb(204,83,72);border-radius: 6px;width:100%;height:100%;padding:30px 44px">
+            <div id="title" style="font-size: 19px;color:rgb(187, 174, 0);line-height: 35px;"><span >编辑器</span></div>
+            <form id="cont" style="margin-top: 80px;width:100%;" action="./index.html">
+              <input type="text" name="u" placeholder="写下你想对朋友说的话" style="width:80%;margin:auto;margin-bottom:20px;height:36px;line-height:36px;font-size:17px;padding:0px 10px;border:1px solid #999;color:#222;border-radius:10px;outline:none">
+              <input type="text" name="b" placeholder="写下你的姓名" style="width:80%;margin:auto;margin-bottom:20px;height:36px;line-height:36px;font-size:17px;padding:0px 10px;border:1px solid #999;color:#222;border-radius:10px;outline:none">
+              <input type="text" name="a" placeholder="写下你朋友的姓名" style="width:80%;margin:auto;margin-bottom:20px;height:36px;line-height:36px;font-size:17px;padding:0px 10px;border:1px solid #999;color:#222;border-radius:10px;outline:none">
+              <input type="text" name="t" placeholder="限时内打开（默认是24小时）" style="width:80%;margin:auto;margin-bottom:20px;height:36px;line-height:36px;font-size:17px;padding:0px 10px;border:1px solid #999;color:#222;border-radius:10px;outline:none">
+              <input id="k" type="hidden" name="k" value="">
+              <p><input type="submit" value="提交"></p>
+              <p style="margin-top:20px">点击提交后，待页面重新加载再点击右上角三个点，即可分享页面</p>
+              <p style="margin-top:20px"><span style="color:red">注意：内容不能为空！！！空了会出现为null的情况！！！</span></p>
+            </form>
+            <div id="fot" style="position: absolute;bottom:15px;width:100%;left:0;right:0;margin: auto;text-align: center;font-size: 12px;">
+              <span style="color:#999">Copyright (c) 2022 Chiziingiin</span>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body{
+      background-color: #fff;
+    }
+  </style>
+
+  <script>
+    $("#k").val(md5(mx.Api.getRandomString(10)))
+  </script>
+</body>
+
+</html>

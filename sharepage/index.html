@@ -1,0 +1,78 @@
+<!-- 
+
+These codes are of historical significance to ChiziIngiin——
+This is the first real website project of ChiziIngiin
+He condensed the result of the unremitting efforts of the whole team of ChiziIngiin
+The smooth birth of this project is inseparable from oschina, gitee, jQuery, Vue and more open source components, and the support of developers
+mx.js will be permanently open source for everyone to learn and use
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title></title>
+  <meta name="description" content="赤子英金" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/colorpicker.css">
+  <link rel="stylesheet" href="/css/main.css" />
+  <!-- Preload -->
+  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <!-- Share -->
+  <!-- 暂未开放 -->
+</head>
+
+<body>
+  <div id="app" class="wrap" >
+    <!-- 内容区域 -->
+    <div id="content" class="content">
+      <div id="sharepage" style="position: fixed;width:100%;height:100%;background-color: rgb(204,83,72);padding:60px 28px;">
+        <div style="width: 100%;height:100%;background-color: #fff;border-radius:8px;padding:10px;">
+          <div style="position: relative;border:1px solid rgb(204,83,72);border-radius: 6px;width:100%;height:100%;padding:30px 44px">
+            <div id="title" style="font-size: 19px;color:rgb(187, 174, 0);line-height: 35px;"><span >亲爱的<span id="a"></span>：</span><br/><span><span id="b">The dreams</span>送您一句话</span></div>
+            <div id="cont" style="margin-top: 100px;width:100%;">
+              <p id="u" style="font-size:18px;color:#222"></p>
+            </div>
+            <div id="fot" style="position: absolute;bottom:15px;width:100%;left:0;right:0;margin: auto;text-align: center;font-size: 12px;">
+              <span style="color:#999">Copyright (c) 2022 Chiziingiin。以上文字不代表赤子英金的观点和立场！原作者为此文字负责</span>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body{
+      background-color: #fff;
+    }
+  </style>
+
+  <script>
+    var a = mx.Api.GetQueryString("a")
+    var b = mx.Api.GetQueryString("b")
+    var u = mx.Api.GetQueryString("u")
+    console.log(a,b,u)
+    $("#a").text(decodeURI(a))
+    $("title").text(decodeURI(b)+"送了您一句话")
+    $("#b").text(decodeURI(b))
+    $("#u").html(decodeURI(u))
+  </script>
+</body>
+
+</html>

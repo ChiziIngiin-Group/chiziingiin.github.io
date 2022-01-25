@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title>赤子英金</title>
+  <meta name="description" content="赤子英金" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vue.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/user.css" />
+</head>
+
+<body>
+  <div id="app" style="display: none;">
+    <div class="page">
+      <!-- 页头区域 -->
+      <div id="head">
+        <nav class="nav nav-fixed">
+          <div class="container">
+            <div class="nav-list">
+              <ul class="nav-left">
+                <li class="nav-item nav-item__img">
+                  <a href="/"><img src="/image/赤子英金.png" alt="赤子英金"></a>
+                </li>
+                <li class="nav-item">
+                  <a href="/community">社区</a>
+                </li>
+                <li class="nav-item">
+                  <a href="">产品</a>
+                </li>
+              </ul>
+              <ul class="nav-right">
+                <li class="nav-item">
+                  <a id="login-button" href="/login?url=/">登录</a>
+                </li>
+                <li class="nav-item">
+                  <a id="reg-button" href="/login?author=reg&url=/">注册</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div id="content" class="content -nav-fixed">
+        <div class="container">
+          <div class="user-box mt-30">
+            <div class="row">
+              <div class="col-12 col-md-3 col-sm-12">
+                <div class="user-box-u">
+                  <div class="user-info user-image">
+                    <div>
+                      <img id="userimg" src="/image/user-unlogin.png" alt="头像">
+                      <div> 更改头像 </div>
+                    </div>
+                  </div>
+                  <div class="user-info user-name">
+                    <span id="username"><img v-bind:src="userGenderImg" alt="">{{userName}}</span>
+                  </div>
+                  <div class="user-info user-sign">
+                    <span id="usersign">{{userSign}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-9 col-sm-12">
+                <h1 data-sjishubx="">账号与安全</h1>
+                <div class="user-content">
+                  <h2>账号信息</h2>
+                  <small>您可使用帐号名登录英金帐号</small>
+                  <div class="user-Panel">
+                    <ul>
+                      <li>
+                        <div class="item-logo">
+                          <div class="icon bg-blue">
+                            <i class="iconfont icon-user-name"></i>
+                          </div>
+                        </div>
+                        <div class="item-content">
+                          <span class="title">账号名</span>
+                          <span class="text" id="user-name">{{userName}}</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-logo">
+                          <div class="icon bg-blue">
+                            <i class="iconfont icon-user-tel"></i>
+                          </div>
+                        </div>
+                        <div class="item-content">
+                          <span class="title">手机号</span>
+                          <span class="text" id="user-tel">{{userTel}}</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-logo">
+                          <div class="icon bg-blue">
+                            <i class="iconfont icon-user-slogan"></i>
+                          </div>
+                        </div>
+                        <div class="item-content">
+                          <span class="title">个性签名</span>
+                          <span class="text" id="user-slogan">{{userSign}}</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-logo">
+                          <div class="icon bg-red">
+                            <i class="iconfont icon-user-logout"></i>
+                          </div>
+                        </div>
+                        <div class="item-content">
+                          <span class="title" style="margin-top:11.5px;cursor: pointer;user-select: none;"
+                            id="user-logout">退出登录</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="user-content">
+                  <h2>设置</h2>
+                  <small>您通过设置来个性化您的页面</small>
+                  <div class="user-Panel">
+                    <ul>
+                      <li>
+                        <div class="item-logo">
+                          <div class="icon" style="background-color: #666;color:#222">
+                            <i class="iconfont icon-DarkTheme" style="color:#fffc"></i>
+                          </div>
+                        </div>
+                        <div class="item-content">
+                          <span class="title" style="margin-top:11.5px;cursor: pointer;user-select: none;"
+                            id="user-dark">
+                            {{ifdark}}暗色模式
+                            <span class="badge badge-primary">Beta</span>
+                          </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-logo">
+                          <div class="icon bg-blue">
+                            <i class="iconfont icon-image-text"></i>
+                          </div>
+                        </div>
+                        <div class="item-content">
+                          <span class="title">自定义网页背景</span>
+                          <input class="text" id="user-back" type="color" style="width:80%;max-width:300px;">
+                          <input class="sbmt" id="user-back-smt" type="submit" value="保存" disabled="disabled">
+                          <input class="sbmt" id="user-back-rst" type="submit" value="还原">
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 页脚区域 -->
+    <div id="foot" class="foot">
+      <div class="foot-content">
+        <div class="container">
+          <ul class="footer-list">
+            <li><a href="/">用户协议</a></li>
+            <li><a href="">隐私政策</a></li>
+            <li><a href="/about.html">关于我们</a></li>
+            <li><a href="/about.html#Lianxiwomen">联系我们</a></li>
+          </ul>
+          <div class="footer-text">
+            <div><a href="https://www.12377.cn/" target="_blank">违法和不良信息举报中心</a></div>
+            <div><a href="/blzx/" target="_blank">八年六班政治协商委员会</a></div>
+            <div><a href="/blfg/" target="_blank">八年六班发展改革委员会</a></div>
+            <div><a href="https://www.12377.cn/" target="_blank">蒙公网安备号（暂未申请）</a></div>
+          </div>
+          <div class="footer-text">
+            <div><span>Copyright 2020-2022 八六政协信息技术协会 赤子英金集团</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"><span><span>©CHZIINGIIN(munox.gitee.io)</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    if (localStorage.getItem("userinfo") == "fail" || !localStorage.getItem("userinfo")) {
+      mx.alert("提示", "您未登录，将跳转到登录页面", true, function () {
+        window.location.href = "/login?url=" + encodeURI(window.location.href)
+      })
+    } else {
+      var userinfo = JSON.parse(localStorage.getItem("userinfo"))
+      if (localStorage.getItem("dark") == "close" || !localStorage.getItem("dark")) {
+        var dark = "开启"
+      } else {
+        var dark = "关闭"
+      }
+      $("#app").css("display", "block")
+      var app = new Vue({
+        el: '#content',
+        data: {
+          userName: userinfo.uname,
+          userTel: userinfo.tel,
+          userSign: userinfo.sign,
+          userGenderImg: "/image/Gender-" + userinfo.k + ".svg",
+          ifdark: dark
+        }
+      })
+    }
+    setInterval(function () {
+      if (!mx.system.security()) {
+        document.body.contentEditable = "false"
+        mx.alert("警告", "系统检测到您正在进行风险操作，系统已中止该操作！", false)
+      }
+    }, 5000);
+  </script>
+  <script src="/js/user.js"></script>
+</body>
+
+</html>

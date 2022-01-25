@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title>英金社区</title>
+  <meta name="description" content="赤子英金" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/js/swiper-bundle.min.js"> </script>
+  <script src="/js/colorpicker.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/colorpicker.css">
+  <link rel="stylesheet" href="/css/main.css" />
+  <!-- Preload -->
+  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="app" class="wrap">
+    <!-- 页头区域 -->
+    <div id="head">
+      <nav class="nav nav-fixed">
+        <div class="container">
+          <div class="nav-list">
+            <ul class="nav-left">
+              <li class="nav-item nav-item__img">
+                <a href=""><img src="/image/赤子英金.png" alt="赤子英金"></a>
+              </li>
+              <li class="nav-item">
+                <a href="/community">社区</a>
+              </li>
+              <li class="nav-item">
+                <a href="">产品</a>
+              </li>
+            </ul>
+            <ul class="nav-right">
+              <li class="nav-item">
+                <div class="nav-search-bar">
+                  <form class="nav-search-box" action="https://munox.gitee.io/search">
+                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
+                      aria-label="搜索" />
+                    <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a id="login-button" href="/login?url=">登录</a>
+              </li>
+              <li class="nav-item">
+                <a id="reg-button" href="/login?author=reg&url=">注册</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- 内容区域 -->
+    <div id="content" class="content -nav-fixed">
+
+      <div class="container">
+        <div class="box-container box-flex">
+          <div class="box-content box-main">
+            <div class="content-box">
+              <div class="panel-box">
+                <div class="panel-content">
+
+                  <div class="panel-content__column">
+                    <div class="panel-content__column-head">
+                      <div class="panel-title">
+                        <a href="">综合资讯</a>
+                      </div>
+                      <div class="panel-title__tabs"></div>
+                      <a class="panel-title__more" href="">更多</a>
+                    </div>
+                    <div class="panel-tab-page">
+                      <ul class="panel-list primary" id="list01">
+
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="panel-content__column">
+                    <div class="panel-content__column-head">
+                      <div class="panel-title">
+                        <a href="">英金海报</a>
+                      </div>
+                      <div class="panel-title__tabs"></div>
+                      <a class="panel-title__more" href="">更多</a>
+                    </div>
+                    <div class="panel-tab-page">
+                      <ul class="panel-list primary" id="list02">
+
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="panel-box">
+                <div class="panel-content">
+
+                  <div class="panel-content__column">
+                    <div class="panel-content__column-head">
+                      <div class="panel-title">
+                        <a href="">时政新闻</a>
+                      </div>
+                      <div class="panel-title__tabs"></div>
+                      <a class="panel-title__more" href="">更多</a>
+                    </div>
+                    <div class="panel-tab-page">
+                      <ul class="panel-list primary" id="list03">
+
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="panel-content__column">
+                    <div class="panel-content__column-head">
+                      <div class="panel-title">
+                        <a href="">班级新闻</a>
+                      </div>
+                      <div class="panel-title__tabs"></div>
+                      <a class="panel-title__more" href="">更多</a>
+                    </div>
+                    <div class="panel-tab-page">
+                      <ul class="panel-list primary" id="list04">
+
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="box-content box-side">
+            <div class="content-box">
+              <div class="panel-box">
+                <div class="panel-content">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">Slide 1</div>
+                      <div class="swiper-slide">Slide 2</div>
+                      <div class="swiper-slide">Slide 3</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 页脚区域 -->
+    <div id="foot" class="foot">
+      <div class="foot-content"></div>
+      <div class="copyright"><span>©CHZIINGIIN(munox.gitee.io) 0.0.002.142 BETA</span><span>赤子英金版权所有</span></div>
+    </div>
+  </div>
+
+  <style>
+    .swiper {
+      width: 100%;
+      height: 300px;
+    }
+    #color-picker{
+      position: fixed;
+      right:0px;
+      top:200px;
+      width:50px;
+      height:50px;
+    }
+  </style>
+
+  <script>
+    var mySwiper = new Swiper('.swiper', {
+      direction: 'vertical',
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+    
+    
+  </script>
+
+
+  <script>
+
+    var List = [
+      [],
+      [
+        { title: "你好，2022", time: 20220101 },
+        { title: "我们不能忘记！", time: 20211213 },
+        { title: "今日小雪", time: 20211122 },
+        { title: "今日立冬", time: 20211107 },
+        { title: "圆满成功！", time: 20211016 },
+        { title: "今日秋分", time: 20210923 },
+        { title: "中秋快乐，阖家团圆", time: 20210921 }
+      ],
+      [
+        { title: "重磅！新闻发布会全文来了", time: 20211112 },
+        { title: "50年前的这一天，对世界影响深远", time: 20211024 },
+        { title: "圆满结束", time: 20211024 },
+        { title: "圆满成功", time: 20211016 },
+      ],
+      []
+    ];
+
+    //渲染
+    function TrTime(time) {
+      return (time + "").substr(4, 2) + "/" + (time + "").substr(6, 2)
+    }
+    for (var i = 0; i < 4; i++) {
+      var tmp = "";
+      var lk = List[i]
+      for (var j = 0; j < lk.length && j < 9; j++) {
+        tmp += "<li class='panel-item'><a href=''>" + lk[j].title + "</a> <span>" + TrTime(lk[j].time) + "</span> </li>";
+      }
+      $("#list0" + (i + 1)).html(tmp)
+    }
+
+
+    setInterval(function () {
+      if (!mx.system.security()) {
+        document.body.contentEditable = "false"
+        mx.alert("警告", "系统检测到您正在进行风险操作，系统已中止该操作！", false)
+      }
+    }, 5000);
+
+  </script>
+</body>
+
+</html>
