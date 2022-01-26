@@ -29,7 +29,10 @@ html {
 
 
 
-
+@font-face {
+  font-family: "Century Gothic"; 
+  src: url('/font/ufonts.com_century-gothic.ttf') format('truetype');
+}
 @font-face {
   font-family: "iconfont"; /* Project id 3138748 */
   src: url('//at.alicdn.com/t/font_3138748_notdimyitol.woff2?t=1642136565498') format('woff2'),
