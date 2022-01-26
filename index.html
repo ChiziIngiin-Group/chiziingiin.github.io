@@ -16,7 +16,7 @@ mx.js will be permanently open source for everyone to learn and use
   <!-- Basic configuration -->
   <meta charset="UTF-8" />
   <title>赤子英金</title>
-  <meta name="description" content="赤子英金" />
+  <meta name="description" content="赤子英金社区" />
   <meta name="keywords" content="赤子英金,chiziingiin,CITRI,ci,czyj">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -98,7 +98,11 @@ mx.js will be permanently open source for everyone to learn and use
             <h3>简，致不凡</h3>
             <div class="panel-wrap">
               <div style="width:600px;">
-                <div style="border:1px solid #ededed;width:600;height:440px;"></div>
+                <div class="home-panel__imgbox">
+                  <div style="width:70%;height:70%;border-radius:24px;background-image:linear-gradient(125deg,#F381E488,#614BBE88);position:absolute;display:block;backdrop-filter:saturate(180%) blur(20px);top:0;left:0"></div>
+                  <div style="width:70%;height:70%;border-radius:24px;background-image:linear-gradient(125deg,#ffffff80,#ffffff2a);position:absolute;display:block;backdrop-filter:saturate(180%) blur(50px);top:28px;left:27.6px;z-index:1;opacity:1;"></div>
+                  <div style="width:45%;height:36%;border-radius:15px;background-image:linear-gradient(-45deg,#6d80fc98,#BA78EF54);position:absolute;display:block;backdrop-filter:saturate(180%) blur(50px);bottom:0;right:1px;z-index:1;opacity:1;opacity:0.96;"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -108,7 +112,16 @@ mx.js will be permanently open source for everyone to learn and use
             <h3>快，一搜即达</h3>
             <div class="panel-wrap">
               <div style="width:600px;">
-                <div style="border:1px solid #ededed;width:100;height:440px;"></div>
+                <div class="home-panel__imgbox">
+                  <div id="homese" style="position:absolute;top:30px;right:100px;width:160px;height:160px;background-image:linear-gradient(-45deg,#6d80fc,#6DE3F2);border-radius: 110px;padding:20px;">
+                    <div style="width:100%;height:100%;background-color:rgb(21, 19, 27);border-radius:50%;"></div>
+                    <div style="height:160px;width:22px;background:linear-gradient(125deg,#6d80fc 60%,#fff5 );top:50%;left:90%;position: absolute;border-radius:11px;z-index:-1;transform:rotate(-45deg);"></div>
+                  </div>
+                  <div id="homenr" style="width:60%;height:8px;background-color: #fff;border-radius: 4px;position: absolute;bottom:140px;left:2px;"></div>
+                  <div id="homenr2" style="width:60%;height:8px;background-color: #fff;border-radius: 4px;position: absolute;bottom:100px;left:2px;"></div>
+                  <div style="width:60%;height:8px;background-color: #fff;border-radius: 4px;position: absolute;bottom:60px;left:2px;"></div>
+                  <div style="width:20%;height:8px;background-color: #fff;border-radius: 4px;position: absolute;bottom:20px;left:2px;"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -118,7 +131,12 @@ mx.js will be permanently open source for everyone to learn and use
             <h3>准，直达热点</h3>
             <div class="panel-wrap">
               <div style="width:600px;">
-                <div style="border:1px solid #ededed;width:100;height:440px;"></div>
+                <div class="home-panel__imgbox">
+                  <div style="position: absolute;top:5px;left:5px;width:65px;height:65px;background-color: #FC3F3F;border-radius: 32.5px;"></div>
+                  <div style="position: absolute;top:30px;left:30px;width:calc(100% - 35px);height:calc(100% - 35px);background-color: #fffd;border-radius:23px;backdrop-filter:saturate(180%) blur(50px);opacity: 0.96;padding:60px">
+                    <div style="width:100%;height:100%;background-color: #0005;border-radius: 20px;"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -146,7 +164,7 @@ mx.js will be permanently open source for everyone to learn and use
           </div>
         </div>
       </div>
-      <div class="copyright"><span><span>©CHZIINGIIN(chiziingiin.github.io)</span><span><a href=""
+      <div class="copyright"><span><span>©CHZIINGIIN</span><span><a href=""
               title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
@@ -155,12 +173,10 @@ mx.js will be permanently open source for everyone to learn and use
     body {
       background-color: rgb(21, 19, 27);
     }
-
     .swiper {
       width: 100%;
       height: 300px;
     }
-
     #color-picker {
       position: fixed;
       right: 0px;
@@ -168,7 +184,6 @@ mx.js will be permanently open source for everyone to learn and use
       width: 50px;
       height: 50px;
     }
-
     .head-panel {
       margin-bottom: -60px;
     }
@@ -179,7 +194,7 @@ mx.js will be permanently open source for everyone to learn and use
       color:#fffb
     }
     .footer-text div{
-      color:#fffd
+      color:#fffb
     }
     .copyright * {
       color:#fff9
