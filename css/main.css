@@ -412,7 +412,7 @@ li, ol, ul {
   align-items: flex-start;
 }
 
-.content .container .box-container.box-flex .box-content{
+.content .container .box-content{
   background-color: #fff;
   min-height: 20px;
   border-radius: 8px;
@@ -434,7 +434,7 @@ li, ol, ul {
   margin-left: 24px;
 }
 
-.content .container .box-container .box-content .content-box{
+.box-content .content-box{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -595,6 +595,99 @@ ul.panel-list li span{
 #homenr,#homenr2{
   display: block;
 }
+
+
+
+/* 社区css */
+.listbox{
+  display: block;
+  width:100%;
+}
+.listbox-box,.listbox-content,.listbox-list{
+  display: block;
+  width: 100%;
+}
+.listbox-title{
+  display: flex;
+  width:100%;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 10px;
+}
+.listbox-title__icon{
+  display: block;
+}
+.listbox-title__text{
+  display: block;
+  margin:0;
+  height:28px;
+  line-height: 28px;
+  font-size: 20px;
+  color:#222;
+  text-align: left;
+  font-weight: normal;
+}
+.listbox-list__box{
+  display: block;
+  display: flex;
+  flex-direction: column;
+}
+.listbox-list__box li{
+  display: flex;
+  flex-direction: column;
+  padding:16px 14px;
+  border-bottom: 1px solid #ededed;
+  min-height: 157px;
+  position: relative;
+  z-index: 1;
+}
+.listbox-list__box li::after{
+  content: "";
+  position: absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-color: #fff;
+  transition: all 0.1s ease-in-out;
+  z-index: -1;
+}
+.listbox-list__box li:hover::after{
+  background-color: #fcfcfc;
+}
+.listbox-list__box li .title{
+  height:25px;
+  width:100%;
+  font-size: 16.5px;
+  color:#333;
+  margin-bottom: 5px;
+}
+.listbox-list__box li .describe{
+  width: 100%;
+  display: flex;
+}
+.listbox-list__box li .describe .describe__img{
+  margin-right: 10px;
+  background: #f1f1f1  ;
+  height:86px;
+  width:128px;
+}
+.listbox-list__box li .describe .describe__text{
+  font-size: 14px;
+  line-height: 18px;
+  color:#999;
+  width:100%;
+}
+.listbox-list__box li .information{
+  height:24px;
+  
+}
+
 
 @media (max-width:999px) {
   .content .container .box-container.box-flex{

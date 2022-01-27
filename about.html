@@ -1,0 +1,157 @@
+<!-- 
+
+These codes are of historical significance to ChiziIngiin——
+This is the first real website project of ChiziIngiin
+He condensed the result of the unremitting efforts of the whole team of ChiziIngiin
+The smooth birth of this project is inseparable from oschina, gitee, jQuery, Vue and more open source components, and the support of developers
+mx.js will be permanently open source for everyone to learn and use
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title>关于我们</title>
+  <meta name="description" content="赤子英金社区" />
+  <meta name="keywords" content="关于赤子英金,AboutUs">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="baidu-site-verification" content="code-8Ibrjegsyx" />
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/typed.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <!-- Preload -->
+  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
+    crossorigin="anonymous">
+  <!-- Share -->
+  <!-- 暂未开放 -->
+</head>
+
+<body>
+  <div id="app" class="wrap">
+    <!-- 页头区域 -->
+    <div id="head">
+      <nav class="nav nav-fixed">
+        <div class="container">
+          <div class="nav-list">
+            <ul class="nav-left">
+              <li class="nav-item nav-item__img">
+                <a href="/"><img src="/image/赤子英金.png" alt="赤子英金"></a>
+              </li>
+              <li class="nav-item">
+                <a href="/community">社区</a>
+              </li>
+              <li class="nav-item">
+                <a href="">产品</a>
+              </li>
+            </ul>
+            <ul class="nav-right">
+              <li class="nav-item">
+                <div class="nav-search-bar">
+                  <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
+                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
+                      aria-label="搜索" />
+                    <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a id="login-button" href="/login?url=/chiziingiin">登录</a>
+              </li>
+              <li class="nav-item">
+                <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- 内容区域 -->
+    <div id="content" class="content -nav-fixed">
+      <div class="container">
+        <div class="box-content">
+          <div class="content-box"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 页脚区域 -->
+    <div id="foot" class="foot">
+      <div class="foot-content">
+        <div class="container">
+          <ul class="footer-list">
+            <li><a href="/">用户协议</a></li>
+            <li><a href="">隐私政策</a></li>
+            <li><a href="/about.html">关于我们</a></li>
+            <li><a href="/about.html#Lianxiwomen">联系我们</a></li>
+          </ul>
+          <div class="footer-text">
+            <div><a href="https://www.12377.cn/" target="_blank">违法和不良信息举报中心</a></div>
+            <div><a href="/blzx/" target="_blank">八年六班政治协商委员会</a></div>
+            <div><a href="/blfg/" target="_blank">八年六班发展改革委员会</a></div>
+            <div><a href="https://www.12377.cn/" target="_blank">蒙公网安备号（暂未申请）</a></div>
+          </div>
+          <div class="footer-text">
+            <div><span>Copyright 2020-2022 八六政协信息技术协会 赤子英金集团</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright"><span><span>©CHZIINGIIN</span><span><a href=""
+              title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: #fff;
+    }
+  </style>
+
+  <script>
+    $("#homepanel").css({ height: window.innerHeight });
+    $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
+    window.onresize = function () {
+      $("#homepanel").css({ height: window.innerHeight });
+      $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
+    }
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > window.innerHeight) {
+        $("nav.nav").removeClass("hide")
+      } else {
+        $("nav.nav").addClass("hide")
+      }
+    })
+    $(".scroll-down-div").click(function () { $('html, body').animate({ scrollTop: window.innerHeight }, 1000); })
+    $("#head-panel__text").typed({
+      strings: ["Chizi Ingiin Technology Community.", "Welcome to visit.", "We hope our content can help you"],
+      stringsElement: null,
+      typeSpeed: 0,
+      startDelay: 0,
+      backSpeed: 0,
+      shuffle: false,
+      backDelay: 3000,
+      loop: true,
+      loopCount: false,
+      showCursor: true,
+      cursorChar: "|",
+      attr: null,
+      contentType: 'html',
+      callback: function () { },
+      preStringTyped: function () { },
+      onStringTyped: function () { },
+      resetCallback: function () { }
+    });
+  </script>
+</body>
+
+</html>
