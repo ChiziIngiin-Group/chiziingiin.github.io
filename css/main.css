@@ -689,6 +689,40 @@ ul.panel-list li span{
 }
 
 
+
+/* 文档css */
+.-doc{
+  margin-top: 80px;
+}
+.-doc.-nav-fixed{
+  margin-top: 122px;;
+}
+.document-box{
+  min-height: 300px;
+}
+.document-box h1{
+  font-size:30px;
+  font-weight: normal;
+  text-align: center;
+  margin-top:10px;
+  margin-bottom: 18px;
+}
+.document-box h1+hr{
+  border:0;
+  border-bottom:1px solid #ededed;
+}
+.document-box h2{
+  font-size: 22px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.document-box p{
+  font-size: 16px;
+  line-height: 22.5px;
+  margin-bottom: 8px;
+}
+
 @media (max-width:999px) {
   .content .container .box-container.box-flex{
     flex-direction: column;
