@@ -54,10 +54,60 @@
   </style>
   <div id="app">
     
-    <div class="goback">
+    <!-- <div class="goback">
       <a href="javascript:location.href=mx.Api.GetQueryString('url')">
         <i class="iconfont icon-back"></i>
       </a>
+    </div> -->
+    <!-- 页头区域 -->
+    <div id="head">
+      <nav class="nav nav-fixed hide">
+        <div class="container">
+          <div class="nav-list">
+            <ul class="nav-left">
+              <li class="nav-item nav-item__img">
+                <a href="/"><img src="/image/赤子英金.png" alt="赤子英金"></a>
+              </li>
+              <li class="nav-item">
+                <a href="/community">社区</a>
+              </li>
+              <li class="nav-item">
+                <a href="">产品</a>
+              </li>
+            </ul>
+            <ul class="nav-right">
+              <li class="nav-item">
+                <div class="nav-search-bar">
+                  <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
+                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
+                      aria-label="搜索" />
+                    <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a id="login-button" href="/login?url=/chiziingiin">登录</a>
+              </li>
+              <li class="nav-item">
+                <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <nav class="m-nav nav-fixed">
+        <div class="m-nav-box">
+          <a class="m-nav-more">
+            <span class="btn-more"></span>
+          </a>
+          <a class="m-nav-logo">
+            <img src="/image/赤子英金.png" alt="">
+          </a>
+          <a class="m-nav-user">
+            <img title=" "/>
+          </a>
+        </div>
+      </nav>
     </div>
 
 
@@ -95,13 +145,14 @@
         </div>
       </div>
       <div class="login-footer">
-        <p>©2021 英金信息技术有限公司</p>
+        <p>©2021 赤子英金信息技术</p>
       </div>
     </div>
   </div>
 
   <script>
     if(mx.Api.GetQueryString("author") == "reg"){
+      mx.alert("提示","暂不支持注册",true,function(){location.href="*"},function(){location.href="*"})
       console.log("[Login Pattern]","reg")
       $(".login-title").text("注 册")
       $("#login-button").text("注册")
