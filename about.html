@@ -31,9 +31,14 @@
     <!-- 页头区域 -->
     <div id="head">
       <nav class="nav nav-fixed hide">
+        <div class="m-nav-backgound"></div>
         <div class="container">
           <div class="nav-list">
-            <ul class="nav-left">
+            <div class="m-nav-more__logo"></div>
+            <ul class="nav-list__box">
+              <li class="nav-item m-nav-item">
+                <a href="/">首页</a>
+              </li>
               <li class="nav-item nav-item__img">
                 <a href="/"><img src="/image/赤子英金.png" alt="赤子英金"></a>
               </li>
@@ -44,8 +49,8 @@
                 <a href="/product">产品</a>
               </li>
             </ul>
-            <ul class="nav-right">
-              <li class="nav-item">
+            <ul class="nav-list__box">
+              <li class="nav-item nav-item__search">
                 <div class="nav-search-bar">
                   <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
                     <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
@@ -53,6 +58,9 @@
                     <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
                   </form>
                 </div>
+              </li>
+              <li class="nav-item m-nav-item">
+                <a href="/search/">搜索</a>
               </li>
               <li class="nav-item">
                 <a id="login-button" href="/login?url=/chiziingiin">登录</a>
@@ -66,7 +74,7 @@
       </nav>
       <nav class="m-nav nav-fixed">
         <div class="m-nav-box">
-          <a class="m-nav-more" id="m-button-more">
+          <a class="m-nav-more" id="m-button-more" href="javascript:void(0)">
             <span class="btn-more"></span>
           </a>
           <a class="m-nav-logo">
@@ -78,6 +86,7 @@
         </div>
       </nav>
     </div>
+    
     <!-- 内容区域 -->
     <div id="content" class="content -nav-fixed -doc">
       <div class="container">
