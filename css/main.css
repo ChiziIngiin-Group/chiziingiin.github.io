@@ -276,7 +276,7 @@ nav.nav-fixed{
   color:#555;
 }
 .m-nav-item,.m-nav-backgound,.m-nav-userimg{
-  display: none;
+  display: none !important; 
 }
 }
 
@@ -561,9 +561,9 @@ nav.nav-fixed{
 }
 
 @media (max-width:520px) {
-  #reg-button{
+  /* #reg-button{
     display: none;
-  }
+  } */
 }
 
 
