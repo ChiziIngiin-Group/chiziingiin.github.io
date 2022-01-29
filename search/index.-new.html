@@ -30,7 +30,7 @@
 
     <!-- 页头区域 -->
     <div id="head">
-      <nav class="nav nav-fixed">
+      <nav class="nav nav-fixed hide">
         <div class="container">
           <div class="nav-list">
             <ul class="nav-left">
@@ -41,18 +41,40 @@
                 <a href="/community">社区</a>
               </li>
               <li class="nav-item">
-                <a href="">产品</a>
+                <a href="/product">产品</a>
               </li>
             </ul>
             <ul class="nav-right">
               <li class="nav-item">
-                <a id="login-button" href="/login?url=/">登录</a>
+                <div class="nav-search-bar">
+                  <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
+                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
+                      aria-label="搜索" />
+                    <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
+                  </form>
+                </div>
               </li>
               <li class="nav-item">
-                <a id="reg-button" href="/login?author=reg&url=/">注册</a>
+                <a id="login-button" href="/login?url=/chiziingiin">登录</a>
+              </li>
+              <li class="nav-item">
+                <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
               </li>
             </ul>
           </div>
+        </div>
+      </nav>
+      <nav class="m-nav nav-fixed">
+        <div class="m-nav-box">
+          <a class="m-nav-more" id="m-button-more">
+            <span class="btn-more"></span>
+          </a>
+          <a class="m-nav-logo">
+            <img src="/image/赤子英金.png" alt="">
+          </a>
+          <a href="/user.html" id="m-login-button" class="m-nav-user">
+            <img title=" "/>
+          </a>
         </div>
       </nav>
     </div>

@@ -181,12 +181,14 @@ const mx = {
 /* Login Button */
 $(function(){
     if(localStorage.getItem("userinfo") == "fail" || !localStorage.getItem("userinfo")){
-        $(".nav #login-button").attr("href","/login?url="+encodeURI(window.location.href)).text("登录");
+        $(".nav #login-button").attr("href",`/login?url=${encodeURI(window.location.href)}`).text("登录");
         $(".m-nav img").removeAttr("src")
+        $(".m-login-button").attr("href",`/login?url=${encodeURI(window.location.href)}`)
     }else{
         $(".nav #login-button").attr("href","/user.html").text(JSON.parse(localStorage.getItem("userinfo")).uname);
         $(".nav #reg-button").remove()
         $(".m-nav img").attr("src",`${JSON.parse(localStorage.getItem("userinfo")).uimg}`)
+        $(".m-login-button").attr("href",`/user.html`)
     }
 })
 
