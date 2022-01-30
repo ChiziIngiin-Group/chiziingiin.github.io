@@ -4,12 +4,11 @@
 <head>
   <!-- Basic configuration -->
   <meta charset="UTF-8" />
-  <title>赤子英金社区</title>
+  <title>产品 - 赤子英金</title>
   <meta name="description" content="赤子英金" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <!-- Javascript -->
   <script src="/js/jquery.js"></script>
@@ -22,8 +21,7 @@
   <link rel="stylesheet" href="/css/colorpicker.css">
   <link rel="stylesheet" href="/css/main.css" />
   <!-- Preload -->
-  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
-    crossorigin="anonymous">
+  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
 
 <body>
@@ -53,7 +51,8 @@
               <li class="nav-item nav-item__search">
                 <div class="nav-search-bar">
                   <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
-                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd" aria-label="搜索" />
+                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
+                      aria-label="搜索" />
                     <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
                   </form>
                 </div>
@@ -153,99 +152,13 @@
     </div>
     <!-- 页脚区域 -->
     <div id="foot" class="foot">
-      <div class="foot-content">
-        <div class="container">
-          <ul class="footer-list">
-            <li><a href="/">用户协议</a></li>
-            <li><a href="">隐私政策</a></li>
-            <li><a href="/about.html">关于我们</a></li>
-            <li><a href="/about.html#Lianxiwomen">联系我们</a></li>
-          </ul>
-          <div class="footer-text">
-            <div><a href="https://www.12377.cn/" target="_blank">违法和不良信息举报中心</a></div>
-            <div><a href="/blzx/" target="_blank">八年六班政治协商委员会</a></div>
-            <div><a href="/blfg/" target="_blank">八年六班发展改革委员会</a></div>
-            <div><a href="https://www.12377.cn/" target="_blank">蒙公网安备号（暂未申请）</a></div>
-          </div>
-          <div class="footer-text">
-            <div><span>Copyright 2020-2022 八六政协信息技术协会 赤子英金集团</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="copyright"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="foot-content"></div>
+      <div class="copyright"><span>©CHZIINGIIN(chiziingiin.github.io) 0.0.002.142 BETA</span><span>赤子英金版权所有</span></div>
     </div>
   </div>
 
-  <style>
-    .swiper {
-      width: 100%;
-      height: 300px;
-    }
-    #color-picker{
-      position: fixed;
-      right:0px;
-      top:200px;
-      width:50px;
-      height:50px;
-    }
-  </style>
 
   <script>
-    var mySwiper = new Swiper('.swiper', {
-      direction: 'vertical',
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
-    
-    
-  </script>
-
-
-  <script>
-
-    var List = [
-      [],
-      [
-        { title: "你好，2022", time: 20220101 },
-        { title: "我们不能忘记！", time: 20211213 },
-        { title: "今日小雪", time: 20211122 },
-        { title: "今日立冬", time: 20211107 },
-        { title: "圆满成功！", time: 20211016 },
-        { title: "今日秋分", time: 20210923 },
-        { title: "中秋快乐，阖家团圆", time: 20210921 }
-      ],
-      [
-        { title: "重磅！新闻发布会全文来了", time: 20211112 },
-        { title: "50年前的这一天，对世界影响深远", time: 20211024 },
-        { title: "圆满结束", time: 20211024 },
-        { title: "圆满成功", time: 20211016 },
-      ],
-      []
-    ];
-
-    //渲染
-    function TrTime(time) {
-      return (time + "").substr(4, 2) + "/" + (time + "").substr(6, 2)
-    }
-    for (var i = 0; i < 4; i++) {
-      var tmp = "";
-      var lk = List[i]
-      for (var j = 0; j < lk.length && j < 9; j++) {
-        tmp += "<li class='panel-item'><a href=''>" + lk[j].title + "</a> <span>" + TrTime(lk[j].time) + "</span> </li>";
-      }
-      $("#list0" + (i + 1)).html(tmp)
-    }
-
-
-    setInterval(function () {
-      if (!mx.system.security()) {
-        document.body.contentEditable = "false"
-        mx.alert("警告", "系统检测到您正在进行风险操作，系统已中止该操作！", false)
-      }
-    }, 5000);
-
   </script>
 </body>
 

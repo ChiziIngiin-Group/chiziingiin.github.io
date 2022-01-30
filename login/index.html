@@ -61,7 +61,7 @@
     </div> -->
     <!-- 页头区域 -->
     <div id="head">
-      <nav class="nav nav-fixed hide">
+      <nav class="nav nav-fixed">
         <div class="m-nav-backgound"></div>
         <div class="container">
           <div class="nav-list">
@@ -100,6 +100,14 @@
                 <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
               </li>
             </ul>
+            <div class="m-nav-alert">
+              <div class="m-title"><span>提示</span></div>
+              <div class="m-content">
+                <p id="r" style="display:none">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</p>
+                <p>此页面的cookie使用是<span class="m-r">安全</span><a class="m-r-more" href="javascript:$('#r').toggle()"></a></p>
+                <p><small>Chiziingiin智云安全引擎</small></p>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
@@ -130,7 +138,7 @@
                 <a href="javascript:;">重新加载</a>
               </div>
             </div>
-            <h3>使用微信扫码登陆</h3>
+            <h3>使用微信扫码登录</h3>
           </div>
           <form class="login-root">
             <div class="login-input-box">
@@ -172,13 +180,13 @@
       if(k == "fail"){
         mx.alert("提示","用户名或密码错误");
       }else if(k){
-        mx.alert("提示","登陆成功",false,function(){
+        mx.alert("提示","登录成功",false,function(){
           if(mx.Api.GetQueryString("url")){
             location.href = mx.Api.GetQueryString("url")
           }
         });
       }else{
-        mx.alert("提示","登陆失败")
+        mx.alert("提示","登录失败")
       }
     } else{
       var k = localStorage.getItem("userinfo");
