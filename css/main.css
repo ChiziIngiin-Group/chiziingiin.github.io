@@ -395,7 +395,7 @@ nav.nav-fixed{
     width:100%;
     height:100%;
     background-color: #0004;
-    backdrop-filter: saturate(180%) blur(50px);
+    backdrop-filter: saturate(180%) blur(15px);
   }
   #head .nav .container{
     position: absolute;
@@ -975,13 +975,20 @@ ul.panel-list li span{
   margin-bottom: 12px;
 }
 .document-box>p{
-  font-size: 15.8px;
-  line-height: 22.5px;
+  font-size: 15px;
+  line-height: 25px;
   margin-bottom: 8px;
   text-indent: 32px;
   flex-wrap: wrap;
   color:#666;
 }
+.unorder_list {
+  padding-bottom: 15px;
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 18px;
+}
+
 .usernamebox{
   display:inline-flex;
   padding:0px 4px;
@@ -1062,6 +1069,11 @@ ul.panel-list li span{
   }
 }
 @media (max-width:730px) {
+  .content .container{
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 50px !important;
+  }
   .panel-box .panel-content {
     flex-direction: column;
   }
