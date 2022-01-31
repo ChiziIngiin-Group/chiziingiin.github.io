@@ -38,7 +38,6 @@ const mx = {
                 throw "Error: This document does not reference jQuery."
             }
         },
-        
         getRandomString: function (len) {
             len = len || 32;
             var $chars = 'AmSTnpN5Rz2EcdCKMXZabersYDW4xtwPBFGy36fhHJQijk78'; 
