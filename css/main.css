@@ -150,7 +150,7 @@ nav.nav-fixed{
   box-shadow: 0 2px 6px 0 var(--Shadow);
   visibility: visible;
   opacity: 1;
-  transition: all 0.3s ease;
+  transition: opacity 0.1s ease;
 }
 
 .nav.container{
@@ -388,7 +388,7 @@ nav.nav-fixed{
     background-color: #0004;
     z-index: 201;
     opacity: 0;
-    transition: all 0.1s ease;
+    transition: opacity 0.1s ease;
     visibility: hidden;
   }
   #head .nav .m-nav-backgound{
@@ -407,9 +407,8 @@ nav.nav-fixed{
     box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
     -webkit-box-shadow: 0 2px 6px 0 var(--Shadow);
     box-shadow: 0 2px 6px 0 var(--Shadow);
-    transition: all 0.1s ease;
+    transition: opacity 0.1s ease,left 0.1s ease;
     opacity: 0;
-    transition: all 0.1s ease;
     left:-75%;
     overflow: hidden;
     visibility: hidden;
@@ -545,7 +544,6 @@ nav.nav-fixed{
   margin-bottom: 90px;
   background-image: url(http://munox.gitee.io/image/banner.jpg);
   background-position: center;
-  background-size: auto 109%;
   background-repeat: no-repeat;
 }
 .head-panel__content{

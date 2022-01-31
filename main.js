@@ -7,7 +7,7 @@
 
 /* declare constant */
 const LoginPage = "./login/login.html";
-const VersionNumber = "0.1.2.0";
+const VersionNumber = "0.2.0.007";
 
 
 /* Version Info */
@@ -191,13 +191,14 @@ $(function(){
     }
 })
 
-
+/* Header Menu */
 $(document).on("click","#m-button-more",function(){
     $("#head .nav").addClass("show")
 })
 $(document).on("click",".m-nav-backgound",function(){
     $("#head .nav").removeClass("show")
 })
+
 
 /* Dark */
 $(function(){

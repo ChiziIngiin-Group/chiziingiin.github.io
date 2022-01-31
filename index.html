@@ -47,6 +47,7 @@ mx.js will be permanently open source for everyone to learn and use
         <p>/*&nbsp;<span id="head-panel__text">Chizi Ingiin Technology Community.</span>&nbsp;*/</p>
       </div>
       <div class="scroll-down-div"><i class="iconfont icon-back"></i></div>
+      <style id="homepanel__style">.head-panel{background-size:auto 100%;}</style>
     </div>
 
     <!-- 页头区域 -->
@@ -219,11 +220,16 @@ mx.js will be permanently open source for everyone to learn and use
   </style>
 
   <script>
+    /* Big Panel */
     $("#homepanel").css({ height: window.innerHeight });
     $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
+    if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#homepanel__style").html(".head-panel{background-size:auto 100%;}")
+    else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     window.onresize = function () {
       $("#homepanel").css({ height: window.innerHeight });
       $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
+      if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#homepanel__style").html(".head-panel{background-size:auto 100%;}")
+      else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     }
     $(window).scroll(function () {
       if ($(window).scrollTop() > window.innerHeight) {
