@@ -49,14 +49,13 @@ const mx = {
             return pwd;
         },
         GetQueryString(name) {
-            var thref1 = window.location.href;
-            if (thref1) var thref2 = thref1.split("?")[1];
-            if (thref2) var thref3 = thref2.split(name + "=")[1];
-            if (thref3) var thref4 = thref3.split("&")[0];
-            if (thref4) var thref5 = thref4;
-            if (thref4) for (var i = 0; i < thref4.length; i++) { if (thref4) thref5 = thref5.replace('+', '%20'); }
-            if (thref5) var href = thref5;
-            if (href) return href;
+            var t1 = window.location.href;
+            if (t1) var t2 = t1.split("?")[1];
+            if (t2) var t3 = t2.split(name + "=")[1];
+            if (t3) var t4 = t3.split("&")[0];
+            if (t4) var t5 = t4;
+            if (t4) for (var i = 0; i < t4.length; i++) { if (t4) t5 = t5.replace('+', '%20'); }
+            if (t5) return t5;
             return null;
         },
         checksSpecialCharator(newName) {
@@ -66,38 +65,13 @@ const mx = {
               return true;
             }
             return false;
+        },
+        getFileName(){
+            var t1 = window.location.href;
+            if (t1) var t2 = t1.split("/");
+            if (t2) return t3 = t2[t2.length-1].split("?")[0].split("#")[0];
+            return null
         }
-        // TimeSortingForList: function(List) {
-        //     var List_1 = [];
-        //     for(var i = 0;i<List.length;i++){
-        //         var k = List[i]
-        //         for(var j = 0;j<k.length;j++){
-        //             List_1.push(k[j])
-        //         }
-        //     }
-        //     console.log("[Temp][TimeSortingForList][List_1]",List_1);
-        //     var List_2 = [];
-        //     List_2[0] = List_1[0]
-        //     for(var i = 1;i<List_1.length;i++){
-        //         if(List_1[i].time > List_2[i-1].time){
-        //             var tmp = List_2.length;
-        //             for(var j = tmp;j>0;j++){
-        //                 List_2[j] = List_2[j-1]
-        //             }
-        //             List_2[0] = List_1[i];
-        //     console.error("[Temp][TimeSortingForList][List_2]",List_2);
-
-        //         }
-        //         else{
-        //             List_2.push(List_1[i])
-        //     console.error("[THemp][TimeSortingForList][List_2]",List_2);
-
-        //         }
-        //     console.log("[Temp][TimeSortingForList][List_2]",List_2);
-
-        //     }
-        //     console.log("[Temp][TimeSortingForList][List_2]",List_2);
-        // }
     },
     /* System basic function */
     system: {
@@ -146,9 +120,9 @@ const mx = {
         if (!t1) {t1 = "确认"}
         if (!t2) {t2 = "取消"}
         var str = mx.Api.getRandomString(12)
-        $("body").append(`<div class='m-modal__wrapper' id='${str}'><div class='m-modal__container ${ttv}' style='width: 30%; margin-top: 15vh;'><div class='m-modal__header'>\  <span class='m-modal__title'>${title}</span><button class='m-modal__headerbtn'><i class='m-modal__close iconfont icon-close'></i></button></div><div class='m-modal__body'>\  <div>"+ ${body}</div></div><div class='m-modal__footer'>\  <button class='m-modal-button m-modal--primary'><span>${t1}</span></button></div></div></div>`);
+        $("body").append(`<div class='m-modal__wrapper' id='${str}'><div class='m-modal__container ${ttv}' style='width: 30%; margin-top: 15vh;'><div class='m-modal__header'>\  <span class='m-modal__title'>${title}</span><button class='m-modal__headerbtn'><i class='m-modal__close iconfont icon-close'></i></button></div><div class='m-modal__body'>\  <div>${body}</div></div><div class='m-modal__footer'>\  <button class='m-modal-button m-modal--primary'><span>${t1}</span></button></div></div></div>`);
         if (boolien != false) {
-            $(`body #${str} .m-modal__footer`).prepend("<button class='m-modal-button m-modal--default'><span>"+t2+"</span></button>")
+            $(`body #${str} .m-modal__footer`).prepend(`<button class='m-modal-button m-modal--default'><span>${t2}</span></button>`)
         }
         $(document).on("click", `body #${str} .m-modal__footer .m-modal--primary`, function () {
             $(`body #${str}`).fadeOut(200)
@@ -187,7 +161,7 @@ $(document).on("click",".m-nav-backgound",function(){
 
 /* Cookie box */
 var c = $.cookie("cookie")
-if(!c){
+if(!c && mx.Api.getFileName() != "cookies.html"){
     console.log(c)
     $(function(){
         $("body").append(`<div class="cookie-alert"><div class="cookie-alert-box"><div class="cookie-alert-box__title">Cookies政策</div><div class="cookie-alert-box__content"><div class="c-text">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</div><div class="button-box">  <button id="c-n">不接受分析型cookies</button>  <button id="c-y">接受分析型cookies</button></div></div></div></div>`)

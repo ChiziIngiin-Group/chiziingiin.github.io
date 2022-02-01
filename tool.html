@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <!-- Basic configuration -->
+  <meta charset="UTF-8" />
+  <title>赤子英金浏览器工具 v0.0.1.125</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="baidu-site-verification" content="code-8Ibrjegsyx" />
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/typed.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <div class="tool-box">
+    <div class="title"></div>
+    <a class="tool-item" id="t1">
+      <div class="tool-item__box">
+        <div class="tool-item__icon"></div>
+        <div class="tool-item__title">清空localStorage</div>
+      </div>
+    </a>
+    <a class="tool-item" id="t2">
+      <div class="tool-item__box">
+        <div class="tool-item__icon"></div>
+        <div class="tool-item__title">清空sessionStorage</div>
+      </div>
+    </a>
+    <a class="tool-item" id="t3">
+      <div class="tool-item__box">
+        <div class="tool-item__icon"></div>
+        <div class="tool-item__title">清空cookies</div>
+      </div>
+    </a>
+    <a class="tool-item" id="t4">
+      <div class="tool-item__box">
+        <div class="tool-item__icon"></div>
+        <div class="tool-item__title">微信浏览器调试工具</div>
+      </div>
+    </a>
+  </div>
+  <style>
+    .tool-box{
+      display: flex;
+      max-width: 450px;
+      margin: auto;
+      height:100%;
+      border-left:1px solid #ededed;
+      border-top:1px solid #ededed;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: fixed;
+      left:0;right:0;
+      background-color: #fff;
+      align-content: flex-start;
+    }
+    .tool-box .title{
+      width:100%;
+      height:100px;
+      background-image: url(/image/赤子英金.png);
+      background-size: auto 90%;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-right:1px solid #ededed;
+      border-bottom:1px solid #ededed;
+    }
+    .tool-box .tool-item{
+      width:calc(100% / 3);
+      height:130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:20px;
+      border-right:1px solid #ededed;
+      border-bottom:1px solid #ededed;
+      cursor: pointer;
+    }
+    .tool-box .tool-item:hover{
+      background-color: #f0f0f0;
+    }
+    .tool-box .tool-item__box{
+      width:100%;
+      height:100%;
+      font-size: 12px;
+      color:#333;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      text-align: center;
+    }
+    .tool-box .tool-item__icon{
+      height:48px;
+      width:48px;
+      background-color: blue;
+      border-radius: 24px;
+    }
+  </style>
+  <script>
+    sessionStorage
+  </script>
+</body>
+</html>

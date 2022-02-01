@@ -130,7 +130,7 @@
                   </tr>
                   <tr>
                     <td>有效时长</td>
-                    <td><strong>1 年</strong><br/><button>停用</button></td>
+                    <td><strong>1 年</strong><br/><a id="closecookie1">停用</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -179,7 +179,7 @@
               .order_list li, .unorder_list li {
                 list-style: inherit;
               }
-              .table_cookie button{
+              .table_cookie a{
                 background-color: transparent;
                 color:#007bffcc;
                 border:0;outline: none;
@@ -194,6 +194,18 @@
                 font-weight: bold;
               }
             </style>
+            <script>
+              var c = $.cookie("cookie")
+              if(c == "false"){
+                $("#closecookie1").html("您已停止使用此项cookies").css("color","red")
+              } else if (c == "true") {
+                $("#closecookie1").click(function(){
+                  mx.alert("cookie政策","您确定要停用此cookie吗",true,function(){$.cookie("cookie","false",{path:"/"});mx.alert("cookie政策","已经成功停用",false)})
+                })
+              } else {
+                $("#closecookie1").html("为保护您的隐私权益，系统默认关闭了此项cookies").css("color","grey")
+              }
+            </script>
           </div>
         </div>
       </div>

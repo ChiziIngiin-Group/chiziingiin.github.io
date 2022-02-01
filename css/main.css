@@ -548,7 +548,7 @@ nav.nav-fixed{
   bottom:0;right:0;
   margin:auto;
   display: flex;
-  width:92%;
+  width:90%;
   max-width: 500px;
   height:320px;
   padding:18px 20px;
@@ -610,6 +610,10 @@ nav.nav-fixed{
   }
   .cookie-alert-box__content .button-box{
     flex-direction: row;
+  }
+  .cookie-alert-box__title{
+    font-size: 23px;
+    padding:12px 0px;
   }
 }
 
@@ -897,10 +901,10 @@ ul.panel-list li span{
   user-select: none;
   display: flex;
   align-content: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color:#999
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color:#999
 }
 
 
@@ -1391,7 +1395,7 @@ ul.panel-list li span{
 
 
 
-
+/* 上一个版本的冗余文件 */
 
 :root { 
   --blackcolor: #000;
@@ -1502,6 +1506,27 @@ html.dark {
   --userli: rgba(51, 54, 57, 0.33);
 }
 
+
+
+
+
+html{
+  overflow:overlay;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.12);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0,0,0,0.18);
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0,0,0,0.25);
+}
 
 
 /* Model Css */
