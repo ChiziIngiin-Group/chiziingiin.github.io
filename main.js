@@ -11,7 +11,7 @@ const VersionNumber = "0.2.0.007";
 
 
 /* Version Info */
-console.log("%cmx.js%cv" + VersionNumber, "color: #fff; background-color:#007bff;padding:4px 6px;padding-right:3px;border-top-left-radius:5px;border-bottom-left-radius:5px;", "color: #fff; background-color:#00a826;padding:4px 6px;padding-left:3px;border-top-right-radius:5px;border-bottom-right-radius:5px;");
+console.log(`%cmx.js%cv${VersionNumber}`,`color: #fff; background-color:#007bff;padding:4px 6px;padding-right:3px;border-top-left-radius:5px;border-bottom-left-radius:5px;`, `color: #fff; background-color:#00a826;padding:4px 6px;padding-left:3px;border-top-right-radius:5px;border-bottom-right-radius:5px;`);
 
 
 /* Main Function */
@@ -146,32 +146,18 @@ const mx = {
         if (!t1) {t1 = "确认"}
         if (!t2) {t2 = "取消"}
         var str = mx.Api.getRandomString(12)
-        $("body").append(
-        "<div class='m-modal__wrapper' id='" + str + "'>\
-          <div class='m-modal__container " + ttv + "' style='width: 30%; margin-top: 15vh;'>\
-            <div class='m-modal__header'>\
-              <span class='m-modal__title'>" + title + "</span>\
-            <button class='m-modal__headerbtn'><i class='m-modal__close iconfont icon-close'></i></button>\
-            </div>\
-            <div class='m-modal__body'>\
-              <div>"+ body + "</div>\
-            </div>\
-            <div class='m-modal__footer'>\
-              <button class='m-modal-button m-modal--primary'><span>"+t1+"</span></button>\
-            </div>\
-          </div>\
-         </div>");
+        $("body").append(`<div class='m-modal__wrapper' id='${str}'><div class='m-modal__container ${ttv}' style='width: 30%; margin-top: 15vh;'><div class='m-modal__header'>\  <span class='m-modal__title'>${title}</span><button class='m-modal__headerbtn'><i class='m-modal__close iconfont icon-close'></i></button></div><div class='m-modal__body'>\  <div>"+ ${body}</div></div><div class='m-modal__footer'>\  <button class='m-modal-button m-modal--primary'><span>${t1}</span></button></div></div></div>`);
         if (boolien != false) {
-            $("body #" + str + " .m-modal__footer").prepend("<button class='m-modal-button m-modal--default'><span>"+t2+"</span></button>")
+            $(`body #${str} .m-modal__footer`).prepend("<button class='m-modal-button m-modal--default'><span>"+t2+"</span></button>")
         }
-        $(document).on("click", "body #" + str + " .m-modal__footer .m-modal--primary", function () {
-            $("body #" + str).fadeOut(200)
-            setTimeout(function () { $("body #" + str).remove() }, 400)
+        $(document).on("click", `body #${str} .m-modal__footer .m-modal--primary`, function () {
+            $(`body #${str}`).fadeOut(200)
+            setTimeout(function () { $(`body #${str}`).remove() }, 400)
             if (e) e() 
         })
-        $(document).on("click", "body #" + str + " .m-modal__footer .m-modal--default", function () {
-            $("body #" + str).fadeOut(200);
-            setTimeout(function () { $("body #" + str).remove() }, 400);
+        $(document).on("click", `body #${str} .m-modal__footer .m-modal--default`, function () {
+            $(`body #${str}`).fadeOut(200);
+            setTimeout(function () { $(`body #${str}`).remove() }, 400);
             if (e2) e2()
         })
     },
@@ -198,6 +184,17 @@ $(document).on("click","#m-button-more",function(){
 $(document).on("click",".m-nav-backgound",function(){
     $("#head .nav").removeClass("show")
 })
+
+/* Cookie box */
+var c = $.cookie("cookie")
+if(!c){
+    console.log(c)
+    $(function(){
+        $("body").append(`<div class="cookie-alert"><div class="cookie-alert-box"><div class="cookie-alert-box__title">Cookies政策</div><div class="cookie-alert-box__content"><div class="c-text">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</div><div class="button-box">  <button id="c-n">不接受分析型cookies</button>  <button id="c-y">接受分析型cookies</button></div></div></div></div>`)
+        $("#c-n").click(function(){$.cookie("cookie","false",{path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
+        $("#c-y").click(function(){$.cookie("cookie","true",{path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
+    })
+}
 
 
 /* Dark */

@@ -491,10 +491,6 @@ nav.nav-fixed{
     margin-bottom: 5px;
   }
   .m-nav-alert .m-content p:last-child{margin:0}
-  .m-nav-alert .m-content a.m-sm-link{
-    color:#007bff99;
-    cursor: pointer;
-  }
   .m-nav-alert .m-content p span.m-r{
     display: inline-block;
     height:18px;
@@ -529,6 +525,94 @@ nav.nav-fixed{
     font-family: Arial, Helvetica, sans-serif;
   }
 }
+.m-nav-alert .m-content a.m-sm-link,
+.cookie-alert-box__content .c-text a{
+  color:#007bff99;
+  cursor: pointer;
+}
+
+/* Cookie box */
+.cookie-alert{
+  position: fixed;
+  top:0;left:0;
+  bottom:0;right:0;
+  z-index: 250;
+  width:100%;
+  height:100%;
+  background-color: #0004;
+  backdrop-filter: saturate(180%) blur(10px);
+}
+.cookie-alert-box{
+  position: absolute;
+  top:0;left:0;
+  bottom:0;right:0;
+  margin:auto;
+  display: flex;
+  width:92%;
+  max-width: 500px;
+  height:320px;
+  padding:18px 20px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+  -webkit-box-shadow: 0 2px 6px 0 var(--Shadow);
+  box-shadow: 0 2px 6px 0 var(--Shadow);
+  flex-direction: column;
+  align-content: center;
+  align-items: stretch;
+}
+.cookie-alert-box__title{
+  height:26px;
+  font-size: 19px;
+  letter-spacing: 1px;
+  padding:5px 0px;
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 16px;
+  box-sizing: content-box;
+}
+.cookie-alert-box__content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: stretch;
+  height:100%;
+  justify-content: space-between;
+}
+.cookie-alert-box__content .c-text{
+  font-size: 14px;
+  line-height: 22px;
+  color:#555;
+  display: block;
+  height:100%;
+}
+.cookie-alert-box__content .button-box{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.cookie-alert-box__content .button-box button{
+  flex:1;
+  margin:6px 8px;
+  height:35px;
+  line-height: 28px;
+  border:1px solid #ededed;
+  font-size: 13px;
+  color:#222;
+  cursor: pointer;
+  background-color: #fafafa;
+}
+.cookie-alert-box__content .button-box button:hover{
+  background-color: #eee;
+}
+@media screen and (min-width:560px) {
+  .cookie-alert-box{
+    height:280px
+  }
+  .cookie-alert-box__content .button-box{
+    flex-direction: row;
+  }
+}
+
 
 /* 首页大面板 */
 .head-panel{
