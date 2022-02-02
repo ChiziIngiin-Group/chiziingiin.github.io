@@ -465,6 +465,7 @@ nav.nav-fixed{
     display: flex;
     align-items: center;
     flex-direction: row;
+    align-content: center;
   }
   .nav-list__box li:hover{
     background-color: #2221;
@@ -475,6 +476,7 @@ nav.nav-fixed{
     border-radius: 14px;
     margin-right: 8px;
     position: relative;
+    display: block;
   }
   .m-nav-more__logo{
     display: block;

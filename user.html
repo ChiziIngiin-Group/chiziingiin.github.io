@@ -3,6 +3,8 @@
 
 <head>
   <!-- Basic configuration -->
+  <title>用户 - 赤子英金</title>
+  <meta name="description" content="赤子英金社区" />
   <meta charset="UTF-8" />
   <meta name="description" v-bind:content="userName" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -245,6 +247,7 @@
         var dark = "关闭"
       }
       $("#app").css("display", "block")
+      $("title").text(userinfo.uname)
       var app = new Vue({
         el: '#content',
         data: {
