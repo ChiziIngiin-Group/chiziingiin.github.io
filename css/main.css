@@ -294,6 +294,11 @@ nav.nav-fixed{
   -webkit-box-shadow: 0 2px 6px 0 var(--Shadow);
   box-shadow: 0 2px 6px 0 var(--Shadow);
   display: none;
+  transition: background 0.2s ease;
+}
+.m-nav.white{
+  box-shadow: none;
+  background-color: transparent;
 }
 .m-nav-box{
   display: flex;
@@ -318,18 +323,28 @@ nav.nav-fixed{
   height:100%;
   align-items: stretch;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
 }
 .m-nav-logo img{
-  height:45px;
-  width:45px;
+  display: none;
+}
+.m-nav-logo::after{
+  content: "";
+  display: block;
+  background-image: url(/image/logo.png);
+  height:22px;
+  width: 65px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background 0.2s ease;
 }
 .btn-more{
-  height:3px;
-  width:22px;
-  border-radius: 1.5px;
+  height:2px;
+  width:18px;
+  border-radius: 1px;
   background-color: #999;
   position: relative;
   opacity: 0.7;
@@ -340,13 +355,19 @@ nav.nav-fixed{
   display: block;
   top:-7px;
   width:100%;
-  height:3px;
-  border-radius: 1.5px;
+  height:2px;
+  border-radius: 1px;
   background-color: #999;
 }
 .btn-more::after{
   top:auto;
   bottom:-7px
+}
+.m-nav.white .m-nav-logo::after{
+  background-image: url(/image/logo_white.png);
+}
+.m-nav.white .btn-more,.m-nav.white .btn-more::before,.m-nav.white .btn-more::after{
+  background-color: #fff;
 }
 .m-nav-user img{
   width:28px;
@@ -395,7 +416,7 @@ nav.nav-fixed{
     width:100%;
     height:100%;
     background-color: #0004;
-    backdrop-filter: saturate(180%) blur(15px);
+    /* backdrop-filter: saturate(180%) blur(15px); */
   }
   #head .nav .container{
     position: absolute;
@@ -430,9 +451,12 @@ nav.nav-fixed{
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding:0px 18px;
-    height:50px;
-    border-bottom: 1px solid #ededed;
+    padding-left: 50px;
+    height:70px;
+    line-height:70px;
+    font-size: 16px;
+    /* border-bottom: 1px solid #ededed; */
+    position: relative;
   }
   .nav-list__box li a{
     width:100%;
@@ -455,12 +479,22 @@ nav.nav-fixed{
   .m-nav-more__logo{
     display: block;
     height:90px;
-    border-bottom: 1px solid #ededed;
+    /* border-bottom: 1px solid #ededed; */
     background-image: url(/image/赤子英金.png);
     background-size: auto 90%;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
   }
+  /* .m-nav-more__logo::after,.nav-list__box li::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom:0px;left:0;right:0;
+    margin: auto;
+    width:55%;
+    border-bottom: 1px solid #ededed;
+  } */
   .m-nav-alert{
     position: absolute;
     z-index: 1;

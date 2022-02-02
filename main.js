@@ -165,8 +165,8 @@ if(!c && mx.Api.getFileName() != "cookies.html"){
     console.log(c)
     $(function(){
         $("body").append(`<div class="cookie-alert"><div class="cookie-alert-box"><div class="cookie-alert-box__title">Cookies政策</div><div class="cookie-alert-box__content"><div class="c-text">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</div><div class="button-box">  <button id="c-n">不接受分析型cookies</button>  <button id="c-y">接受分析型cookies</button></div></div></div></div>`)
-        $("#c-n").click(function(){$.cookie("cookie","false",{path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
-        $("#c-y").click(function(){$.cookie("cookie","true",{path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
+        $("#c-n").click(function(){$.cookie("cookie","false",{expires:365,path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
+        $("#c-y").click(function(){$.cookie("cookie","true",{expires:365,path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
     })
 }
 

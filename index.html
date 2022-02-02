@@ -108,7 +108,7 @@ mx.js will be permanently open source for everyone to learn and use
             <span class="btn-more"></span>
           </a>
           <a class="m-nav-logo">
-            <img src="/image/赤子英金.png" alt="">
+            <img src="/image/logo.png" alt="">
           </a>
           <a href="/user.html" id="m-login-button" class="m-nav-user">
             <img title=" "/>
@@ -222,11 +222,20 @@ mx.js will be permanently open source for everyone to learn and use
       if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#homepanel__style").html(".head-panel{background-size:auto 100%;}")
       else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     }
+    if ($(window).scrollTop() > window.innerHeight) {
+      $("nav.nav").removeClass("hide")
+      $("nav.m-nav").removeClass("white")
+    } else {
+      $("nav.nav").addClass("hide")
+      $("nav.m-nav").addClass("white")
+    }
     $(window).scroll(function () {
       if ($(window).scrollTop() > window.innerHeight) {
         $("nav.nav").removeClass("hide")
+        $("nav.m-nav").removeClass("white")
       } else {
         $("nav.nav").addClass("hide")
+        $("nav.m-nav").addClass("white")
       }
     })
     $(".scroll-down-div").click(function () { $('html, body').animate({ scrollTop: window.innerHeight }, 1000); })

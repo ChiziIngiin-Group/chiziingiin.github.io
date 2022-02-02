@@ -200,7 +200,7 @@
                 $("#closecookie1").html("您已停止使用此项cookies").css("color","red")
               } else if (c == "true") {
                 $("#closecookie1").click(function(){
-                  mx.alert("cookie政策","您确定要停用此cookie吗",true,function(){$.cookie("cookie","false",{path:"/"});mx.alert("cookie政策","已经成功停用",false)})
+                  mx.alert("cookie政策","您确定要停用此cookie吗",true,function(){$.cookie("cookie","false",{expires:365,path:"/"});mx.alert("cookie政策","已经成功停用",false)})
                 })
               } else {
                 $("#closecookie1").html("为保护您的隐私权益，系统默认关闭了此项cookies").css("color","grey")
