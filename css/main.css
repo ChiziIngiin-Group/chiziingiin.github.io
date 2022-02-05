@@ -1129,7 +1129,14 @@ ul.panel-list li span{
   padding-top: 10px;
   margin-bottom: 20px;
 }
-.document-box h2[s]{
+.document-box h3{
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 5px;
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+.document-box h2[s],.document-box h3[s]{
   font-weight: bold;
 }
 .document-box>p{
@@ -1225,10 +1232,14 @@ ul.panel-list li span{
   }
   .document-box h1{
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 40px;
   }
   .document-box h2{
     font-size: 18px;
+  }
+  .document-box h3{
+    font-size: 17px;
   }
   .document-box>p{
     font-size: 16px;
