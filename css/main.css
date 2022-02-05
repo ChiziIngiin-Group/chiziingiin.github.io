@@ -1005,9 +1005,61 @@ ul.panel-list li span{
   display: block;
 }
 
-
-
-/* 社区css */
+/* 内容区域 - 社区 */
+.com-panel{
+  padding:24px 26px;
+  background-color: #fafafa;
+  margin-bottom: 28px;
+  width:100%;
+}
+.com-panel-box{
+  display: flex;
+  width:100%;
+  height:100%;
+  flex-direction: column;
+  align-items: stretch;
+}
+.com-panel-box .com-panel-img{
+  height:280px;
+  width:100%;
+  background-color: #0000000f;
+  background-size: 100% auto;
+}
+.com-panel-title{
+  height:22px;
+  line-height: 22px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top:20px;
+  margin-bottom:17px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  width:100%;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space: nowrap;
+}
+.com-panel-content{
+  width:100%;
+  display: flex;
+  color:#666;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.com-panel-content #com-content{
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+.com-panel-content #com-read{
+  color:#999;
+  font-size: 12px;
+  opacity: 0.8;
+}
 .listbox{
   display: block;
   width:100%;
@@ -1051,7 +1103,6 @@ ul.panel-list li span{
   flex-direction: column;
   padding:16px 14px;
   border-bottom: 1px solid #ededed;
-  min-height: 157px;
   position: relative;
   z-index: 1;
 }
@@ -1072,7 +1123,10 @@ ul.panel-list li span{
 .listbox-list__box li .title{
   height:25px;
   width:100%;
-  font-size: 16.5px;
+  line-height: 25px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.7px;
   color:#333;
   margin-bottom: 5px;
 }
@@ -1081,20 +1135,65 @@ ul.panel-list li span{
   display: flex;
 }
 .listbox-list__box li .describe .describe__img{
-  margin-right: 10px;
+  margin-right: 14px;
   background: #f1f1f1  ;
   height:86px;
   width:128px;
 }
 .listbox-list__box li .describe .describe__text{
   font-size: 14px;
-  line-height: 18px;
+  line-height: 24px;
   color:#999;
   width:100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  height:66px;
 }
 .listbox-list__box li .information{
-  height:24px;
-  
+  position: absolute;
+  top:18px;right:16px;
+  height:20px;
+  line-height: 16px;
+  border-radius: 3px;
+  font-size: 11px;
+  color:#777;
+  /* background-color: #f4f4f4; */
+  padding:2px 3px;
+  opacity: 0.5;
+  letter-spacing: 0.5px;
+}
+.listbox-list__box li[hot] .title{
+  color:#B22A2C
+}
+.listbox-list__box li[hot] .information{
+  color:#fff;
+  color:#B22A2C;
+  /* background-color: #ec653f; */
+  opacity: 0.8;
+}
+
+@media (max-width:730px) {
+  .com-panel-box .com-panel-img{
+    height:260px;
+  }
+  .listbox-title{
+    display: none !important;
+  }
+  .listbox-list__box li .describe .describe__img {
+    height:64.5px;
+    width:96px;
+  }
+  .listbox-list__box li .describe .describe__text{
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+@media (max-width:650px) {
+  .com-panel-box .com-panel-img{
+    height:220px;
+  }
 }
 
 

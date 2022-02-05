@@ -15,7 +15,6 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/md5.js"></script>
   <script src="/js/swiper-bundle.min.js"> </script>
-  <script src="/js/colorpicker.js"></script>
   <script src="/main.js"></script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/swiper-bundle.min.css">
@@ -84,9 +83,7 @@
           <a class="m-nav-more" id="m-button-more" href="javascript:void(0)">
             <span class="btn-more"></span>
           </a>
-          <a class="m-nav-logo">
-            <img src="/image/赤子英金.png" alt="">
-          </a>
+          <a class="m-nav-logo"></a>
           <a href="/user.html" id="m-login-button" class="m-nav-user">
             <img title=" "/>
           </a>
@@ -95,11 +92,17 @@
     </div>
     <!-- 内容区域 -->
     <div id="content" class="content -nav-fixed">
-
       <div class="container">
         <div class="box-container box-flex">
           <div class="box-content box-main">
             <div class="content-box">
+              <div class="com-panel">
+                <div class="com-panel-box">
+                  <div class="com-panel-img" style="background-image:url('/image/df00002.png')"></div>
+                  <div class="com-panel-title">愿你所有的付出都不会被辜负</div>
+                  <div class="com-panel-content"><span id="com-content">赤子英金 - 夜读</span><span id="com-read">2571阅读</span></div>
+                </div>
+              </div>
               <div class="listbox">
                 <div class="listbox-box">
                   <div class="listbox-title">
@@ -108,22 +111,32 @@
                   </div>
                   <div class="listbox-content">
                     <div class="listbox-list">
-                      <ul class="listbox-list__box">
-                        <li>
-                          <div class="title">1</div>
+                      <ul class="listbox-list__box" id="comnews1">
+                        <li hot>
+                          <div class="title">赤子英金发布轻浏览器</div>
                           <div class="describe">
-                            <img src="" alt="" class="describe__img">
-                            <span class="describe__text">...................</span>
+                            <img src="/image/df00002.png" class="describe__img">
+                            <span class="describe__text">替换文本.写文章总是一件难事，可这文本也不知怎么的就这么短，但是为了测试，我不得不写这么长。熬夜人熬夜魂熬夜都是人上人</span>
                           </div>
-                          <div class="information">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                          </div>
+                          <div class="information">158阅读</div>
                         </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        
+                        <li>
+                          <div class="title">赤子英金发布轻浏览器</div>
+                          <div class="describe">
+                            <img src="/image/df00002.png" class="describe__img">
+                            <span class="describe__text">替换文本.写文章总是一件难事，可这文本也不知怎么的就这么短，但是为了测试，我不得不写这么长。熬夜人熬夜魂熬夜都是人上人</span>
+                          </div>
+                          <div class="information">158阅读</div>
+                        </li>
+                        <li>
+                          <div class="title">赤子英金发布轻浏览器</div>
+                          <div class="describe">
+                            <img src="/image/df00002.png" class="describe__img">
+                            <span class="describe__text">替换文本.写文章总是一件难事，可这文本也不知怎么的就这么短，但是为了测试，我不得不写这么长。熬夜人熬夜魂熬夜都是人上人</span>
+                          </div>
+                          <div class="information">158阅读</div>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -156,23 +169,22 @@
       <div class="foot-content">
         <div class="container">
           <ul class="footer-list">
-            <li><a href="/">用户协议</a></li>
-            <li><a href="">隐私政策</a></li>
+            <li><a href="/p/agreement.html">用户协议</a></li>
+            <li><a href="/p/privacy.html">隐私政策</a></li>
             <li><a href="/about.html">关于我们</a></li>
             <li><a href="/about.html#Lianxiwomen">联系我们</a></li>
           </ul>
           <div class="footer-text">
             <div><a href="https://www.12377.cn/" target="_blank">违法和不良信息举报中心</a></div>
-            <div><a href="/blzx/" target="_blank">八年六班政治协商委员会</a></div>
-            <div><a href="/blfg/" target="_blank">八年六班发展改革委员会</a></div>
             <div><a href="https://www.12377.cn/" target="_blank">蒙公网安备号（暂未申请）</a></div>
+            <div><a href="/Munox" target="_blank">Munox团队</a></div>
           </div>
           <div class="footer-text">
-            <div><span>Copyright 2020-2022 八六政协信息技术协会 赤子英金集团</span></div>
+            <div><span>Copyright 2020-2022 赤子英金信息技术</span></div>
           </div>
         </div>
       </div>
-      <div class="copyright"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六政协信息技术协会</a></span><span>指定官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
 
@@ -181,12 +193,13 @@
       width: 100%;
       height: 300px;
     }
-    #color-picker{
-      position: fixed;
-      right:0px;
-      top:200px;
-      width:50px;
-      height:50px;
+    html,#app{
+      background-color: #fff;
+    }
+    @media (max-width:730px) {
+    .container{
+      padding-top:0px !important;
+    }
     }
   </style>
 
@@ -198,45 +211,39 @@
         el: '.swiper-pagination',
       },
     });
-    
-    
   </script>
 
 
   <script>
 
-    var List = [
-      [],
-      [
-        { title: "你好，2022", time: 20220101 },
-        { title: "我们不能忘记！", time: 20211213 },
-        { title: "今日小雪", time: 20211122 },
-        { title: "今日立冬", time: 20211107 },
-        { title: "圆满成功！", time: 20211016 },
-        { title: "今日秋分", time: 20210923 },
-        { title: "中秋快乐，阖家团圆", time: 20210921 }
-      ],
-      [
-        { title: "重磅！新闻发布会全文来了", time: 20211112 },
-        { title: "50年前的这一天，对世界影响深远", time: 20211024 },
-        { title: "圆满结束", time: 20211024 },
-        { title: "圆满成功", time: 20211016 },
-      ],
-      []
+    var List01 = [ 
+      { u:"",g:"",i:"",t:"快来赤子英金领红包！陪你迎冬奥",c:"", m: 20220101 },
+      { u:"",g:"",i:"",t:"快来领取专属祝福",c:"", m: 20220101 },
+      { u:"",g:"",i:"",t:"你好，2022",c:"", m: 20220101 },
+      { u:"",g:"",i:"",t:"我们不能忘记！",c:"84年前的今天，侵华日军制造了惨绝人寰的大屠杀", m: 20211213 },
+      { u:"",g:"",i:"",t:"今日小雪",c:"", m: 20211122 },
+      { u:"",g:"",i:"",t:"今日立冬",c:"", m: 20211107 },
+      { u:"",g:"",i:"",t:"圆满成功！",c:"", m: 20211016 },
+      { u:"",g:"",i:"",t:"今日秋分",c:"", m: 20210923 },
+      { u:"",g:"",i:"",t:"中秋快乐，阖家团圆",c:"", m: 20210921 }
     ];
+    $("#comnews1").html("")
+    for(var i = 0;i<List01.length;i++){
+      $("#comnews1").append(`<li u="${List01[i].u}"><div class="title">${List01[i].t}</div><div class="describe"><img src="${List01[i].g}" class="describe__img"><span class="describe__text">${List01[i].c}</span></div><div class="information">${List01[i].i}</div></li>`)
+    }
 
     //渲染
     function TrTime(time) {
       return (time + "").substr(4, 2) + "/" + (time + "").substr(6, 2)
     }
-    for (var i = 0; i < 4; i++) {
-      var tmp = "";
-      var lk = List[i]
-      for (var j = 0; j < lk.length && j < 9; j++) {
-        tmp += "<li class='panel-item'><a href=''>" + lk[j].title + "</a> <span>" + TrTime(lk[j].time) + "</span> </li>";
-      }
-      $("#list0" + (i + 1)).html(tmp)
-    }
+    // for (var i = 0; i < 4; i++) {
+    //   var tmp = "";
+    //   var lk = List[i]
+    //   for (var j = 0; j < lk.length && j < 9; j++) {
+    //     tmp += "<li class='panel-item'><a href=''>" + lk[j].title + "</a> <span>" + TrTime(lk[j].time) + "</span> </li>";
+    //   }
+    //   $("#list0" + (i + 1)).html(tmp)
+    // }
 
 
     setInterval(function () {
