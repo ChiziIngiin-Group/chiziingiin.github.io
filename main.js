@@ -191,13 +191,15 @@ $(()=>{
 
 
 /* 百度分析 */
+$(()=>{
 var _hmt = _hmt || [];
-(function() {
+(()=>{
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?bc9a5ce042da8760453195bf36820bca";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
+})
 /* 
  相关隐私政策请查看
  赤子英金隐私政策:https://chiziingiin.github.io/p/privacy.html
