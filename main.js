@@ -19,9 +19,9 @@ const mx = {
     version:VersionNumber,
     /* System interface function */
     Api: {
-        ifjq: function () { if ($) return true; },
-        ifvue: function () { if (Vue) return true; },
-        GetUserConfig: function () {
+        ifjq: ()=>{ if ($) return true; },
+        ifvue: ()=>{ if (Vue) return true; },
+        GetUserConfig:()=>{
             /* Get user information */
             var userconfig = localStorage.getItem("UserConfig");
             console.info("[GetUserConfig]", userconfig);
@@ -31,14 +31,14 @@ const mx = {
                 return JSON.parse(userconfig);
             }
         },
-        OpenLoginAlert: function () {
+        OpenLoginAlert:()=>{
             if (this.ifjq()) {
                 mx.alert("提示","暂不支持该功能！")
             } else {
                 throw "Error: This document does not reference jQuery."
             }
         },
-        getRandomString: function (len) {
+        getRandomString:(len)=>{
             len = len || 32;
             var $chars = 'AmSTnpN5Rz2EcdCKMXZabersYDW4xtwPBFGy36fhHJQijk78'; 
             var maxPos = $chars.length;
@@ -48,7 +48,7 @@ const mx = {
             }
             return pwd;
         },
-        GetQueryString(name) {
+        GetQueryString:(name)=>{
             var t1 = window.location.href;
             if (t1) var t2 = t1.split("?")[1];
             if (t2) var t3 = t2.split(name + "=")[1];
@@ -58,7 +58,7 @@ const mx = {
             if (t5) return t5;
             return null;
         },
-        checksSpecialCharator(newName) {
+        checksSpecialCharator:(newName)=>{
             let regEn = /[`!@#$%^&*()_+<>?:"{},.\/;'[\]]/im,
               regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im;
             if (regEn.test(newName) || regCn.test(newName)) {
@@ -66,7 +66,7 @@ const mx = {
             }
             return false;
         },
-        getFileName(){
+        getFileName:()=>{
             var t1 = window.location.href;
             if (t1) var t2 = t1.split("/");
             if (t2) return t3 = t2[t2.length-1].split("?")[0].split("#")[0];
@@ -76,7 +76,7 @@ const mx = {
     /* System basic function */
     system: {
         /* login: This function is used to automatically verify the login status */
-        login: function (e) {
+        login:(e)=>{
             /* Judgment: verify whether the environment is safe */
             if (mx.system.security()) {
                 /* Judgment: verify whether the user is logged in */
@@ -96,7 +96,7 @@ const mx = {
             }
         },
         /* security: This function is used to verify that the environment is secure */
-        security: function (e) {
+        security:(e)=>{
             /* Judgment: verify whether the web page is nested */
             if (top.location.href === window.location.href) {
                 /* Judgment: verify whether the page is edited */
@@ -112,7 +112,7 @@ const mx = {
         },
     },
     /*  Alert fucntion */
-    alert: function (title, body, boolien, e, e2, t1, t2) {
+    alert:(title, body, boolien, e, e2, t1, t2)=>{
         var ttv = ""
         if (!boolien) {ttv = "onlytrue";}
         if (!title) {title = "提示";console.warn(" Error: NO title of Alert")}
@@ -124,21 +124,21 @@ const mx = {
         if (boolien != false) {
             $(`body #${str} .m-modal__footer`).prepend(`<button class='m-modal-button m-modal--default'><span>${t2}</span></button>`)
         }
-        $(document).on("click", `body #${str} .m-modal__footer .m-modal--primary`, function () {
+        $(document).on("click", `body #${str} .m-modal__footer .m-modal--primary`, ()=>{
             $(`body #${str}`).fadeOut(200)
-            setTimeout(function () { $(`body #${str}`).remove() }, 400)
+            setTimeout(()=>{ $(`body #${str}`).remove() }, 400)
             if (e) e() 
         })
-        $(document).on("click", `body #${str} .m-modal__footer .m-modal--default`, function () {
+        $(document).on("click", `body #${str} .m-modal__footer .m-modal--default`, ()=>{
             $(`body #${str}`).fadeOut(200);
-            setTimeout(function () { $(`body #${str}`).remove() }, 400);
+            setTimeout(()=>{ $(`body #${str}`).remove() }, 400);
             if (e2) e2()
         })
     },
 }
 
 /* Login Button */
-$(function(){
+$(()=>{
     if(localStorage.getItem("userinfo") == "fail" || !localStorage.getItem("userinfo")){
         $(".nav #login-button").attr("href",`/login?url=${encodeURI(window.location.href)}`).html(`登录`);
         $("#m-login-button img").removeAttr("src")
@@ -152,30 +152,54 @@ $(function(){
 })
 
 /* Header Menu */
-$(document).on("click","#m-button-more",function(){
+$(document).on("click","#m-button-more",()=>{
     $("#head .nav").addClass("show")
 })
-$(document).on("click",".m-nav-backgound",function(){
+$(document).on("click",".m-nav-backgound,.m-nav-more__button",()=>{
     $("#head .nav").removeClass("show")
 })
+
+/* Header Hider */
+// $(()=>{
+//     $.cookie("top",$(window).scrollTop(),{path:"/"})
+//     $(window).scroll(()=>{
+//         if($(window).scrollTop() - $.cookie("top") > 30)$(".nav,.m-nav").addClass("tophide")
+//         else if ($(window).scrollTop() - $.cookie("top") < -30)$(".nav,.m-nav").removeClass("tophide")
+//         $.cookie("top",$(window).scrollTop(),{path:"/"})
+//     })
+// })
 
 /* Cookie box */
 var c = $.cookie("cookie")
 if(!c && mx.Api.getFileName() != "cookies.html"){
     console.log(c)
-    $(function(){
+    $(()=>{
         $("body").append(`<div class="cookie-alert"><div class="cookie-alert-box"><div class="cookie-alert-box__title">Cookies政策</div><div class="cookie-alert-box__content"><div class="c-text">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</div><div class="button-box">  <button id="c-n">不接受分析型cookies</button>  <button id="c-y">接受分析型cookies</button></div></div></div></div>`)
-        $("#c-n").click(function(){$.cookie("cookie","false",{expires:365,path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
-        $("#c-y").click(function(){$.cookie("cookie","true",{expires:365,path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(function () { $(`body .cookie-alert`).remove() }, 400);})
+        $("#c-n").click(()=>{$.cookie("cookie","false",{expires:365,path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(()=>{ $(`body .cookie-alert`).remove() }, 400);})
+        $("#c-y").click(()=>{$.cookie("cookie","true",{expires:365,path:"/"});$(".cookie-alert").fadeOut(200);setTimeout(()=>{ $(`body .cookie-alert`).remove() }, 400);})
     })
 }
 
-
 /* Dark */
-$(function(){
+$(()=>{
     if(localStorage.getItem("dark") == "close" || !localStorage.getItem("dark")){
         
     }else{
         $("html").addClass("dark")
     }
 })
+
+
+/* 百度分析 */
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bc9a5ce042da8760453195bf36820bca";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+/* 
+ 相关隐私政策请查看
+ 赤子英金隐私政策:https://chiziingiin.github.io/p/privacy.html
+ 百度分析隐私政策:https://chiziingiin.github.io/p/privacy.html
+*/

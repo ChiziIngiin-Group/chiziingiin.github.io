@@ -99,7 +99,7 @@
                 <div class="user-box-u">
                   <div class="user-info user-image">
                     <div>
-                      <img id="userimg" src="/image/user-unlogin.png" alt="头像">
+                      <img id="userimg" v-bind:src="userimg" alt="头像">
                       <div> 更改头像 </div>
                     </div>
                   </div>
@@ -255,7 +255,8 @@
           userTel: userinfo.tel,
           userSign: userinfo.sign,
           userGenderImg: "/image/Gender-" + userinfo.k + ".svg",
-          ifdark: dark
+          ifdark: dark,
+          userimg: userinfo.uimg,
         }
       })
     }

@@ -57,6 +57,7 @@ mx.js will be permanently open source for everyone to learn and use
         <div class="container">
           <div class="nav-list">
             <div class="m-nav-more__logo"></div>
+            <!-- <div class="m-nav-more__button"><span></span></div> -->
             <ul class="nav-list__box">
               <li class="nav-item m-nav-item">
                 <a href="/">首页</a>
@@ -216,7 +217,7 @@ mx.js will be permanently open source for everyone to learn and use
     $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
     if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#homepanel__style").html(".head-panel{background-size:auto 100%;}")
     else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
-    window.onresize = function () {
+    window.onresize = ()=>{
       $("#homepanel").css({ height: window.innerHeight });
       $("#homepanel .head-panel__content").css({ top: ((window.innerHeight / 2) - 135) + "px" });
       if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#homepanel__style").html(".head-panel{background-size:auto 100%;}")
@@ -229,7 +230,7 @@ mx.js will be permanently open source for everyone to learn and use
       $("nav.nav").addClass("hide")
       $("nav.m-nav").addClass("white")
     }
-    $(window).scroll(function () {
+    $(window).scroll(()=>{
       if ($(window).scrollTop() > window.innerHeight) {
         $("nav.nav").removeClass("hide")
         $("nav.m-nav").removeClass("white")
@@ -238,7 +239,7 @@ mx.js will be permanently open source for everyone to learn and use
         $("nav.m-nav").addClass("white")
       }
     })
-    $(".scroll-down-div").click(function () { $('html, body').animate({ scrollTop: window.innerHeight }, 1000); })
+    $(".scroll-down-div").click(()=>{ $('html, body').animate({ scrollTop: window.innerHeight }, 1000); })
     $("#head-panel__text").typed({
       strings: ["Chizi Ingiin Technology Community.", "Welcome to visit.", "We hope our content can help you"],
       stringsElement: null,
@@ -253,10 +254,10 @@ mx.js will be permanently open source for everyone to learn and use
       cursorChar: "|",
       attr: null,
       contentType: 'html',
-      callback: function () { },
-      preStringTyped: function () { },
-      onStringTyped: function () { },
-      resetCallback: function () { }
+      callback: ()=>{ },
+      preStringTyped: ()=>{ },
+      onStringTyped: ()=>{ },
+      resetCallback: ()=>{ }
     });
   </script>
 </body>
