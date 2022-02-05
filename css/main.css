@@ -1482,6 +1482,12 @@ ul.panel-list li span{
   line-height: 38px;
 }
 
+html{
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  -webkit-filter: grayscale(100%);
+}
+
+
 
 
 
