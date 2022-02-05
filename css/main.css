@@ -1153,7 +1153,19 @@ ul.panel-list li span{
   list-style-position: outside;
   padding-left: 18px;
 }
+.document-box a{
+  color:#0065d1;
+}
 
+.document-box img[l]{
+  height:26px;
+}
+.document-box ul li{
+  padding:3px 0px;
+}
+.order_list li, .unorder_list li {
+  list-style: inherit;
+}
 @media print{
   nav{
     display:none !important;
@@ -1480,11 +1492,6 @@ ul.panel-list li span{
   text-align: center;
   width:30px;
   line-height: 38px;
-}
-
-html{
-  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-  -webkit-filter: grayscale(100%);
 }
 
 
