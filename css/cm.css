@@ -134,8 +134,10 @@ input:-ms-input-placeholder {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+  background-color: #fff;
 }
 .cm-panel img{
   /* height:100px; */
   width:100%;
+  opacity: 0;
 }
