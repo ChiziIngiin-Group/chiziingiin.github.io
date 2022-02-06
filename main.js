@@ -143,10 +143,13 @@ $(()=>{
         $(".nav #login-button").attr("href",`/login?url=${encodeURI(window.location.href)}`).html(`登录`);
         $("#m-login-button img").removeAttr("src")
         $("#m-login-button").attr("href",`/login?url=${encodeURI(window.location.href)}`)
+        $("#cm-login").attr("href",`/login?url=${encodeURI(window.location.href)}`)
     }else{
         $(".nav #login-button").attr("href","/user.html").html(`<img class="m-nav-userimg" src="${JSON.parse(localStorage.getItem("userinfo")).uimg}">${JSON.parse(localStorage.getItem("userinfo")).uname}`);
         $(".nav #reg-button").parent().remove()
         $("#m-login-button img").attr("src",`${JSON.parse(localStorage.getItem("userinfo")).uimg}`)
+        $("#cm-login img").attr("src",`${JSON.parse(localStorage.getItem("userinfo")).uimg}`)
+        $("#cm-login").attr("href",`/user.html`)
         $("#m-login-button").attr("href",`/user.html`)
     }
 })

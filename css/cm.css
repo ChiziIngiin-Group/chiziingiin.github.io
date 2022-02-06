@@ -1,0 +1,141 @@
+.cm-head{
+ padding-top: 30px;
+ padding-bottom: 50px;
+ background-color: #DA0101;
+ position: relative;
+}
+.cm-head::after{
+  content: "";
+  display: block;
+  width:100%;
+  height:20px;
+  bottom:-20px;
+  position: absolute;
+  background-image: 
+  linear-gradient(-182.45228218507685deg, #DA0101 50%, transparent 50%)  ;
+  text-align: center;
+	background-size: 100%, cover;
+	background-repeat: no-repeat;
+}
+.cm-head__box{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.cm-head__navbar{
+  display: flex;
+  height:35px;
+  padding:0px 20px;
+  margin-bottom: 5px;
+  width:100%;
+}
+.cm-head__navbar .logo{
+  width:80px;height:100%;
+  background-image: url(/image/logo_white.png);
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 16px;
+}
+.cm-head__navbar form{
+  width:100%;
+}
+.cm-head__navbar input{
+  background-color: #ffffff25;
+  border:0;
+  outline: none;
+  height:100%;
+  border-radius: 10px;
+  width:100%;
+  padding:6px 12px;
+  line-height: 24px;
+  color:#fff;
+}
+input::-webkit-input-placeholder{
+  color:#fff !important;
+  opacity: 0.8;
+}
+input:-moz-placeholder {
+  color:#fff !important;
+  opacity: 0.8;
+}
+input::-moz-placeholder {
+  color:#fff !important;
+  opacity: 0.8;
+}
+input:-ms-input-placeholder {
+  color:#fff !important;
+  opacity: 0.8;
+}
+.cm-head__navbar .user{
+  height:35px;
+  width:35px;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.cm-head__navbar .user img{
+  height:28px;
+  width:28px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.cm-head__tabbar{
+  padding: 16px 0px;
+  width:100%;
+  display: block;
+}
+.cm-head__tabbar ul{
+  display: flex;
+  padding-left: 20px;
+  width:100%;
+  overflow: auto;
+  flex-basis: 56px;
+  flex-shrink: 0;;
+  white-space: nowrap ;
+  overflow-x: auto;
+}
+.cm-head__tabbar ul::-webkit-scrollbar{
+  height:2px;
+  width:2px;
+}
+.cm-head__tabbar ul::-webkit-scrollbar-thumb{
+  background-color: #00000002;
+}
+.cm-head__tabbar ul li{
+  padding:6px 12px;
+  line-height: 21px;
+  font-size: 15px;
+  margin:0 6px;
+  color:#fff;
+  opacity: 0.65;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+}
+.cm-head__tabbar ul li:first-child{
+  margin-left: 0;
+}
+.cm-head__tabbar ul li.active{
+  opacity: 1;
+  background-color: #00000020;
+}
+
+.content{
+  margin-top: -50px;
+  padding:0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.cm-panel{
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cm-panel img{
+  /* height:100px; */
+  width:100%;
+}

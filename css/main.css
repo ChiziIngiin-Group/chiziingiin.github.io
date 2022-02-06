@@ -370,7 +370,7 @@ nav.nav-fixed{
 .m-nav.white .m-nav-more__button span,.m-nav.white .m-nav-more__button ::before,.m-nav.white .m-nav-more__button ::after{
   background-color: #fff;
 }
-.m-nav-user img{
+.m-nav-user img,#cm-login img{
   width:28px;
   height:28px;
   position: relative;
@@ -378,7 +378,7 @@ nav.nav-fixed{
   display: block;
   border-radius: 14px;
 }
-.m-nav-user img::before{
+.m-nav-user img::before,#cm-login img::before{
   content: "";
   display: block;
   position: absolute;
@@ -1007,7 +1007,7 @@ ul.panel-list li span{
 
 /* 内容区域 - 社区 */
 .com-panel{
-  padding:24px 26px;
+  padding:24px 32px;
   background-color: #fafafa;
   margin-bottom: 28px;
   width:100%;
@@ -1184,10 +1184,14 @@ ul.panel-list li span{
   .listbox-list__box li .describe .describe__img {
     height:64.5px;
     width:96px;
+    height:96px
   }
   .listbox-list__box li .describe .describe__text{
     font-size: 12px;
     line-height: 20px;
+  }
+  .com-panel{
+    padding:24px 26px
   }
 }
 @media (max-width:650px) {
