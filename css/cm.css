@@ -1,3 +1,7 @@
+html,#app{
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .cm-head{
  padding-top: 30px;
  padding-bottom: 50px;
@@ -145,6 +149,7 @@ input:-ms-input-placeholder {
   display: block;
   position: relative;
   max-height: 170px;
+  min-height: 150px;
 }
 .cm-panel__bg::before{
   content:"";
@@ -276,4 +281,109 @@ input:-ms-input-placeholder {
   letter-spacing: 1px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
+}
+
+.cm-news-list ul{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.cm-news-list li{
+  display: flex;
+  padding:18px 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ededed;
+}
+
+.cm-news-list li .ba{
+  display: block;
+  width:calc(100% - 100px);
+  margin-right: 20px;
+  height:80px;
+  overflow: hidden;
+}
+.cm-news-list li .ba .t{
+  display: block;
+  width:100%;
+  height:30px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 30px;
+  color:#333;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space: nowrap;
+}
+.cm-news-list li .ba .c{
+  display: block;
+  width:100%;
+  height:46px;
+  font-size: 14px;
+  font-weight: normal;
+  color:#999;
+  line-height: 23px;
+}
+.cm-news-list li .i{
+  display: block;
+  width:80px;
+  height:80px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+.cm-news-list li .da{
+  display: flex;
+  width:100%;
+  height:16px;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.cm-news-list li .da .a{
+  color:rgb(21, 150, 255);
+  font-size: 12px;
+}
+@font-face {
+  font-family: "iconfont"; /* Project id 3138748 */
+  src: url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.woff2?t=1644198066798') format('woff2'),
+       url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.woff?t=1644198066798') format('woff'),
+       url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.ttf?t=1644198066798') format('truetype');
+}
+.cm-news-list li .da .a::before{
+  content: "\e680";
+  display: inline;
+  font-family: 'iconfont';
+  margin-right: 4px;
+}
+.cm-news-list li .da .d{
+  font-size: 12px;
+  color:#aaa;
+}
+
+.cm-news-list li.i3{
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+.cm-news-list li.i3 >*{
+  flex:1
+}
+.cm-news-list li.i3 .ba{
+  width:100%;
+  margin-right: 0;
+}
+.cm-news-list li.i3 .i-box{
+  display: flex;
+  margin-top: 10px;
+}
+.cm-news-list li.i3 .i{
+  width:calc(calc(100% - 30px) / 3);
+  height:86px;
+  margin-right: 15px;
+}
+.cm-news-list li.i3 .i:last-child{
+  margin-right: 0;
 }

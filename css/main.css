@@ -35,9 +35,9 @@ html {
 }
 @font-face {
   font-family: "iconfont"; /* Project id 3138748 */
-  src: url('//at.alicdn.com/t/font_3138748_notdimyitol.woff2?t=1642136565498') format('woff2'),
-       url('//at.alicdn.com/t/font_3138748_notdimyitol.woff?t=1642136565498') format('woff'),
-       url('//at.alicdn.com/t/font_3138748_notdimyitol.ttf?t=1642136565498') format('truetype');
+  src: url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.woff2?t=1644198066798') format('woff2'),
+       url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.woff?t=1644198066798') format('woff'),
+       url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.ttf?t=1644198066798') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -56,6 +56,10 @@ html {
 .icon-search:hover::before {
   color:#0087ff;
 }
+.icon-compass:before {
+  content: "\e680";
+}
+
 @font-face {
   font-family: "iconfont2"; /* Project id 2848893 */
   src: url('//at.alicdn.com/t/font_2848893_5b3buu6lf5q.woff2?t=1633344670611') format('woff2'),
