@@ -132,10 +132,8 @@ const mx = {
         if (!t1) {t1 = "确认"}
         if (!t2) {t2 = "取消"}
         var str = mx.Api.getRandomString(12)
-        $("body").append(`<div class='m-modal__wrapper' id='${str}'><div class='m-modal__container ${ttv}' style='width: 30%; margin-top: 15vh;'><div class='m-modal__header'>\  <span class='m-modal__title'>${title}</span><button class='m-modal__headerbtn'><i class='m-modal__close iconfont icon-close'></i></button></div><div class='m-modal__body'>\  <div>${body}</div></div><div class='m-modal__footer'>\  <button class='m-modal-button m-modal--primary'><span>${t1}</span></button></div></div></div>`);
-        if (boolien != false) {
-            $(`body #${str} .m-modal__footer`).prepend(`<button class='m-modal-button m-modal--default'><span>${t2}</span></button>`)
-        }
+        $("body").append(`<div class='m-modal__wrapper' id='${str}'><div class='m-modal__container ${ttv}' style='width: 30%; margin-top: 15vh;'><div class='m-modal__header'>\  <span class='m-modal__title'>${title}</span><button class='m-modal__headerbtn'><i class='m-modal__close iconfont icon-close'></i></button></div><div class='m-modal__body'>\  <div>${body}<textarea class='mx-alert-content' style='opacity:0;width:1px;height:1px;'>${body}</textarea></div></div><div class='m-modal__footer'>\  <button class='m-modal-button m-modal--primary'><span>${t1}</span></button></div></div></div>`);
+        if (boolien != false) {$(`body #${str} .m-modal__footer`).prepend(`<button class='m-modal-button m-modal--default'><span>${t2}</span></button>`)}
         $(document).on("click", `body #${str} .m-modal__footer .m-modal--primary`, ()=>{
             $(`body #${str}`).fadeOut(200)
             setTimeout(()=>{ $(`body #${str}`).remove() }, 400)
