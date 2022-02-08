@@ -72,6 +72,12 @@ const mx = {
             if (t2) return t3 = t2[t2.length-1].split("?")[0].split("#")[0];
             return null
         },
+        getLastFileName:()=>{
+            var t1 = window.location.href;
+            if (t1) var t2 = t1.split("/");
+            if (t2) return t3 = t2[t2.length-2].split("?")[0].split("#")[0];
+            return null
+        },
         download:(filename, text)=>{
             var pom = document.createElement('a');
             pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -184,7 +190,7 @@ $(document).on("click",".m-nav-backgound,.m-nav-more__button",()=>{
 
 /* Cookie box */
 var c = $.cookie("cookie")
-if(!c && mx.Api.getFileName() != "cookies.html"){
+if(!c && mx.Api.getFileName() != "cookies.html" && mx.Api.getLastFileName() != "p"){
     console.log(c)
     $(()=>{
         $("body").append(`<div class="cookie-alert"><div class="cookie-alert-box"><div class="cookie-alert-box__title">Cookies政策</div><div class="cookie-alert-box__content"><div class="c-text">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</div><div class="button-box">  <button id="c-n">不接受分析型cookies</button>  <button id="c-y">接受分析型cookies</button></div></div></div></div>`)
