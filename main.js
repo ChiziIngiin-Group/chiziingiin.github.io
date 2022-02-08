@@ -71,6 +71,18 @@ const mx = {
             if (t1) var t2 = t1.split("/");
             if (t2) return t3 = t2[t2.length-1].split("?")[0].split("#")[0];
             return null
+        },
+        download:(filename, text)=>{
+            var pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            pom.setAttribute('download', filename);
+            if (document.createEvent) {
+                var event = document.createEvent('MouseEvents');
+                event.initEvent('click', true, true);
+                pom.dispatchEvent(event);
+            } else {
+                pom.click();
+            }
         }
     },
     /* System basic function */
@@ -192,6 +204,36 @@ $(()=>{
     }
 })
 
+/* Browser Old Version */
+var ms_ie = false;
+var ua = window.navigator.userAgent.toLowerCase();
+var old_ie = ua.indexOf('MSIE');
+var new_ie = ua.indexOf('trident/');
+var is360 = false;
+var append = document.getElementById("append");
+if((old_ie > -1) || (new_ie > -1)) {
+    ms_ie = true;
+}
+if(window.navigator.appName.indexOf("Microsoft") != -1) {
+    me_ie = true;
+}
+if((window.navigator.mimeTypes[40] || !window.navigator.mimeTypes.length)) {
+    is360 = true;
+}
+if(ms_ie) {
+    var DEFAULT_VERSION = 8.0;
+    var ua = navigator.userAgent.toLowerCase();
+    var isIE = ua.indexOf("msie")>-1;
+    var safariVersion;
+    if(isIE){
+        safariVersion =  ua.match(/msie ([\d.]+)/)[1];
+    }
+    if(safariVersion < DEFAULT_VERSION ){
+        window.location.href='/p/oldversion.html'
+    }
+}
+
+console.log(ms_ie,is360,isIE)
 
 /* 百度分析 */
 $(()=>{

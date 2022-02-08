@@ -45,6 +45,25 @@ html,#app{
 }
 .cm-head__navbar form{
   width:100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  position: relative;
+}
+.cm-head__navbar form::before{
+  position: absolute;
+  display: block;
+  content:"\e7b3";
+  font-family: 'iconfont';
+  color:#fff;
+  opacity: 0.8;
+  font-size: 18px;
+  z-index: 1;
+  width:12px;
+  height:12px;
+  line-height: 12px;
+  top:11.5px;
+  left:10px;
 }
 .cm-head__navbar input{
   background-color: #ffffff25;
@@ -55,8 +74,11 @@ html,#app{
   width:100%;
   padding:6px 12px;
   line-height: 24px;
+  font-size: 13px;
   color:#fff;
+  padding-left: 32px;
 }
+
 input::-webkit-input-placeholder{
   color:#fff !important;
   opacity: 0.8;
