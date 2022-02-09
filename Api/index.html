@@ -21,6 +21,9 @@
 	<p style="margin-bottom: 10px;">采用赤子英金munox.cdn提升浏览效率</p>
 	<p style="margin-bottom: 12px;margin-top: 15px;"><input id="title" type="text" value="" placeholder="输入标题"></p>
 	<p style="margin-bottom: 12px;margin-top: 15px;"><input id="description" type="text" value="" placeholder="输入描述（默认取正文前40个字符）"></p>
+	<p style="margin-bottom: 12px;margin-top: 15px;"><input id="author" type="text" value="" placeholder="作者昵称"></p>
+	<p style="margin-bottom: 12px;margin-top: 15px;"><input id="authorId" type="text" value="" placeholder="作者ID"></p>
+	<p style="margin-bottom: 12px;margin-top: 15px;"><input id="imgurl" type="text" value="" placeholder="图片[JSON格式]"></p>
 	<div id = "tinymce_demo"></div>
 	<div>
 		<br>
@@ -49,7 +52,7 @@
 	    plugins: "lists,hr, advlist,anchor,autolink,autoresize,charmap,code,codesample,emoticons,fullscreen,image,media,insertdatetime,link,pagebreak,paste,preview,print,searchreplace,table,textcolor,toc,visualchars,wordcount", //依赖lists插件
 	    toolbar: 'bullist numlist anchor charmap emoticons fullscreen hr image insertdatetime link media pagebreak paste preview print searchreplace textcolor wordcount',
 	    //选中时出现的快捷工具，与插件有依赖关系 
-	    images_upload_url:'a.php', /*后图片上传接口*/ /*返回值为json类型 {'location':'uploads/jpg'}*/
+	    images_upload_url:'https://imgtu.com/upload', /*后图片上传接口*/ /*返回值为json类型 {'location':'uploads/jpg'}*/
  	    setup: function(editor){ 
 	   		 editor.on('change',function(){ editor.save(); });
 		}
@@ -59,7 +62,21 @@
 	</script>
 
 	<!-- 例子 -->
-	<script src="./index.js">
-	</script>
+	<script src="./index.js"></script>
+	<style>
+		input[id]{
+			width: 100%;
+			border:1px solid #eee;
+			outline: none;
+			background-color: #fff;
+			color:#222;
+			font-size:15px;
+			line-height: 26px;
+			padding:3px 12px;
+		}
+		input[id]:hover,input[id]:focus{
+			border-color: #ccc;
+		}
+	</style>
 </body>
 </html>

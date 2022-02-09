@@ -100,33 +100,39 @@
     const list = [
       {
         "title":"22.2.7步征概述",
-        "content":"步征 人员：李翼安 吕雪阳 张新越 路线：蒙小-胡同-清河路-安澜河-东风桥-站",
+        "description":"",
+        "pId":"",
+        "url":"",
         "author":"TTS俱乐部",
         "authorId":"TTSCLUB",
-        "read":"3",
-        "comment":"1",
+        "read":3,
+        "comment":1,
         "img":
-        [`${cdn}5ade3566058d1c4b10c547b1e0b384b.jpg`,
-        `${cdn}643d774735e227b9af7dda2f6f2a9f3.jpg`,
-        `${cdn}91df317f2a794f1054caf43df22af85.jpg`],
+        ["${cdn}5ade3566058d1c4b10c547b1e0b384b.jpg",
+        "${cdn}643d774735e227b9af7dda2f6f2a9f3.jpg",
+        "${cdn}91df317f2a794f1054caf43df22af85.jpg"],
       },
       {
         "title":"22.2.7步征概述",
-        "content":"步征 人员：李翼安 吕雪阳 张新越 路线：蒙小-胡同-清河路-安澜河-东风桥-站",
+        "description":"",
+        "pId":"",
+        "url":"",
         "author":"TTS俱乐部",
         "authorId":"TTSCLUB",
-        "read":"3",
-        "comment":"1",
+        "read":3,
+        "comment":1,
         "img":
-        [`${cdn}5ade3566058d1c4b10c547b1e0b384b.jpg`],
+        ["${cdn}5ade3566058d1c4b10c547b1e0b384b.jpg"],
       },
       {
         "title":"22.2.7步征概述",
-        "content":"步征 人员：李翼安 吕雪阳 张新越 路线：蒙小-胡同-清河路-安澜河-东风桥-站",
+        "description":"",
+        "pId":"",
+        "url":"",
         "author":"TTS俱乐部",
         "authorId":"TTSCLUB",
-        "read":"3",
-        "comment":"1",
+        "read":3,
+        "comment":1,
         "img":[]
       },
     ];
@@ -136,7 +142,7 @@
       else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
       else{var j=``,k=`i0`}
       console.log(list[i])
-      $("#cm-news-list").append(`<li class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].content}</span></span>${j}<span class="da">  <span class="a">${list[i].author}</span>  <span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span></span></li>`)
+      $("#cm-news-list").append(`<li class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a">${list[i].author}</span>  <span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span></span></li>`)
     }
   </script>
 </body>
