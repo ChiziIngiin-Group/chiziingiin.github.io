@@ -1,3 +1,4 @@
+const cdn = 'http://munox.gitee.io/cdn'
 function getbody(){
   var activeEditor = tinymce.activeEditor;
   var editBody = activeEditor.getBody();
@@ -38,7 +39,7 @@ function getcontent(){
           "authorId":authorId,
           "read":1,
           "comment":0,
-          "img":JSON.parse(imgurl)
+          "img":JSON.parse(imgurl.replace(RegExp('${cdn}','g'),cdn))
         })
         console.log("[载入data]",data)
 

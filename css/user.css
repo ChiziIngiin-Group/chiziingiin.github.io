@@ -124,6 +124,7 @@
 }
 .user-content{
   background-color: var(--Bg-White);
+  background-color: #fff;
   padding: 30px 35px;
   margin-bottom: 20px;
   border-radius: 16px;
@@ -135,6 +136,7 @@
 }
 .user-box-u{
   background-color: var(----Bg-White);
+  background-color: #fff;
   border-radius: 16px;
   min-height: 32px;
   width:100%;
