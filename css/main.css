@@ -1328,9 +1328,9 @@ ul.panel-list li span{
   .ifpc{
     visibility: hidden;
   }
-  #foot{
+  /* #foot{
     height:200px
-  }
+  } */
   #foot .copyright{
     display: none;
   }
@@ -1403,11 +1403,11 @@ ul.panel-list li span{
 
 .foot{
   margin-top:50px;
-  height:250px;
+  /* height:250px; */
 }
 
 .foot .foot-content{
-  height:200px;
+  /* height:200px; */
   background-color:#fbfbfb;
   margin-top: 80px;
   padding: 53px 0 45px;
@@ -1443,7 +1443,7 @@ ul.panel-list li span{
   position: relative;
 }
 .footer-text div {
-  color: #888;
+  color: #aaa;
   font-family: PingFang SC, DFPKingGothicGB-Regular, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -1477,7 +1477,15 @@ ul.panel-list li span{
   margin-right: 12px;
 }
 
-
+@media screen and (max-width:500px) {
+  .foot .foot-content{
+    padding:40px 0 32px;
+  }
+  .footer-text div {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
 
 
 

@@ -1,5 +1,5 @@
 /*! 
- * mx.js v0.1.2.0
+ * mx.js v0.2.0.007
  * Author Zhangxinyue etc.
  * (c) 2020-2022 ChiziIngin Information Technology Research Institute.
  * Released under the MIT License.
@@ -54,7 +54,7 @@ const mx = {
             if (t2) var t3 = t2.split(name + "=")[1];
             if (t3) var t4 = t3.split("&")[0];
             if (t4) var t5 = t4;
-            if (t4) for (var i = 0; i < t4.length; i++) { if (t4) t5 = t5.replace(RegExp('+','g'), '%20'); }
+            if (t4) for (var i=0;i<t4.length;i++){if(t4[i]&&t4[i].indexOf('+')>-1)t5[i]=t4[i].replace(RegExp('+','g'),'%20');}
             if (t5) return t5;
             return null;
         },
