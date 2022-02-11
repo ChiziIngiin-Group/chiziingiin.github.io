@@ -153,9 +153,12 @@ input:-ms-input-placeholder {
 
 .content{
   margin-top: -50px;
-  padding:0 20px;
   position: relative;
   z-index: 10;
+}
+
+.con{
+  padding:0 20px;
 }
 
 .cm-panel{
@@ -223,6 +226,7 @@ input:-ms-input-placeholder {
 .cm-sm-panel{
   display: block;
   margin-bottom: 20px;
+  padding-left: 20px;
 }
 .cm-sm-panel ul{
   width:100%;
@@ -305,6 +309,7 @@ input:-ms-input-placeholder {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   margin-bottom: 10px;
+  padding:0 20px;
 }
 
 .cm-news-list ul{
@@ -316,7 +321,7 @@ input:-ms-input-placeholder {
 
 .cm-news-list li{
   display: flex;
-  padding:18px 14px;
+  padding:18px 22px;
   padding-top: 10px;
   flex-direction: row;
   flex-wrap: wrap;
@@ -331,7 +336,7 @@ input:-ms-input-placeholder {
   display: block;
   width:calc(100% - 100px);
   margin-right: 20px;
-  height:80px;
+  /* height:80px; */
   overflow: hidden;
 }
 .cm-news-list li .ba .t{
@@ -375,7 +380,15 @@ input:-ms-input-placeholder {
   align-items: center;
 }
 .cm-news-list li .da .a{
+  color:#aaa;
+  font-size: 12px;
+}
+.cm-news-list li .da .a[g]{
   color:rgb(21, 150, 255);
+  font-size: 12px;
+}
+.cm-news-list li .da .a[z]{
+  color:rgb(255, 146, 44);
   font-size: 12px;
 }
 @font-face {
