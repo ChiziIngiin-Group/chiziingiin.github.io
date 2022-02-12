@@ -6,7 +6,7 @@
  */
 
 /* declare constant */
-const LoginPage = "./login/login.html";
+const LoginPage = "./login/index.html";
 const VersionNumber = "0.2.0.007";
 
 

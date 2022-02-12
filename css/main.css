@@ -1,6 +1,7 @@
 /*  */
 html {
-  --PageBg:#f1f4fa;
+  /* --PageBg:#f1f4fa; */
+  --PageBg:#f6f6f6;
   --PageTx:#222;
   
   --Bd-BluePrimary: #007bff;
@@ -108,7 +109,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: #f1f4fa;
+  background-color: #f1f1f1;
   background-color: var(--PageBg);
   min-height: 100%;
   font-size: 14px;

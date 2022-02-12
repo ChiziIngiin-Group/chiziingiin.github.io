@@ -23,97 +23,72 @@
   <noscript>
     <div class="m-modal__wrapper" id="noscript"><div class="m-modal__container onlytrue" style="width: 30%; margin-top: 15vh;"><div class="m-modal__header">  <span class="m-modal__title">提示</span><button class="m-modal__headerbtn"><i class="m-modal__close iconfont icon-close"></i></button></div><div class="m-modal__body">  <div>您没有开启javascript或浏览器版本过低，可能会导致体验不佳</div></div></div></div>
   </noscript>
-  <div id="app" class="wrap cm-page">
+  <div id="app" class="wrap user-page">
     <!-- 新页头 -->
     <div id="head">
-      <div class="cm-head">
-        <div class="cm-head__box">
-          <div class="cm-head__navbar">
-            <div class="logo"></div>
-            <form action="/search/"><input placeholder="大家都在搜" type="text" name="wd" id="searchbox"/></form>
-            <a class="user" href="" id="cm-login"><img/></a>
-          </div>
-          <div class="cm-head__tabbar">
-            <ul id="cm-head__tabbar">
-              <li url="/">首页</li>
-              <li url="#" class="active">新闻</li>
-              <li url="#">抗疫</li>
-              <li url="#">国际</li>
-              <li url="#">财经</li>
-              <li url="#">音乐</li>
-              <li url="#">体育</li>
-              <li url="#">娱乐</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      
     </div>
-    <!-- 新闻主页面 -->
+    <!-- 用户主页面 -->
     <div id="content" class="content">
       <!-- Container -->
       <div class="con">
-        <!-- 热点大面板 -->
-        <div class="cm-panel">
-          <div class="cm-panel__bg"><img src="/image/banner.jpg" alt=""></div>
-          <div class="cm-panel__box">
-            <div class="cm-panel__im">热点</div>
-            <div class="cm-panel__title">赤子英金新闻通讯社</div>
-            <div class="cm-panel__info">5081阅读</div>
+        <!-- 用户卡片 -->
+        <div class="up-card">
+          <div class="up-card__main w">
+            <div class="up-card__us">
+              <div class="up-card__us-img"><img src="/image/header/lxy.jpg" alt=""></div>
+              <div class="up-card__us-box">
+                <h1><span>星五仁</span><small>设计师</small></h1>
+                <span class="tel">18248053669</span>
+              </div>
+              <div class="up-card__share"></div>
+            </div>
+            <div class="up-card__im">
+              <ul>
+                <li>微信：ErsPassion1994</li>
+                <li>公司：赤子英金</li>
+                <li>地址：赤峰市</li>
+                <li>邮箱：johndeacen51@foxmail.com</li>
+              </ul>
+            </div>
+          </div>
+          <div class="up-card__description">The Passion 吉他手</div>
+        </div>
+        <div class="up-navigation">
+          <ul class="tabs-nav">
+            <li class="active">动态</li>
+            <li>相册</li>
+          </ul>
+          <div class="tabs-content">
+            <div class="active">
+              <div class="cm-news-list">
+                <ul id="cm-news-list"></ul>
+              </div>
+            </div>
+            <div>
+
+            </div>
           </div>
         </div>
       </div>
-      <!-- 班级新闻列表 -->
-      <div class="cm-sm-panel">
-        <ul>
-          <li class="date-panel">
-            <span class="d">2月7日</span>
-            <span class="t">
-              <span>班级</span>
-              <span>新闻</span>
-            </span>
-          </li>
-          <li>
-            <span class="t">2.7步征即将起航</span>
-            <span class="c">TTS俱乐部</span>
-          </li>
-          <li>
-            <span class="t">猿题库战区招兵</span>
-            <span class="c">猿题库赤峰六中战区</span>
-          </li>
-        </ul>
-      </div>
-      <!-- 最新资讯列表 -->
-      <div class="cm-news-list">
-        <div class="news-title">最新资讯</div>
-        <ul id="cm-news-list"></ul>
-      </div>
-      <!-- 大资讯列表 -->
-      <div class="cm-news-section"></div>
     </div>
     <!-- 页脚 -->
-    <div class="cm-newspage-footer">
-      <div class="links"><a href="/p/agreement.html">用户协议</a><a href="/p/privacy.html">隐私政策</a><a href="//12377.cn">举报不良信息</a>
-      </div>
-      <div class="copyright">
-        Copyright &copy; 2021 - <!---->2022<!----> Chiziingiin. All Rights Reserved
-      </div>
-    </div>
   </div>
 
 
 
-  <style id="headstyle"></style>
+  <style id="cardstyle"></style>
   <script>
     glist=['BCGOC'];
     zlist=['TTSCLUB'];
-    function headstyle(e){
-      $("#headstyle").html(`.cm-head::after{background-image: linear-gradient(${-(270 - Math.atan(window.innerWidth/e) * (180/Math.PI))}deg, #DA0101 50%, transparent 50%);}`)
-    };headstyle(28)
-    window.onresize = ()=>{headstyle(28)}
-    $("#cm-head__tabbar li").click(function(){
-      $(this).addClass("active").siblings().removeClass("active");
-      if ($(this).attr("url")) window.location.href=$(this).attr("url")
-    }) 
+    function up_card(e){
+      $('#cardstyle').html(`.up-card__main{height:${(window.innerWidth-18)/e}px}`)
+    };up_card(1.7)
+    window.onresize=()=>{up_card(1.7)}
+    $('.tabs-nav li').click(function(){
+      $(this).addClass('active').siblings().removeClass('active');
+      $('.tabs-content>div').eq($(this).index()).addClass('active').siblings().removeClass('active')
+    })
     $.ajax({url:"/p/data.json",dataType:"text",success:(e)=>{
       list=JSON.parse(e)
       $("#cm-news-list").html("")
