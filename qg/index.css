@@ -7,7 +7,7 @@ h1{
   font-weight: bolder;
 }
 
-@font-face {
+/* @font-face {
   font-family: '宋体';
   src: url(/font/SIMSUN.TTC);
 }
@@ -18,4 +18,4 @@ h1{
 @font-face {
   font-family: "Century Gothic"; 
   src: url('/font/ufonts.com_century-gothic.ttf') format('truetype');
-}
+} */
