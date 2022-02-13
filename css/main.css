@@ -383,6 +383,12 @@ nav.nav-fixed{
   display: block;
   border-radius: 14px;
 }
+.m-nav-user{
+  /*  */
+  /* display: none; */
+  visibility: hidden;
+  /*  */
+}
 .m-nav-user img::before,#cm-login img::before{
   content: "";
   display: block;
@@ -736,6 +742,7 @@ nav.nav-fixed{
   border-bottom: solid 1px #ddd;
   margin-bottom: 90px;
   background-image: url(http://munox.gitee.io/image/banner.jpg);
+  background-image: url(/image/banner.jpg);
   background-position: center;
   background-repeat: no-repeat;
 }

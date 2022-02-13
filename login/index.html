@@ -8,6 +8,7 @@
   <meta name="description" content="英金社区 - 登录" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="no-referrer">
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
   <!-- Javascript -->
@@ -211,7 +212,7 @@
       }
       else {
         var url =  mx.Api.GetQueryString("url")
-        location.href = "/Api/login.htm?u=" + md5(username) + "&p=" + md5(password) + "&k=md5&i=citri&l=" +"/login/" + "&url=" + url
+        window.location.replace("/Api/login.htm?u="+md5(username)+"&p="+md5(password)+"&k=md5&i=citri&l="+"/login/"+"&url="+url);
       }
     })
     }

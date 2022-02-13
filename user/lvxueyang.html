@@ -24,6 +24,9 @@
     <div class="m-modal__wrapper" id="noscript"><div class="m-modal__container onlytrue" style="width: 30%; margin-top: 15vh;"><div class="m-modal__header">  <span class="m-modal__title">提示</span><button class="m-modal__headerbtn"><i class="m-modal__close iconfont icon-close"></i></button></div><div class="m-modal__body">  <div>您没有开启javascript或浏览器版本过低，可能会导致体验不佳</div></div></div></div>
   </noscript>
   <div id="app" class="wrap user-page">
+    <div class="hide" style="width:1px;height:1px;opacity:0;">
+      
+    </div>
     <!-- 新页头 -->
     <div id="head">
       
@@ -34,7 +37,14 @@
       <div class="con">
         <!-- 用户卡片 -->
         <div class="up-card">
-          <div class="up-card__main w">
+          <div class="up-card__main">
+            <script>
+              function ImageOnload(that){
+                if(mx.Api.ifImageDark(that)) $('.up-card__main').addClass('w')
+                $('.up-card__us-bg').css('background-color',mx.Api.getImageColor(that,true))
+              }
+            </script>
+            <div class="up-card__bg"><img src="/image/banner.jpg" onload="ImageOnload(this)"></div>
             <div class="up-card__us">
               <div class="up-card__us-img"><img src="/image/header/lxy.jpg" alt=""></div>
               <div class="up-card__us-box">
@@ -84,7 +94,8 @@
     function up_card(e){
       $('#cardstyle').html(`.up-card__main{height:${(window.innerWidth-18)/e}px}`)
     };up_card(1.7)
-    window.onresize=()=>{up_card(1.7)}
+    mx.Api.autoSize($('.up-card__bg img'),'0')
+    window.onresize=()=>{up_card(1.7);mx.Api.autoSize($('.up-card__bg img'),'0')}
     $('.tabs-nav li').click(function(){
       $(this).addClass('active').siblings().removeClass('active');
       $('.tabs-content>div').eq($(this).index()).addClass('active').siblings().removeClass('active')

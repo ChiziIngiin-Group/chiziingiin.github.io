@@ -477,13 +477,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
   min-height: 210px;
   max-height: 280px;
-  background-size: auto 100%;
+  position: relative;
+  /* background-size: auto 100%;
   background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(/image/banner.jpg);
+  background-repeat: no-repeat; */
+  /* background-image: url(/image/banner.jpg); */
 }
 .up-card__description{
   padding:15px 22px;
@@ -512,6 +513,16 @@
 .up-card__us-img img{
   width:100%;
   height:100%;
+}
+.up-card__bg{
+  width:100%;
+  height:100%;
+  position: absolute;
+  z-index: 0;
+  top:0;left:0;
+}
+.up-card__bg img{
+  width:100%;
 }
 .up-card__us-box{
   height:66px;
@@ -559,30 +570,53 @@
 .up-navigation>ul{
   width:100%;
   display: flex;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   overflow: auto;
   flex-basis: 56px;
   flex-shrink: 0;
   white-space: nowrap;
   overflow-x: auto;
   justify-content: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+  overflow: initial;
 }
-
 .up-navigation>ul>li{
-  padding: 6px 12px;
+  padding: 8px 14px;
   line-height: 21px;
   font-size: 15px;
-  margin: 0 6px;
-  color: #fff;
-  opacity: 0.75;
+  color:#555;
   font-weight: 700;
   letter-spacing: 1px;
-  border-radius: 4px;
-  background-color: #DA0101aa;
+  background-color: rgb(243, 243, 243);
+  position: relative;
+  cursor: pointer;
+}
+.up-navigation>ul>li::after{
+  content:"";
+  display: block;
+  position: absolute;
+  width:calc(100% - 2px);
+  height:calc(100% - 4px);
+  top:2px;
+  left:1px;
+  right:1px;
+  box-shadow: 0px 0px 4px #ccc;
+  z-index: -2;
+}
+.up-navigation>ul>li:first-child{
+  border-top-left-radius: 10px;
+}
+.up-navigation>ul>li:first-child::after{
+  border-top-left-radius: 8px;
+}
+.up-navigation>ul>li:last-child{
+  border-top-right-radius: 10px;
+}
+.up-navigation>ul>li:last-child::after{
+  border-top-right-radius: 8px;
 }
 .up-navigation>ul>li.active{
-  opacity: 1;
+  background-color: #fff;
 }
 .tabs-content{
   background-color: #fff;

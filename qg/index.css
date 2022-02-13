@@ -1,0 +1,19 @@
+@font-face {
+  font-family: '宋体';
+  src: url(/font/SIMSUN.TTC);
+}
+@font-face {
+  font-family: '等线';
+  src: url(/font/DENG.TTF);
+}
+@font-face {
+  font-family: "Century Gothic"; 
+  src: url('/font/ufonts.com_century-gothic.ttf') format('truetype');
+}
+*{
+  font-family: 'Century Gothic','等线';
+}
+h1{
+  font-family: '宋体';
+  font-weight: bolder;
+}

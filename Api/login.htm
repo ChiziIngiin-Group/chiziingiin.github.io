@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+  <meta name="referrer" content="no-referrer">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,10 +118,10 @@
 
     if(n){
       localStorage.setItem("userinfo",JSON.stringify(userinfo[i]));
-      location.href = l + "?k=success&url=" + href;
+      window.location.replace(l+"?k=success&url=" + href);
     }else{
       localStorage.setItem("userinfo","fail");
-      location.href = l + "?k=fail";
+      window.location.replace(l+"?k=fail");
     }
 
 
