@@ -52,7 +52,7 @@ mx.js will be permanently open source for everyone to learn and use
 
     <!-- 页头区域 -->
     <div id="head">
-      <nav class="nav nav-fixed hide">
+      <nav class="nav nav-fixed white">
         <div class="m-nav-backgound"></div>
         <div class="container">
           <div class="nav-list">
@@ -228,18 +228,18 @@ mx.js will be permanently open source for everyone to learn and use
       else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     }
     if ($(window).scrollTop() > window.innerHeight) {
-      $("nav.nav").removeClass("hide")
+      $("nav.nav").removeClass("white")
       $("nav.m-nav").removeClass("white")
     } else {
-      $("nav.nav").addClass("hide")
+      $("nav.nav").addClass("white")
       $("nav.m-nav").addClass("white")
     }
     $(window).scroll(()=>{
       if ($(window).scrollTop() > window.innerHeight) {
-        $("nav.nav").removeClass("hide")
+        $("nav.nav").removeClass("white")
         $("nav.m-nav").removeClass("white")
       } else {
-        $("nav.nav").addClass("hide")
+        $("nav.nav").addClass("white")
         $("nav.m-nav").addClass("white")
       }
     })

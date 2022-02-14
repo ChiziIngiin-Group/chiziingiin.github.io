@@ -49,13 +49,10 @@ html {
 }
 .icon-search::before {
   content: "\e7b3";
-  color:#999
+  color:inherit
 }
 .icon-back::before {
   content: "\e679";
-}
-.icon-search:hover::before {
-  color:#0087ff;
 }
 .icon-compass:before {
   content: "\e680";
@@ -127,11 +124,6 @@ li, ol, ul {
 }
 
 /* 标题栏样式 */
-.nav.hide{
-  visibility:hidden;
-  opacity: 0;
-}
-
 nav.nav-fixed{
   position: fixed;
   top:0;
@@ -143,146 +135,188 @@ nav.nav-fixed{
 
 
 @media (min-width:791px) {
-.nav{
-  height: 72px;
-  width:100%;
-  position: relative;
-  background-color: #fff;
-  background-color: var(--Bd-White);
-  -webkit-box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
-  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
-  -webkit-box-shadow: 0 2px 6px 0 var(--Shadow);
-  box-shadow: 0 2px 6px 0 var(--Shadow);
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.2s ease,visibility 0.2s ease,top 0.3s ease;
-}
-
-.nav.container{
-  height:inherit;
-}
-
-.nav-list{
-  height:inherit;
-  display: flex;
-  justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin:0 auto;
-  max-width: 1350px;
-}
-
-.nav-list>ul{
-  height:inherit;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-.nav-list .nav-item{
-  height:inherit;
-  display: block;
-  padding:0px
-}
-
-.nav-list .nav-item a{
-  position: relative;
-  display: inline-block;
-  padding: 25px 20px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 22px;
-  color: #222;
-  color: var(--PageTx);
-  opacity: 0.7;
-  text-align: center;
-  -webkit-transition: opacity .1s ease,font-weight .1s ease;
-  transition: opacity .1s ease,font-weight .1s ease;
-  white-space: nowrap;
-}
-
-.nav-list .nav-item a:hover,.nav-list .nav-item.active a{
-  opacity: 1;
-}
-
-.nav-list .nav-item__img a{
-  padding-top:0;
-  padding-bottom:0;
-  opacity: 1;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  height:inherit
-}
-
-.nav-list .nav-item__img img{
-  height:58px;
-}
-
-.nav-search-bar{
-  position: relative;
-  width:auto;
-}
-.nav-search-box{
-  height:38px;
-  padding-right: 20px;
-  position: relative;
-}
-
-.nav-search-input{
-  outline: none;
-  height:100%;
-  border:2px solid var(--Bd-Grey);
-  border-radius: 19px;
-  padding:4px 15px;
-  padding-right: 36px;
-  font-size: 15px;
-  color:#aaa5;
-  width: 190px;
-  transition: width .3s ease-in-out,border .3s ease-in-out;
-  background: #fff5;
-}
-.nav-search-input:hover{
-  border:2px solid var(--Bd-BluePrimary);
-}
-
-.nav-search-input:focus{
-  border: #007bff;
-  border:2px solid var(--Bd-BluePrimary);
-  width:270px;
-  color:#555;
-  color:var(--Tx-BlackGrey)
-}
-
-.nav-search-btn{
-  position: absolute;
-  background: transparent;
-  outline: none;
-  width:20px;
-  height:20px;
-  top:0;
-  right:29px;
-  bottom:0;
-  margin:auto;
-  border:0px;
-  padding: 0;
-  cursor: pointer;
-}
-.nav-search-btn i{
-  font-size: 18px;
-  font-weight: 600;
-  color:#555;
-}
-.m-nav-item,.m-nav-backgound,.m-nav-userimg,.m-nav-more__logo,.m-nav-alert,.m-nav-more__button{
-  display: none !important; 
-}
+  .nav{
+    height: 72px;
+    width:100%;
+    position: relative;
+    background-color: #fff;
+    background-color: var(--Bd-White);
+    -webkit-box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
+    -webkit-box-shadow: 0 2px 6px 0 var(--Shadow);
+    box-shadow: 0 2px 6px 0 var(--Shadow);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease,visibility 0.2s ease,
+    top 0.3s ease,background 0.2s ease;
+  }
+  .nav.white::after{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:200%;
+    background-image: linear-gradient(#00000020,transparent);
+  }
+  .nav.container{
+    height:inherit;
+  }
+  .nav-list{
+    height:inherit;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin:0 auto;
+    max-width: 1350px;
+  }
+  .nav-list>ul{
+    height:inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .nav-list .nav-item{
+    height:inherit;
+    display: block;
+    padding:0px
+  }
+  .nav-list .nav-item a{
+    position: relative;
+    display: inline-block;
+    padding: 25px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #222;
+    color: var(--PageTx);
+    opacity: 0.7;
+    text-align: center;
+    -webkit-transition: opacity .1s ease,font-weight .1s ease;
+    transition: opacity .1s ease,font-weight .1s ease;
+    white-space: nowrap;
+  }
+  .nav-list .nav-item a:hover,.nav-list .nav-item.active a{
+    opacity: 1;
+  }
+  .nav-list .nav-item__img a{
+    padding-top:0;
+    padding-bottom:0;
+    opacity: 1;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height:inherit
+  }
+  .nav-list .nav-item__img img{
+    height:36px;
+    border-radius: 10px;
+  }
+  .nav-search-bar{
+    position: relative;
+    width:auto;
+  }
+  .nav-search-box{
+    height:38px;
+    padding-right: 20px;
+    position: relative;
+  }
+  .nav-search-input{
+    outline: none;
+    height:100%;
+    border:2px solid var(--Bd-Grey);
+    border-radius: 19px;
+    padding:4px 15px;
+    padding-right: 36px;
+    font-size: 15px;
+    color:#aaa5;
+    width: 190px;
+    transition: width .3s ease-in-out,border .3s ease-in-out,
+    opacity .2s ease,visibility .2s ease,padding .2s ease,right .2s ease;
+    background: transparent;
+    position: relative;
+    right:0;
+  }
+  .nav-search-box:hover .nav-search-input{
+    border:2px solid var(--Bd-BluePrimary);
+  }
+  .nav-search-input:focus{
+    border: #007bff;
+    border:2px solid var(--Bd-BluePrimary);
+    width:270px;
+    color:#555;
+    color:var(--Tx-BlackGrey)
+  }
+  .nav-search-btn{
+    position: absolute;
+    background: transparent;
+    outline: none;
+    width:20px;
+    height:20px;
+    top:0;
+    right:29px;
+    bottom:0;
+    margin:auto;
+    border:0px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .nav-search-btn i{
+    font-size: 18px;
+    font-weight: 600;
+    color:#555;
+    transition: all .1s ease;
+  }
+  .nav-search-box:hover .icon-search{
+    color:#0087ff;
+  }
+  /* New - white mode */
+  .nav.white{
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .nav.white .nav-list .nav-item a{
+    color:#fff;
+  }
+  .nav-item.nav-item__search{
+    height:72px;
+    display: flex;
+    align-items: center;
+  }
+  .nav.white .nav-item.nav-item__search button{
+    right:20px;
+  } 
+  .nav.white .nav-item.nav-item__search button i{
+    font-size: 21px;
+    color:#fff;
+    font-weight: 400;
+  }
+  .nav.white .nav-item.nav-item__search input{
+    padding:0;
+    opacity:0;
+    color:#fff;
+    width:38px;
+    visibility: hidden;
+    right:-9px;
+  }
+  .m-nav-item,
+  .m-nav-backgound,
+  .m-nav-userimg,
+  .m-nav-more__logo,
+  .m-nav-alert,
+  .m-nav-more__button{
+    display: none !important; 
+  } 
 }
 
 
@@ -492,7 +526,7 @@ nav.nav-fixed{
     display: block;
     height:90px;
     background-image: url(/image/赤子英金.png);
-    background-size: auto 90%;
+    background-size: auto 45%;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
@@ -690,30 +724,32 @@ nav.nav-fixed{
   }
 }
 
+/* .nav-search-box{
+  display: block;
+  padding: 0;
+  height:inherit
+}
+.nav-search-box .nav-search-input{
+  display: none;
+  height:inherit
+}
+.nav-search-box .nav-search-btn{
+  height:inherit;
+  width: auto;
+  position: relative;
+  display: flex;
+  top:auto;
+  bottom:auto;
+  right:auto;
+  padding: 25px 20px;
+}
+.head-panel__content h1{
+  font-size: 36px;
+} */
+
 /* 移动端页头 */
 @media (max-width:790px) {
-  .nav-search-box{
-    display: block;
-    padding: 0;
-    height:inherit
-  }
-  .nav-search-box .nav-search-input{
-    display: none;
-    height:inherit
-  }
-  .nav-search-box .nav-search-btn{
-    height:inherit;
-    width: auto;
-    position: relative;
-    display: flex;
-    top:auto;
-    bottom:auto;
-    right:auto;
-    padding: 25px 20px;
-  }
-  .head-panel__content h1{
-    font-size: 36px;
-  }
+  
   .m-nav{
     display: block;
   }
