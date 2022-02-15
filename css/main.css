@@ -132,6 +132,17 @@ nav.nav-fixed{
   z-index: 20;
   background-color: #fff;
 }
+.nav.white::after,.m-nav.white::after{
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:200%;
+  background-image: linear-gradient(#2f00ff30,transparent);
+  /* background-image: linear-gradient(#ffffff50,transparent); */
+}
 
 
 @media (min-width:791px) {
@@ -149,16 +160,6 @@ nav.nav-fixed{
     opacity: 1;
     transition: opacity 0.2s ease,visibility 0.2s ease,
     top 0.3s ease,background 0.2s ease;
-  }
-  .nav.white::after{
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:200%;
-    background-image: linear-gradient(#00000020,transparent);
   }
   .nav.container{
     height:inherit;
@@ -286,7 +287,7 @@ nav.nav-fixed{
     box-shadow: none;
   }
   .nav.white .nav-list .nav-item a{
-    color:#fff;
+    /* color:#fff; */
   }
   .nav-item.nav-item__search{
     height:72px;
@@ -298,13 +299,13 @@ nav.nav-fixed{
   } 
   .nav.white .nav-item.nav-item__search button i{
     font-size: 21px;
-    color:#fff;
+    /* color:#fff; */
     font-weight: 400;
   }
   .nav.white .nav-item.nav-item__search input{
     padding:0;
     opacity:0;
-    color:#fff;
+    /* color:#fff; */
     width:38px;
     visibility: hidden;
     right:-9px;
@@ -403,11 +404,13 @@ nav.nav-fixed{
   bottom:-7px
 }
 .m-nav.white .m-nav-logo::after{
-  background-image: url(/image/logo_white.png);
+  background-image: url(/image/logo.png);
+  /* background-image: url(/image/logo_white.png); */
 }
 .m-nav.white .btn-more,.m-nav.white .btn-more::before,.m-nav.white .btn-more::after,
 .m-nav.white .m-nav-more__button span,.m-nav.white .m-nav-more__button ::before,.m-nav.white .m-nav-more__button ::after{
-  background-color: #fff;
+  background-color: #999;
+  /* background-color: #fff; */
 }
 .m-nav-user img,#cm-login img{
   width:28px;

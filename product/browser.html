@@ -4,8 +4,8 @@
 <head>
   <!-- Basic configuration -->
   <meta charset="UTF-8" />
-  <title>轻浏览器 隐私政策</title>
-  <meta name="description" content="轻浏览器 隐私政策" />
+  <title>轻浏览器</title>
+  <meta name="description" content="轻浏览器" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -15,18 +15,15 @@
   <script src="/js/md5.js"></script>
   <script src="/main.js"></script>
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/css/colorpicker.css">
   <link rel="stylesheet" href="/css/main.css" />
-  <!-- Preload -->
-  <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/new.css">
 </head>
 
 <body>
   <div id="app" class="wrap">
     <!-- 页头区域 -->
     <div id="head">
-      <nav class="nav nav-fixed">
+      <nav class="nav nav-fixed white">
         <div class="m-nav-backgound"></div>
         <div class="container">
           <div class="nav-list">
@@ -65,44 +62,53 @@
                 <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
               </li>
             </ul>
-            <div class="m-nav-alert">
-              <div class="m-title"><span>提示</span></div>
-              <div class="m-content">
-                <p id="r" style="display:none">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</p>
-                <p>此页面正在您的许可范围内使用cookie<a class="m-r-more" href="javascript:$('#r').toggle()"></a></p>
-                <p><small>Chiziingiin智能云安全引擎</small></p>
-              </div>
-            </div>
           </div>
         </div>
       </nav>
-      <nav class="m-nav nav-fixed">
+      <nav class="m-nav nav-fixed white">
         <div class="m-nav-box">
           <a class="m-nav-more" id="m-button-more" href="javascript:void(0)">
             <span class="btn-more"></span>
           </a>
-          <a class="m-nav-logo">
-            <img src="/image/赤子英金.png" alt="">
-          </a>
+          <a class="m-nav-logo"></a>
           <a href="/user.html" id="m-login-button" class="m-nav-user">
-            <!-- <img title=" "/> -->
+            <img title=" "/>
           </a>
         </div>
       </nav>
     </div>
-    <!-- 内容区域 -->
-    <div id="content" class="content -nav-fixed">
 
-      <div class="container">
-        <div class="box-content">
-          <div class="content-box">
-            <div class="document-box">
-              
+    <!-- 内容区域 -->
+    <div id="content" class="content -nav-fixed pd-root">
+      <div id="pd-panel" class="pd-panel">
+        <div class="pd-panel__bg"></div>
+        <div class="pd-panel__box">
+          <div class="pd-panel-box">
+            <div class="pd-panel-description">
+              <div class="pd-panel-description__bg">
+                <img src="/image/pdpanel-browser.svg" alt="">
+              </div>
+            </div>
+            <div class="pd-panel-content">
+              <div class="pd-panel__title">
+                <h1>轻 浏览器</h1>
+                <h2>轻，致力于打造洁净，流畅，方便，体积小的浏览器。整洁且有趣的UI设计，让您的浏览不再单调或杂乱。</h2>
+              </div>
+              <div class="pd-panel__content">
+                <div class="pd-panel__buttonbox">
+                  <a class="pd-panel__button">下载 v0.0.1.109</a>
+                  <a class="pd-panel__button">详细信息</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="container">
+        <div style="height:1000px"></div>
+      </div>
     </div>
+
     <!-- 页脚区域 -->
     <div id="foot" class="foot">
       <div class="foot-content">
@@ -126,6 +132,37 @@
       <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
+
+
+
+  <script>
+    // $("#pd-panel").css({ height: window.innerHeight });
+    // $("#pd-panel .pd-panel__box").css({ 'padding-top': ((window.innerHeight / 2) - ($('.pd-panel__box').height() / 2)) + "px" });
+    // if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#pd-panel__style").html(".pd-panel__bg{background-size:auto 100%;}")
+    // else $("#pd-panel__style").html(".pd-panel__bg{background-size:100% auto;}")
+    // window.onresize = ()=>{
+    //   $("#pd-panel").css({ height: window.innerHeight });
+    //   $("#pd-panel .pd-panel__box").css({ 'padding-top': ((window.innerHeight / 2) - ($('.pd-panel__box').height() / 2)) + "px" });
+    //   if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#pd-panel__style").html(".pd-panel__bg{background-size:auto 100%;}")
+    //   else $("#pd-panel__style").html(".pd-panel__bg{background-size:100% auto;}")
+    // }
+    if ($(window).scrollTop() > window.innerHeight) {
+      $("nav.nav").removeClass("white")
+      $("nav.m-nav").removeClass("white")
+    } else {
+      $("nav.nav").addClass("white")
+      $("nav.m-nav").addClass("white")
+    }
+    $(window).scroll(()=>{
+      if ($(window).scrollTop() > window.innerHeight) {
+        $("nav.nav").removeClass("white")
+        $("nav.m-nav").removeClass("white")
+      } else {
+        $("nav.nav").addClass("white")
+        $("nav.m-nav").addClass("white")
+      }
+    })
+  </script>
 </body>
 
 </html>
