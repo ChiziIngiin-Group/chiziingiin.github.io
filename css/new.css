@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Community Code */
 .cm-page{
   background-color: #fff;
@@ -666,7 +667,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  transition: .5s;
+  transition: .1s;
 }
 .pd-panel-box{
   width:100%;
@@ -674,7 +675,7 @@
   justify-content: center;
   align-self: center;
   flex-wrap: wrap;
-  transition: .5s;
+  transition: .1s;
 }
 .pd-panel__title{
   padding:0 15px;
@@ -685,17 +686,17 @@
   font-weight: 700;
   font-size: 34px;
   line-height: 41px;
-  transition: .5s;
+  transition: .1s;
 }
 .pd-panel__title h3{
   font-size: 18px;
   line-height: 23px;
-  transition: .5s;
+  transition: .1s;
 }
 .pd-panel__content{
   padding:0 15px;
   padding-top: 16px;
-  transition: .5s;
+  transition: .1s;
 }
 .pd-panel__content .pd-panel__buttonbox{
   padding-top: 10px;
@@ -704,20 +705,24 @@
   flex-wrap: wrap;
 }
 .pd-panel__content .pd-panel__button{
-  margin-right: 14px;
-  margin-bottom: 14px;
+  margin-right: 18px;
+  margin-bottom: 18px;
   font-family: montserrat,sans-serif;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 13px 28px;
-  border-radius: 6px;
-  transition: .5s;
-  color: #fff;
-  background: #5425f1;
+  padding: 15px 28px;
+  border-radius: 10px;
+  transition: .1s;
+  color:#270f6a;
+  background: #dfdbf1;
   cursor: pointer;
+}
+.pd-panel__content .pd-panel__button.active{
+  color:#fff;
+  background-color: #5425f1;
 }
 .pd-panel-description{
   margin-bottom: 50px;
@@ -732,7 +737,7 @@
   width:100%;
 }
 .section-header{
-  margin-top:55px;
+  margin-top:70px;
   width:100%;
 }
 .section-header h2{
@@ -750,16 +755,19 @@
   font-size: 15px;
   padding-bottom: 60px;
   color: #0f416a;
-  width: 50%;
-  opacity: 0.9;
+  width: 80%;
+  letter-spacing: 1px;
+  font-weight: normal;
+  line-height: 20px;
+  opacity: 0.7;
 }
 @media (max-width: 500px){
   .pd-panel__content .pd-panel__buttonbox{
     padding-top: 24px;
   }
   .pd-panel__button{
-    width:85%;
-    margin:8px auto;
+    width:90%;
+    margin:10px auto!important;
     text-align: center;
   }
 }
@@ -826,10 +834,20 @@
 }
 
 
-.swiper-slide.dark{
-  background-color: rgb(24, 23, 26);
-}
+/* .swiper-slide.dark{
+  background-color: rgb(33, 18, 59);
+} */
 
 .swiper-slide.dark *{
   color:#fff;
+} 
+
+
+
+
+
+/* PDBX DBC */
+.pd-box{
+  background-color: #fff;
+  min-height: 100px;;
 }

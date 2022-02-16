@@ -1831,6 +1831,10 @@ h2.login-title {
   background-color: var(--Loginbutton);
 }
 
+.login-input-box:last-child{
+  font-size: 0;
+}
+
 .login-input-box .text-a {
   color: var(--ActiveColor);
   font-size: 14px;
@@ -1841,7 +1845,8 @@ h2.login-title {
 }
 
 .login-input-box .text-a.line::after {
-  content: " | ";
+  content: "|";
+  margin:0 8px;
   color: var(--Grey-text);
   font-size: 14px;
 }

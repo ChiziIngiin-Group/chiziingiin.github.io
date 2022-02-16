@@ -103,7 +103,7 @@
                     </div>
                     <div class="pd-panel__content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
                       <div class="pd-panel__buttonbox">
-                        <a class="pd-panel__button">下载 v0.0.1.109</a>
+                        <a class="pd-panel__button active">下载 v0.0.1.109</a>
                         <a class="pd-panel__button">详细信息</a>
                       </div>
                     </div>
@@ -118,7 +118,7 @@
               <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">依托chromeium框架和mx等开源组件的强大支持，软件体积小运行速度快</h3>
             </header>
           </section>
-          <section class="swiper-slide">
+          <section class="swiper-slide dark">
             <header class="section-header">
               <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">隐私 全面防护</h2>
               <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">依托赤子英金安全框架beta和百度安全分析，为您的浏览保驾护航</h3>
@@ -133,29 +133,6 @@
         </div>
       </div>
     </div>
-
-    <!-- 页脚区域 -->
-    <!-- <div id="foot" class="foot">
-      <div class="foot-content">
-        <div class="container">
-          <ul class="footer-list">
-            <li><a href="/p/agreement.html">用户协议</a></li>
-            <li><a href="/p/privacy.html">隐私政策</a></li>
-            <li><a href="/about.html">关于我们</a></li>
-            <li><a href="/about.html#Lianxiwomen">联系我们</a></li>
-          </ul>
-          <div class="footer-text">
-            <div><a href="https://www.12377.cn/" target="_blank">违法和不良信息举报中心</a></div>
-            <div><a href="https://www.12377.cn/" target="_blank">蒙公网安备号（暂未申请）</a></div>
-            <div><a href="/Munox" target="_blank">Munox团队</a></div>
-          </div>
-          <div class="footer-text">
-            <div><span>Copyright 2020-2022 赤子英金信息技术</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
-    </div> -->
   </div>
 
   <style>
@@ -183,6 +160,9 @@
       align-items: flex-start;
       /* padding-top: 80px; */
     }
+    #app{
+      transition: background 0.35s ease;
+    }
   </style>
   <!-- Swiper JS -->
   <script src="/js/swiper-bundle.min.js"></script>
@@ -192,14 +172,9 @@
     var swiper = new Swiper(".pd-Swiper", {
       direction: "vertical",
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 0,
       mousewheel: true,
-      // freeMode: true,
-      // mousewheel: {
-      //   sensitivity : 1,
-      // },
       releaseOnEdges: true,
-      threshold:70,
       on:{
         init: function(){
           swiperAnimateCache(this); //隐藏动画元素 
@@ -208,12 +183,17 @@
         slideChangeTransitionStart: function(){
           console.log(this.realIndex);
           setTimeout(()=>{
-            if(this.realIndex==3){
+            if(this.realIndex==2){
               $('.nav,.m-nav').addClass('dark')
+              $('#app').css('background-color','rgb(30,18,59)')
+            } else if (this.realIndex==3){
+              $('.nav,.m-nav').addClass('dark')
+              $('#app').css('background-color','rgb(24,23,26)')
             }else{
               $('.nav,.m-nav').removeClass('dark')
+              $('#app').css('background-color','')
             }
-          },200)
+          },50)
         },
         slideChangeTransitionEnd: function(){ 
           swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
