@@ -86,7 +86,7 @@ html {
 
 
 
-
+/* 基本样式 */
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
   margin: 0;
   padding: 0;
@@ -122,6 +122,39 @@ li, ol, ul {
 #app{
   font-family: 'Century Gothic','TeXGyreAdventor',"STHeiti",sans-serif;
 }
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px){
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px){
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px){
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px){
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
+
+
+
+
 
 /* 标题栏样式 */
 nav.nav-fixed{
@@ -132,7 +165,7 @@ nav.nav-fixed{
   z-index: 20;
   background-color: #fff;
 }
-.nav.white::after,.m-nav.white::after{
+.nav.nobg::after,.m-nav.nobg::after{
   content: '';
   z-index: -1;
   position: absolute;
@@ -140,7 +173,7 @@ nav.nav-fixed{
   left:0;
   width:100%;
   height:200%;
-  background-image: linear-gradient(#2f00ff30,transparent);
+  background-image: linear-gradient(#2f00ff13,transparent);
   /* background-image: linear-gradient(#ffffff50,transparent); */
 }
 
@@ -161,8 +194,10 @@ nav.nav-fixed{
     transition: opacity 0.2s ease,visibility 0.2s ease,
     top 0.3s ease,background 0.2s ease;
   }
-  .nav.container{
+  .nav .container{
     height:inherit;
+    width:100%;
+    max-width: 100%;;
   }
   .nav-list{
     height:inherit;
@@ -282,33 +317,42 @@ nav.nav-fixed{
     color:#0087ff;
   }
   /* New - white mode */
-  .nav.white{
+  .nav.nobg{
     background-color: transparent;
     box-shadow: none;
   }
-  .nav.white .nav-list .nav-item a{
-    /* color:#fff; */
+  .nav.nobg .nav-list .nav-item a{
+    transition: color 0.2s;
+  }
+  .nav.nobg.dark .nav-list .nav-item a{
+    color:#fff;
   }
   .nav-item.nav-item__search{
     height:72px;
     display: flex;
     align-items: center;
   }
-  .nav.white .nav-item.nav-item__search button{
+  .nav.nobg .nav-item.nav-item__search button{
     right:20px;
   } 
-  .nav.white .nav-item.nav-item__search button i{
+  .nav.nobg .nav-item.nav-item__search button i{
     font-size: 21px;
-    /* color:#fff; */
     font-weight: 400;
+    transition: color 0.2s;
   }
-  .nav.white .nav-item.nav-item__search input{
+  .nav.nobg.dark .nav-item.nav-item__search button i{
+    color:#fff;
+  }
+  .nav.nobg .nav-item.nav-item__search input{
     padding:0;
     opacity:0;
-    /* color:#fff; */
     width:38px;
     visibility: hidden;
     right:-9px;
+    transition: color 0.2s;
+  }
+  .nav.nobg.dark .nav-item.nav-item__search input{
+    color:#fff;
   }
   .m-nav-item,
   .m-nav-backgound,
@@ -336,7 +380,7 @@ nav.nav-fixed{
   display: none;
   transition: background 0.3s ease,top 0.3s ease;
 }
-.m-nav.white{
+.m-nav.nobg{
   box-shadow: none;
   background-color: transparent;
 }
@@ -403,12 +447,12 @@ nav.nav-fixed{
   top:auto;
   bottom:-7px
 }
-.m-nav.white .m-nav-logo::after{
+.m-nav.nobg .m-nav-logo::after{
   background-image: url(/image/logo.png);
   /* background-image: url(/image/logo_white.png); */
 }
-.m-nav.white .btn-more,.m-nav.white .btn-more::before,.m-nav.white .btn-more::after,
-.m-nav.white .m-nav-more__button span,.m-nav.white .m-nav-more__button ::before,.m-nav.white .m-nav-more__button ::after{
+.m-nav.nobg .btn-more,.m-nav.nobg .btn-more::before,.m-nav.nobg .btn-more::after,
+.m-nav.nobg .m-nav-more__button span,.m-nav.nobg .m-nav-more__button ::before,.m-nav.nobg .m-nav-more__button ::after{
   background-color: #999;
   /* background-color: #fff; */
 }
@@ -846,14 +890,14 @@ nav.nav-fixed{
 
 
 /* 内容样式 */
-.content .container,.foot .container{
+/* .content .container,.foot .container{
   height:auto;
   width:1290px;
   margin:0 auto;
   padding:0px 24px;
   width:100%;
   max-width: 1290px;
-}
+} */
 .content.-nav-fixed>.container{
   margin-top: 72px;
   padding-top: 20px;

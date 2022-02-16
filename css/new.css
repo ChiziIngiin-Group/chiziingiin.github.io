@@ -640,8 +640,8 @@
 
 /* Product */
 .pd-root .container{
-  margin-top: 0;
-  padding-top: 0; 
+  margin-top: 0!important;
+  padding-top: 0!important;
   font-family: montserrat,sans-serif;
 }
 
@@ -650,7 +650,7 @@
   width: 100%;
   height: 100vh;
   position: relative;
-  background: #ececfa url(../img/intro-bg.jpg) center top no-repeat;
+  background: #ededf5 url(../img/intro-bg.jpg) center top no-repeat;
   background-size: cover;
 }
 .pd-panel__bg{
@@ -687,7 +687,7 @@
   line-height: 41px;
   transition: .5s;
 }
-.pd-panel__title h2{
+.pd-panel__title h3{
   font-size: 18px;
   line-height: 23px;
   transition: .5s;
@@ -731,6 +731,28 @@
 .pd-panel-description img{
   width:100%;
 }
+.section-header{
+  margin-top:55px;
+  width:100%;
+}
+.section-header h2{
+  font-size: 36px;
+  color: #0f416a;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  font-family: montserrat,sans-serif;
+  margin: 0 0 20px;
+}
+.section-header h3 {
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  padding-bottom: 60px;
+  color: #0f416a;
+  width: 50%;
+  opacity: 0.9;
+}
 @media (max-width: 500px){
   .pd-panel__content .pd-panel__buttonbox{
     padding-top: 24px;
@@ -746,7 +768,7 @@
   .pd-panel__box {
     max-width: 540px;
   }
-  .pd-panel__title h2{
+  .pd-panel__title h3{
     font-size: 20px;
     line-height: 28px;
   }
@@ -777,9 +799,12 @@
     padding-top: 14px;
     justify-content: flex-start;
   }
-  .pd-panel__title h2{
+  .pd-panel__title h3{
     font-size: 22px;
     line-height: 30px;
+  }
+  .section-header{
+    margin-top:90px;
   }
 }
 @media (min-width: 992px){
@@ -789,7 +814,7 @@
   .pd-panel__title{
     padding-top: 80px;
   }
-  .pd-panel__title h2{
+  .pd-panel__title h3{
     font-size: 24px;
     line-height: 32px;
   }
@@ -801,3 +826,10 @@
 }
 
 
+.swiper-slide.dark{
+  background-color: rgb(24, 23, 26);
+}
+
+.swiper-slide.dark *{
+  color:#fff;
+}

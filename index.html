@@ -50,7 +50,7 @@ mx.js will be permanently open source for everyone to learn and use
       <style id="homepanel__style">.head-panel{background-size:auto 100%;}</style>
     </div>
 
-    <!-- 页头区域 -->class="icon
+    <!-- 页头区域 -->
     <div id="head">
       <nav class="nav nav-fixed white">
         <div class="m-nav-backgound"></div>
@@ -228,19 +228,19 @@ mx.js will be permanently open source for everyone to learn and use
       else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     }
     if ($(window).scrollTop() > window.innerHeight) {
-      $("nav.nav").removeClass("white")
-      $("nav.m-nav").removeClass("white")
+      $("nav.nav").removeClass("nobg light")
+      $("nav.m-nav").removeClass("nobg light")
     } else {
-      $("nav.nav").addClass("white")
-      $("nav.m-nav").addClass("white")
+      $("nav.nav").addClass("nobg light")
+      $("nav.m-nav").addClass("nobg light")
     }
     $(window).scroll(()=>{
       if ($(window).scrollTop() > window.innerHeight) {
-        $("nav.nav").removeClass("white")
-        $("nav.m-nav").removeClass("white")
+        $("nav.nav").removeClass("nobg light")
+        $("nav.m-nav").removeClass("nobg light")
       } else {
-        $("nav.nav").addClass("white")
-        $("nav.m-nav").addClass("white")
+        $("nav.nav").addClass("nobg light")
+        $("nav.m-nav").addClass("nobg light")
       }
     })
     $(".scroll-down-div").click(()=>{ $('html, body').animate({ scrollTop: window.innerHeight }, 1000); })
