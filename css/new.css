@@ -876,11 +876,12 @@
   display: inline-block;
   text-align: center;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  box-shadow: 0 0 4px 4px #0001;
+  width: 70px;
+  height: 70px;
+  padding:10px;
+  box-shadow: 0 0 8px 4px rgba(0,0,0,0.05);
   overflow: hidden;
-  line-height: 60px;
+  line-height: 50px;
   vertical-align: middle;
 }
 .pd-box .title{
@@ -906,6 +907,8 @@
   color:var(--ActiveColor);
   vertical-align: middle;
   user-select: none;
+  margin: 0 10px 40px;
+
 }
 .DBC span{
   border:1px solid var(--BdActiveColor);

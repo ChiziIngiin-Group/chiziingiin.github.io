@@ -85,49 +85,10 @@
       <!-- Swiper -->
       <div class="swiper pd-Swiper">
         <div class="swiper-wrapper">
-          <!-- 首页 -->
-          <section class="swiper-slide">
-            <div class="pd-panel">
-              <div class="pd-panel__bg"></div>
-              <div class="pd-panel__box">
-                <div class="pd-panel-box">
-                  <div class="pd-panel-description ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.4s" swiper-animate-delay="0.1s">
-                    <div class="pd-panel-description__bg">
-                      <img src="/image/pdpanel-browser.svg" alt="">
-                    </div>
-                  </div>
-                  <div class="pd-panel-content ani">
-                    <div class="pd-panel__title">
-                      <h1 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">轻 浏览器</h1>
-                      <h3 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.4s">轻，致力于打造洁净，流畅，方便，体积小的浏览器。整洁且有趣的UI设计，让您的浏览不再单调或杂乱。</h3>
-                    </div>
-                    <div class="pd-panel__content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
-                      <div class="pd-panel__buttonbox">
-                        <a class="pd-panel__button active">下载 v0.0.1.109</a>
-                        <a class="pd-panel__button">详细信息</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <section class="swiper-slide">
             <header class="section-header">
-              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">小，却大有可为</h2>
-              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">依托chromeium框架和mx等开源组件的强大支持，软件体积小运行速度快</h3>
-            </header>
-          </section>
-          <section class="swiper-slide dark">
-            <header class="section-header">
-              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">隐私 全面防护</h2>
-              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">依托赤子英金安全框架beta和百度安全分析，为您的浏览保驾护航</h3>
-            </header>
-          </section>
-          <section class="swiper-slide dark">
-            <header class="section-header">
-              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>暗</span>&nbsp;<span>同样精彩</span></h2>
-              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></h3>
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">您的下载已经开始</h2>
+              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">检测到您是安卓系统，自动为您下载（v0.0.1.109）</h3>
             </header>
           </section>
         </div>
@@ -155,15 +116,20 @@
       -webkit-justify-content: center;
       justify-content: center;
       -webkit-box-align: center;
-      -ms-flex-align: flex-start;
+      /* -ms-flex-align: flex-start; */
+      -ms-flex-align: center;
       -webkit-align-items: center;
-      align-items: flex-start;
+      /* align-items: flex-start; */
+      align-items: center;
       /* padding-top: 80px; */
     }
     #app{
       transition: background 0.35s ease;
     }
   </style>
+  <script>
+    location.href='../download/QingBrowserV0.0.1.109.apk'
+  </script>
   <!-- Swiper JS -->
   <script src="/js/swiper-bundle.min.js"></script>
   <script src="/js/swiper.animate1.0.3.min.js"></script>
