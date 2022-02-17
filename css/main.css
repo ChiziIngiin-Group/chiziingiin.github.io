@@ -261,6 +261,9 @@ nav.nav-fixed{
   #reg-button:hover{
     color: var(--ActiveColor);
   }
+  .nav.dark #reg-button:hover{
+    color:var(--White)
+  }
   .nav-list .nav-item a:hover,.nav-list .nav-item.active a{
     opacity: 1;
   }
