@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+	<link rel="stylesheet" href="/css/main.css">
+	<script src="/js/jquery.js"></script>
+	<script src="/main.js"></script>
+</head>
+<body>
+  <div class="u"><input type="date"><a>计算</a></div>
+	<script>
+    function a (e) {
+			let day = Math.floor(new Date().getTime() / 1e3) - (new Date(e).getTime() / 1e3),
+			day1 = Math.floor(day / (24 * 3600));
+			if(day1>365){
+				var y = new Date().getFullYear();
+				var k = Math.floor(y/4) * 4;
+				var yu = y-k;
+				var n = (new Date(e).getFullYear());
+				if(y-n>=4){
+					var k = Math.ceil(n/4) * 4;
+				}else{
+					var k = Math.floor(n/4) * 4;
+				}
+				var nu = k-n;
+				return (((y-n) - (yu+nu)) / 4)+1
+			}else{
+				return false
+			}
+		}
+	  function startEndTime(currentTime){
+			let day = Math.floor(new Date().getTime() / 1e3) - (new Date(currentTime).getTime() / 1e3),
+			day2 = Math.floor(day / (24 * 3600)),
+			day3 = day2 * 24 * 3600,
+			day4 = day - day3,
+			day5 = Math.floor(day4 / 3600),
+			day6 = day4 - day5 * 3600,
+			day7 = Math.floor(day6 / 60),
+			day8 = day6 - day7 * 60;
+			var day9=day2,k=''
+			if(day2>365){
+				var year = Math.floor((day2-(a(currentTime)*366)) / 365) + a(currentTime)
+				k=year+' 年 '
+				day9=day2 - ((year*365)+a(currentTime));
+			}
+			return `${k}${day9} 天 ${day5} 小时 ${day7} 分钟 ${day8} 秒`
+	  }
+
+		$('a').click(()=>{
+			mx.alert('',startEndTime($('input').val()))
+			console.log(startEndTime($('input').val()))
+		})
+	 	
+  </script>
+</body>
+</html>

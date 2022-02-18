@@ -113,52 +113,33 @@
               <div class="col-12 col-md-9 col-sm-12">
                 <h1 data-sjishubx="">账号与安全</h1>
                 <div class="user-content">
-                  <h2>账号信息</h2>
-                  <small>您可使用帐号名登录英金帐号</small>
+                  <div class="user-title">
+                    <h2>账号信息</h2>
+                    <small>您可使用帐号名登录英金帐号</small>
+                  </div>
                   <div class="user-Panel">
                     <ul>
                       <li>
-                        <div class="item-logo">
-                          <div class="icon bg-blue">
-                            <i class="iconfont icon-user-name"></i>
-                          </div>
-                        </div>
                         <div class="item-content">
                           <span class="title">账号名</span>
                           <span class="text" id="user-name">{{userName}}</span>
                         </div>
                       </li>
                       <li>
-                        <div class="item-logo">
-                          <div class="icon bg-blue">
-                            <i class="iconfont icon-user-tel"></i>
-                          </div>
-                        </div>
                         <div class="item-content">
                           <span class="title">手机号</span>
                           <span class="text" id="user-tel">{{userTel}}</span>
                         </div>
                       </li>
                       <li>
-                        <div class="item-logo">
-                          <div class="icon bg-blue">
-                            <i class="iconfont icon-user-slogan"></i>
-                          </div>
-                        </div>
                         <div class="item-content">
                           <span class="title">个性签名</span>
                           <span class="text" id="user-slogan">{{userSign}}</span>
                         </div>
                       </li>
-                      <li>
-                        <div class="item-logo">
-                          <div class="icon bg-red">
-                            <i class="iconfont icon-user-logout"></i>
-                          </div>
-                        </div>
+                      <li class="link" id="user-logout">
                         <div class="item-content">
-                          <span class="title" style="margin-top:11.5px;cursor: pointer;user-select: none;"
-                            id="user-logout">退出登录</span>
+                          <span class="text" style="cursor: pointer;">退出登录</span>
                         </div>
                       </li>
                     </ul>
@@ -166,35 +147,19 @@
                 </div>
 
                 <div class="user-content">
-                  <h2>设置</h2>
-                  <small>您通过设置来个性化您的页面</small>
+                  <div class="user-title">
+                    <h2>设置</h2>
+                    <small>您通过设置来个性化您的页面</small>
+                  </div>
                   <div class="user-Panel">
                     <ul>
-                      <li>
-                        <div class="item-logo">
-                          <div class="icon" style="background-color: #666;color:#222">
-                            <i class="iconfont icon-DarkTheme" style="color:#fffc"></i>
-                          </div>
-                        </div>
+                      <li class="link">
                         <div class="item-content">
-                          <span class="title" style="margin-top:11.5px;cursor: pointer;user-select: none;"
+                          <span class="text" style="cursor: pointer;user-select: none;"
                             id="user-dark">
                             {{ifdark}}暗色模式
                             <span class="badge badge-primary">Beta</span>
                           </span>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="item-logo">
-                          <div class="icon bg-blue">
-                            <i class="iconfont icon-image-text"></i>
-                          </div>
-                        </div>
-                        <div class="item-content">
-                          <span class="title">自定义网页背景</span>
-                          <input class="text" id="user-back" type="color" style="width:80%;max-width:300px;">
-                          <input class="sbmt" id="user-back-smt" type="submit" value="保存" disabled="disabled">
-                          <input class="sbmt" id="user-back-rst" type="submit" value="还原">
                         </div>
                       </li>
                     </ul>
@@ -230,7 +195,14 @@
       <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
-
+  <style>
+    body,#app{
+      background-color: #fff;
+    }
+    #content{
+      padding:0 10px;
+    }
+  </style>
   <script>
     if (localStorage.getItem("userinfo") == "fail" || !localStorage.getItem("userinfo")) {
       mx.alert("提示", "您未登录，将跳转到登录页面", true, function () {

@@ -85,7 +85,7 @@ var mx = {
     },
     getFileName:(n)=>{
       var t1 = window.location.href;
-      if (t1) var t2 = t1.split("/");
+      if (t1 && t1.indexOf('?') >-1) var t2 = t1.split("/");
       if (t2) return t3 = t2[t2.length-(1+parseInt(n))].split("?")[0].split("#")[0];
       return null
     },
