@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* 用户页面 */
 @media screen and (max-width: 767px){
   h1[data-sjishubx],[data-zdywybj]{ display: none; }
@@ -143,6 +145,7 @@
   width:100%;
   padding:24px 24px;
   margin-top:88px;
+  overflow: hidden;
 }
 h1[data-sjishubx]{
   margin:28px 0;
@@ -156,6 +159,7 @@ h1[data-sjishubx]{
 .col-md-9 h2{
   font-size: 18px;
   color: var(--blackcolor);
+  font-family: 'mxicon';
   font-weight: 500;
   line-height:24px;
 }
@@ -177,6 +181,7 @@ h1[data-sjishubx]{
   /* line-height: 46px; */
   /* border-radius: 16px; */
   padding: 14px 16px;
+  padding-right: 40px;
   position: relative;
   background-color: transparent;
 }
@@ -186,7 +191,7 @@ h1[data-sjishubx]{
 .user-Panel li::after{
   content: '';
   position: absolute;
-  right: 24px;
+  right: 16px;
   top:calc(50% - 12px);
   height:24px;
   width:24px;
@@ -194,6 +199,35 @@ h1[data-sjishubx]{
   font-size: 24px;
   line-height: 24px;
   font-family: 'mxicon';
+  text-align: center;
+}
+.mxicon{
+  display: inline-block;
+  color:inherit;
+  vertical-align: bottom;
+  font-family: 'mxicon';
+  font-size: inherit;
+}
+.user-Panel li .mxicon{
+  font-size: 20px;
+}
+.user-Panel li svg{
+  height:20px;
+  width:20px;
+  vertical-align: bottom;
+}
+.user-Panel li.link::after{
+  content:'';
+  font-size: 18px;
+  color:#007fe7
+}
+.user-Panel li.link.fun::after{
+  content:''
+}
+.user-Panel li.link.logout::after{
+  content:'';
+  font-size:22px;
+  color:#DA0101
 }
 .user-Panel li .item-content{
   display: flex;
@@ -203,19 +237,19 @@ h1[data-sjishubx]{
   content: '';
   position: absolute;
   top:-1px;
-  height:1px;width:calc(100% - 48px);
+  height:1px;width:calc(100% - 16px);
   background-color: #ededed;
-  left:24px;
-  transition: .3s;
+  left:16px;
+  /* transition: .3s; */
 }
 .user-Panel li .item-content::after{
   content: '';
   position: absolute;
   bottom:0px;
-  height:1px;width:calc(100% - 24px);
+  height:1px;width:calc(100% - 16px);
   background-color: #ededed;
   left:16px;
-  transition: .3s;
+  /* transition: .3s; */
 }
 .user-Panel li:hover .item-content::before, 
 .user-Panel li:hover .item-content::after,
@@ -224,7 +258,11 @@ h1[data-sjishubx]{
   width:100%;
   left:0;
 }
-.user-Panel li:first-child .item-content::before,.user-Panel li:last-child .item-content::after{
+.user-Panel li:first-child:last-child .item-content::before{
+  width:100%;
+  left:0;
+}
+.user-Panel li:last-child .item-content::after{ 
   opacity: 0;
 }
 .user-Panel li.link .item-content::before{
@@ -247,10 +285,12 @@ h1[data-sjishubx]{
   display: block;
   line-height: 24px;
   margin-right: 24px;
-  padding-top: 4px;
+  line-height: 28px;
   font-size: 16px;
-  line-height: 24px;
-  height:28px
+  height:28px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .user-Panel li .item-content input.text{
   border:1px solid #8a8a8a;
@@ -294,6 +334,9 @@ h1[data-sjishubx]{
   color:#007fe7;
   font-weight: normal;
 }
+.user-Panel li.link.logout .text{
+  color:#DA0101
+}
 
 @media (min-width: 768px){
   .user-Panel li .item-content{
@@ -313,6 +356,7 @@ h1[data-sjishubx]{
   }
   .user-Panel li{
     padding:15px 24px;
+    padding-right: 48px;
   }
   .user-Panel li .item-content .title{
     font-size: 14px;
@@ -321,12 +365,19 @@ h1[data-sjishubx]{
     font-size: 17px;
     height:28px;
     line-height: 24px;
+    padding-top: 4px;
+    line-height: 24px;
   }
   .col-md-9 h2{
     font-size: 22px;
     line-height: 38px;
   }
+  .user-Panel li .item-content::before,
   .user-Panel li .item-content::after{
-    left:24px
+    left:24px;
+    width:calc(100% - 24px);
+  }
+  .user-Panel li::after{
+    right:24px
   }
 }
