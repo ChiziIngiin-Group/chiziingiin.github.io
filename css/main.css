@@ -36,6 +36,12 @@ html {
   src: url('/font/ufonts.com_century-gothic.ttf') format('truetype');
 }
 @font-face {
+  font-family: "mxicon"; 
+  font-style: normal;
+  font-weight: 400;
+  src: url('/font/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2') format('woff2');
+}
+@font-face {
   font-family: "iconfont"; /* Project id 3138748 */
   src: url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.woff2?t=1644198066798') format('woff2'),
        url('//at.alicdn.com/t/font_3138748_t0aixsshm8p.woff?t=1644198066798') format('woff'),

@@ -183,6 +183,18 @@ h1[data-sjishubx]{
 .user-Panel li:hover{
   background-color: var(--userli);
 }
+.user-Panel li::after{
+  content: '';
+  position: absolute;
+  right: 24px;
+  top:calc(50% - 12px);
+  height:24px;
+  width:24px;
+  color:#5f6368;
+  font-size: 24px;
+  line-height: 24px;
+  font-family: 'mxicon';
+}
 .user-Panel li .item-content{
   display: flex;
   flex-direction: column;
@@ -200,13 +212,15 @@ h1[data-sjishubx]{
   content: '';
   position: absolute;
   bottom:0px;
-  height:1px;width:calc(100% - 48px);
+  height:1px;width:calc(100% - 24px);
   background-color: #ededed;
-  left:24px;
+  left:16px;
   transition: .3s;
 }
-.user-Panel li:hover .item-content::before, .user-Panel li:hover .item-content::after,
-.user-Panel li.link .item-content::before, .user-Panel li.link .item-content::after{
+.user-Panel li:hover .item-content::before, 
+.user-Panel li:hover .item-content::after,
+.user-Panel li.link .item-content::before, 
+.user-Panel li.link .item-content::after{
   width:100%;
   left:0;
 }
@@ -288,7 +302,7 @@ h1[data-sjishubx]{
     align-content: center;
   }
   .user-Panel li .item-content .title{
-    width:60px;
+    min-width:60px;
   }
   .user-Panel li .item-content .text{
     padding-top: 0;
@@ -311,5 +325,8 @@ h1[data-sjishubx]{
   .col-md-9 h2{
     font-size: 22px;
     line-height: 38px;
+  }
+  .user-Panel li .item-content::after{
+    left:24px
   }
 }
