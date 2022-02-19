@@ -126,7 +126,7 @@
   background-color: var(--Bg-White);
   background-color: #fff;
   /* padding: 30px 35px; */
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: none;
   transition: box-shadow 0.3s ease;
@@ -145,19 +145,19 @@
   margin-top:88px;
 }
 h1[data-sjishubx]{
-  margin:20px 0;
+  margin:28px 0;
   font-weight: 500;
   padding:0px 10px;
 }
 .user-title{
-  padding: 24px 24px;
-  padding-bottom: 16px;
+  padding: 16px 16px;
+  padding-bottom: 12px;
 }
 .col-md-9 h2{
-  font-size: 22px;
+  font-size: 18px;
   color: var(--blackcolor);
   font-weight: 500;
-  line-height:38px;
+  line-height:24px;
 }
 .col-md-9 small{
   display: block;
@@ -176,7 +176,7 @@ h1[data-sjishubx]{
   /* height:46px; */
   /* line-height: 46px; */
   /* border-radius: 16px; */
-  padding: 15px 24px;
+  padding: 14px 16px;
   position: relative;
   background-color: transparent;
 }
@@ -224,22 +224,19 @@ h1[data-sjishubx]{
 }
 .user-Panel li .item-content .title{
   display: block;
-  height:23px;
-  line-height: 23px;
   margin-bottom: 2px;
-  font-size: 13px;
   margin-right: 24px;
+  font-size: 13px;
   opacity: .6;
 }
 .user-Panel li .item-content .text{
   display: block;
-  height:20px;
-  line-height: 20px;
-  font-size: 16px;
+  line-height: 24px;
   margin-right: 24px;
   padding-top: 4px;
-  height:28px;
+  font-size: 16px;
   line-height: 24px;
+  height:28px
 }
 .user-Panel li .item-content input.text{
   border:1px solid #8a8a8a;
@@ -281,7 +278,7 @@ h1[data-sjishubx]{
 }
 .user-Panel li.link .item-content .text{
   color:#007fe7;
-  font-weight: 600;
+  font-weight: normal;
 }
 
 @media (min-width: 768px){
@@ -295,5 +292,24 @@ h1[data-sjishubx]{
   }
   .user-Panel li .item-content .text{
     padding-top: 0;
+  }
+  .user-title{
+    padding:24px 24px;
+    padding-bottom: 16px;
+  }
+  .user-Panel li{
+    padding:15px 24px;
+  }
+  .user-Panel li .item-content .title{
+    font-size: 14px;
+  }
+  .user-Panel li .item-content .text{
+    font-size: 17px;
+    height:28px;
+    line-height: 24px;
+  }
+  .col-md-9 h2{
+    font-size: 22px;
+    line-height: 38px;
   }
 }
