@@ -180,8 +180,7 @@ h1[data-sjishubx]{
   /* height:46px; */
   /* line-height: 46px; */
   /* border-radius: 16px; */
-  padding: 14px 16px;
-  padding-right: 40px;
+  /* padding-right: 40px; */
   position: relative;
   background-color: transparent;
 }
@@ -231,6 +230,8 @@ h1[data-sjishubx]{
 }
 .user-Panel li .item-content{
   display: flex;
+  padding: 14px 16px;
+  padding-right: 40px;
   flex-direction: column;
 }
 .user-Panel li .item-content::before{
@@ -354,7 +355,7 @@ h1[data-sjishubx]{
     padding:24px 24px;
     padding-bottom: 16px;
   }
-  .user-Panel li{
+  .user-Panel li .item-content{
     padding:15px 24px;
     padding-right: 48px;
   }

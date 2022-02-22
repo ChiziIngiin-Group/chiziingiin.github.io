@@ -48,7 +48,7 @@ mx.js will be permanently open source for everyone to learn and use
         <h1>赤子英金社区</h1>
         <p>/*&nbsp;<span id="head-panel__text">Chizi Ingiin Technology Community.</span>&nbsp;*/</p>
       </div>
-      <div class="scroll-down-div"><i font icon-back"></i></div>
+      <div class="scroll-down-div"><i class="iconfont icon-back"></i></div>
       <style id="homepanel__style">.head-panel{background-size:auto 100%;}</style>
     </div>
 
@@ -229,7 +229,7 @@ mx.js will be permanently open source for everyone to learn and use
       if(window.innerHeight / window.innerWidth>0.5429362880886427) $("#homepanel__style").html(".head-panel{background-size:auto 100%;}")
       else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     }
-    if ($(window).scrollTop() > window.innerHeight) {
+    if ($(window).scrollTop()> window.innerHeight) {
       $("nav.nav").removeClass("nobg dark")
       $("nav.m-nav").removeClass("nobg dark")
     } else {
@@ -237,7 +237,7 @@ mx.js will be permanently open source for everyone to learn and use
       $("nav.m-nav").addClass("nobg dark")
     }
     $(window).scroll(()=>{
-      if ($(window).scrollTop() > window.innerHeight) {
+      if ($(window).scrollTop()> window.innerHeight) {
         $("nav.nav").removeClass("nobg dark")
         $("nav.m-nav").removeClass("nobg dark")
       } else {

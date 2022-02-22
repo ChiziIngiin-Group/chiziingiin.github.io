@@ -249,6 +249,18 @@ mx.Api.jqOnload(()=>{
     if(window.innerWidth<=790){
       $('#reg-button').parent().remove()
     }
+    shadowtp();
+    $(window).scroll(()=>{
+      shadowtp();
+    })
+
+    function shadowtp() {
+      if ($(window).scrollTop() < 20) {
+        $('.nav,.m-nav').css('box-shadow', 'none');
+      } else {
+        $('.nav,.m-nav').css('box-shadow', '');
+      }
+    }
   })
   /* Header Menu */
   $(document).on("click","#m-button-more",()=>{
@@ -277,13 +289,13 @@ mx.Api.jqOnload(()=>{
   })
   /* 百度分析 */
   $(()=>{
-  var _hmt = _hmt || [];
-  (()=>{
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?bc9a5ce042da8760453195bf36820bca";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-  })();
+    var _hmt = _hmt || [];
+    (()=>{
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bc9a5ce042da8760453195bf36820bca";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
   })
 })
 /* 
