@@ -1,8 +1,8 @@
 [
   {
     "title":"李翼安",
-    "description":"扫码进群",
-    "searchText":[],
+    "description":"李翼安，别名“土逗”，赤峰人，2008年生。第一、二届八年六班政治协商委员会主任委员，赤子英金信息技术协会副会长。",
+    "searchText":["土逗","八年六班","赤子英金"],
     "pType":"bk",
     "pId":"iOr4Cfstu8",
     "url":"/p/iOr4Cfstu8.html",
@@ -11,7 +11,7 @@
     "read":3,
     "comment":1,
     "date":0,
-    "img":[]
+    "img":[""]
   },
   {
     "title":"暮青梅",
@@ -56,8 +56,8 @@
     "img":[]
   },
   {
-    "title":"李翼安",
-    "description":"扫码进群",
+    "title":"张新越",
+    "description":"张新越，别名“花果山电报员”，赤峰人，2008年生。第一、二届八年六班政治协商委员会副主任委员，赤子英金信息技术协会会长。",
     "searchText":[],
     "pType":"bk",
     "pId":"iOr4Cfstu8",
@@ -70,8 +70,22 @@
     "img":[]
   },
   {
-    "title":"李翼安",
-    "description":"扫码进群",
+    "title":"赤子英金",
+    "description":"赤子英金是一个由中学生组成的社区，旨在服务学生群体，分享技术内容，传播社会正能量。赤子英金社区是一个面向学生的科技、影视、娱乐社区。它由 ChiziIngiin 团队和 munox 运营。",
+    "searchText":[],
+    "pType":"bk",
+    "pId":"iOr4Cfstu8",
+    "url":"/about.html",
+    "author":"英金百科",
+    "authorId":"IGBK",
+    "read":3,
+    "comment":1,
+    "date":0,
+    "img":[]
+  },
+  {
+    "title":"包涵",
+    "description":"包涵，别名“Eric”，赤峰人，2008年生。第一、二届八年六班政治协商委员会委员，赤子英金信息技术协会成员。",
     "searchText":[],
     "pType":"bk",
     "pId":"iOr4Cfstu8",
@@ -84,9 +98,37 @@
     "img":[]
   },
   {
-    "title":"李翼安",
-    "description":"扫码进群",
-    "searchText":[],
+    "title":"于佳轩",
+    "description":"包涵，别名“Eric”，赤峰人，2008年生。第一、二届八年六班政治协商委员会委员，赤子英金信息技术协会成员。",
+    "searchText":["鸭","糖老"],
+    "pType":"bk",
+    "pId":"iOr4Cfstu8",
+    "url":"/p/iOr4Cfstu8.html",
+    "author":"英金百科",
+    "authorId":"IGBK",
+    "read":3,
+    "comment":1,
+    "date":0,
+    "img":[]
+  },
+  {
+    "title":"王淑杰",
+    "description":"王淑杰，八年六班语文教师，别名“女王”。",
+    "searchText":["女王"],
+    "pType":"bk",
+    "pId":"iOr4Cfstu8",
+    "url":"/p/iOr4Cfstu8.html",
+    "author":"英金百科",
+    "authorId":"IGBK",
+    "read":3,
+    "comment":1,
+    "date":0,
+    "img":[]
+  },
+  {
+    "title":"吴艳杰",
+    "description":"吴艳杰，八年六班英语教、班主任，别名“吴迪”。",
+    "searchText":["吴迪"],
     "pType":"bk",
     "pId":"iOr4Cfstu8",
     "url":"/p/iOr4Cfstu8.html",

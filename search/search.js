@@ -154,17 +154,17 @@ $.ajax({
     //   })
     // }
     /* 页面滚动 */
-    $(document).scroll(function () {
-      var scrtop = $(document).scrollTop()
-      if (scrtop >= 260) {
-        if ($(".search-box").attr("a") !== "1") {
-          $(".search-box").addClass("more").attr("a", "1")
-          $("#temp").html(".search-box.more .search-bar{width:" + $(window).width() + "px}")
-        }
-      } else {
-        $(".search-box").removeClass("more").removeAttr("a")
-      }
-    });
+    // $(document).scroll(function () {
+    //   var scrtop = $(document).scrollTop()
+    //   if (scrtop >= 260) {
+    //     if ($(".search-box").attr("a") !== "1") {
+    //       $(".search-box").addClass("more").attr("a", "1")
+    //       $("#temp").html(".search-box.more .search-bar{width:" + $(window).width() + "px}")
+    //     }
+    //   } else {
+    //     $(".search-box").removeClass("more").removeAttr("a")
+    //   }
+    // });
   },
   fail: function (res) {
     console.warn("[搜索参考列表读取]","Fail")
