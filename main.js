@@ -40,12 +40,20 @@ var mx = {
     ifvue: false,
     GetUserConfig:()=>{
       /* Get user information */
-      var userconfig = localStorage.getItem("UserConfig");
+      var userconfig = localStorage.getItem("userinfo");
       console.info("[GetUserConfig]", userconfig);
       if (!userconfig) {
         return null;
       } else {
         return JSON.parse(userconfig);
+      }
+    },
+    GetSystemUserInfo:()=>{
+      var userinfo = localStorage.getItem('usersystem');
+      if(userinfo){
+        return true;
+      }else{
+        return false;
       }
     },
     OpenLoginAlert:()=>{
@@ -183,6 +191,17 @@ var mx = {
           }
         } else {
           console.log("[Login] The user is already logged in")
+        }
+      }
+    },
+    systemLogin:(e)=>{
+      if (mx.system.security()) {
+        if(mx.Api.GetSystemUserInfo()){
+          if(e) window.location.href=e
+        } else {
+          mx.alert('提示','此操作需要登陆验证',true,function(){
+            window.location.href="/login/?s=st&url"+e
+          })
         }
       }
     },
