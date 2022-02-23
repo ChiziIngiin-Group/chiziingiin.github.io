@@ -331,6 +331,11 @@
   background-color: #fafafa;
 }
 
+.cm-news-list span.high{
+  color:#0032d8;
+  font-weight: 700;
+}
+
 .cm-news-list li .ba{
   display: block;
   width:calc(100% - 100px);
