@@ -4,7 +4,7 @@
 <head>
   <!-- Basic configuration -->
   <meta charset="UTF-8" />
-  <title>搜素 - 赤子英金</title>
+  <title>搜索 - 赤子英金</title>
   <meta name="description" content="搜索" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,7 +45,7 @@
               </li>
             </ul>
             <ul class="nav-list__box">
-              <li class="nav-item nav-item__search">
+              <!-- <li class="nav-item nav-item__search">
                 <div class="nav-search-bar">
                   <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
                     <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
@@ -53,7 +53,7 @@
                     <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
                   </form>
                 </div>
-              </li>
+              </li> -->
               <li class="nav-item m-nav-item">
                 <a href="/search/">搜索</a>
               </li>
@@ -64,14 +64,6 @@
                 <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
               </li>
             </ul>
-            <div class="m-nav-alert">
-              <div class="m-title"><span>提示</span></div>
-              <div class="m-content">
-                <p id="r" style="display:none">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</p>
-                <p>此页面正在您的许可范围内使用cookie<a class="m-r-more" href="javascript:$('#r').toggle()"></a></p>
-                <p><small>Chiziingiin智能云安全引擎</small></p>
-              </div>
-            </div>
           </div>
         </div>
       </nav>
@@ -134,8 +126,8 @@
             </div>
             <!-- <div class="search-list content-list"></div> -->
             <link rel="stylesheet" href="/css/new.css">
-            <div class="cm-news-list mt-3">
-              <div class="news-title">查询结果</div>
+            <div class="cm-news-list" style="margin-top: 28px;">
+              <div class="news-title" id="news-title" style="text-align: center;">查询中</div>
               <ul id="cm-news-list"></ul>
             </div>
           </div>

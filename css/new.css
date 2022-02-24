@@ -419,7 +419,7 @@
 .cm-news-list li.i3 >*{
   flex:1
 }
-.cm-news-list li.i3 .ba,.i0 .ba{
+.cm-news-list li.i3 .ba,.cm-news-list li.i0 .ba{
   width:100%;
   margin-right: 0;
 }

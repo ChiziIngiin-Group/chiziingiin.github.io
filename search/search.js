@@ -36,14 +36,15 @@ var GetSearchHistoryList = function () {
 
 var wd = mx.Api.GetQueryString("wd");
 if (wd) {
-  var p = decodeURIComponent(wd)
-  $("#search-input").val(p)
+  var p = wd
   history(p)
 }
 else {
   var p = ""
 }
 console.log("[搜索数据]", p)
+$("#search-input").val(p)
+$('title').text(`${p} - 赤子英金搜索`)
 
 var pdata = []
 $.ajax({
@@ -68,9 +69,7 @@ $.ajax({
               }
             }
           }
-          console.warn(';!')
         }else{
-          console.warn(';;')
         }
       }
 
@@ -87,39 +86,64 @@ $.ajax({
               }
             }
           }
-          console.warn(';!')
         }else{
-          console.warn(';;')
         }
       }
+      if(searchlist.length==0){
+        // $("#cm-news-list").html("没有找到相关结果")
+        $('#news-title').html('没有找到相关结果').css({'text-align':"center"})
+      } else {
+        $('#news-title').html('搜索结果').css({'text-align':"left"})
+      }
+    } else {
+      $('#news-title').html('输入关键词开始查询').css({'text-align':"center"})
     }
 
-    if(searchlist.length==0){
-      $("#cm-news-list").html("没有找到相关结果").css({'margin-top':"20px",'text-align':"center"})
-    }else{
-      $("#cm-news-list").html("")
-    }
+    $("#cm-news-list").html("<!-- 成功加载 -->")
 
-    console.log("[搜索数据(0)文章数据搜索完成]",searchlist)
+    console.log("[搜索数据 文章数据搜索完成]",searchlist)
     
-    var list = searchlist, 
+    var list = [], tlist = searchlist,ulist = [],
     glist=['BCGOC','IGBK'],
     zlist=['TTSCLUB'];
 
+    function compare(property,desc) {
+      return function (a, b) {
+        var value1 = a[property];
+        var value2 = b[property];
+        if(desc==true){
+          // 升序排列
+          return value1 - value2;
+        }else{
+          // 降序排列
+          return value2 - value1;
+        }
+      }
+    }
+    console.group('搜索信息详情')
+    for(var i=0;i<tlist.length;i++){
+      if(!tlist[i].KeyNumber){tlist[i].KeyNumber=0}
+      tlist[i].KeyNumber+=(tlist[i].title.split(p).length-1)+(tlist[i].description.split(p).length-1)
+      tlist[i].title=tlist[i].title.replace(RegExp(p,'g'),`<span class="high">${p}</span>`)
+      tlist[i].description=tlist[i].description.replace(RegExp(p,'g'),`<span class="high">${p}</span>`)
+    }
+    list=tlist.sort(compare('KeyNumber',false)) // 按照相关度排序
     for(var i=0;i<list.length;i++){
-      list[i].title=list[i].title.replace(RegExp(p,'g'),`<span class="high">${p}</span>`)
-      list[i].description=list[i].description.replace(RegExp(p,'g'),`<span class="high">${p}</span>`)
-      if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
-      else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
-      else{var j=``,k=`i0`};
+      var j=``,k=`i0`
+      if(list[i].img){
+       if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
+       else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
+      }
       url=list[i].url
-      AuthorType="";
-      for(var j2=0;j2<glist.length;j2++){if(list[i].authorId==glist[j2]){AuthorType='g';console.log(list[i].authorId,glist[j2])}}
+      AuthorType="",d='';
+      if(list[i].read && list[i].comment){d=`<span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span>`}
+      for(var j2=0;j2<glist.length;j2++){if(list[i].authorId==glist[j2]){AuthorType='g';}}
       for(var j3=0;j3<zlist.length;j3++){if(list[i].authorId==zlist[j3]){AuthorType='z'}}
-      console.log('[文章代码]',list[i])
-      $("#cm-news-list").append(`<li id="${list[i].pId}" url="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>  <span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span></span></li>`)
+      console.log('[文章代码]',{str:list[i]},'相关度',list[i].KeyNumber,'作者',list[i].authorId,)
+      $("#cm-news-list").append(`<li id="${list[i].pId}" url="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>${d}</span></li>`)
       $(`#${list[i].pId}`).click(()=>{window.location.href=`${url}`})
     }
+    console.groupEnd()//搜索信息详情Group关闭
 
 
     // if (p == "" || (searchlist.length == pdata.length && p.indexOf(" ") > -1)) {
