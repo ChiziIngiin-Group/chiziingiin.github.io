@@ -32,13 +32,36 @@
   },
   {
     "title":"郭宏轩",
-    "description":"你点进来",
+    "description":"八年六班同学",
     "searchText":[],
     "pType":"bk",
     "pId":"ghxsb",
     "url":"/p/ghxsb.html",
     "author":"英金百科",
     "authorId":"IGBK"
+  },
+  {
+    "title":"致赤子英金爱好者的一封信",
+    "description":"2022年2月26日",
+    "searchText":["chiziingiinkeyword"],
+    "onlySearchText":true,
+    "runFunction":"mx.alert('提示','解密成功')",
+    "pType":"bk",
+    "pId":"ghxmsg",
+    "url":"p/ghxsb.html",
+    "author":"张新越",
+    "authorId":"BCGOC"
+  },
+  {
+    "title":"致郭宏轩的一封信",
+    "description":"2022年2月26日",
+    "searchText":["uis"],
+    "onlySearchText":true,
+    "pType":"bk",
+    "pId":"ghxmsg",
+    "url":"p/ghxsb.html",
+    "author":"张新越",
+    "authorId":"BCGOC"
   },
   {
     "title":"张新越",
