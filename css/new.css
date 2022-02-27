@@ -326,6 +326,7 @@
   flex-wrap: wrap;
   cursor: pointer;
   border-bottom: 1px solid #ededed;
+  position: relative;
 }
 
 .cm-news-list ul>*:hover{

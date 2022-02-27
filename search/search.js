@@ -92,6 +92,7 @@ $.ajax({
     var searchlist = [];
 
     if(p!='' && p!=' '){
+      var ilist={};
       for (var i = 0; i < pdata.length; i++) {
         function runFunction() {
           if (pdata[i].runFunction) {
@@ -112,8 +113,18 @@ $.ajax({
           }
         } else {
           if(pdata[i].title == p || pdata[i].description == p) {
-            pdata[i].KeyNumber+=20
-            pdata[i].title+='<span class="search-ts">最佳答案</span>'
+            pdata[i].KeyNumber+=20;
+            console.log(ilist.key,pdata[i].KeyNumber,(ilist.key < pdata[i].KeyNumber),pdata[i].description)
+            if(ilist.key){
+              if(ilist.key < pdata[i].KeyNumber){
+                pdata[ilist.u].title.replace('<span class="search-ts">最佳答案</span>','')
+                ilist.u=i,ilist.key=pdata[i].KeyNumber;
+                pdata[i].title+='<span class="search-ts">最佳答案</span>'
+              }
+            }else{
+              ilist.u=i,ilist.key=pdata[i].KeyNumber;
+              pdata[i].title+='<span class="search-ts">最佳答案</span>'
+            }
             searchlist.push(pdata[i])
             runFunction()
           }
@@ -122,15 +133,15 @@ $.ajax({
               searchlist.push(pdata[i])
               runFunction()
             }
-            if(pdata[i].description.indexOf(p) > -1){
-              pdata[i].title+='<span class="search-ts">智能推荐</span>'
+            else if(pdata[i].description.indexOf(p) > -1){
               searchlist.push(pdata[i])
               runFunction()
             }
-          }
+          };
           if (pdata[i].searchText){
-            for(var j = 0;j<pdata[i].searchText.length;j++){
-              if(pdata[i].searchText[j].indexOf(p) > 1){
+            for(var j=0;j<pdata[i].searchText.length;j++){
+              if(pdata[i].searchText[j].indexOf(p) > -1){
+                pdata[i].title+='<span class="search-ts">智能推荐</span>'
                 searchlist.push(pdata[i])
                 runFunction()
               }
@@ -138,6 +149,7 @@ $.ajax({
           }
         }
       }
+      //查询结束
       if(searchlist.length==0){
         $('#news-title').html('没有找到相关结果').css({'text-align':"center"})
       } else {
@@ -149,7 +161,7 @@ $.ajax({
     $("#cm-news-list").html("<!-- 成功加载 -->")
     console.log("[搜索数据 文章数据搜索完成]",searchlist)
     var list = [], tlist = searchlist,
-    glist=['BCGOC','IGBK'],
+    glist=['BCGOC','IGBK','CZIG'],
     zlist=['TTSCLUB'];
 
     function compare(property,desc) {
@@ -185,17 +197,17 @@ $.ajax({
       $("#cm-news-list").append(`<a pid="${list[i].pId}" id=${id} purl="${url}" href="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>${d}</span></a>`)
       $(`a#${id}`).on('click',()=>{debounce(clickHistory(that),1000)})
     }
-    $.ajax({
-      url:`https://baidu.com/sugrec`,
-      async: true,
-      type:"jsonp",
-      success:(e)=>{
-        console.log(e)
-      },
-      fail:(e)=>{
-        console.error(e)
-      }
-    })
+    // $.ajax({
+    //   url:`https://baidu.com/sugrec`,
+    //   async: true,
+    //   type:"jsonp",
+    //   success:(e)=>{
+    //     console.log(e)
+    //   },
+    //   fail:(e)=>{
+    //     console.error(e)
+    //   }
+    // })
     $("#cm-news-list").append(`<li class="ts"><span>赤子英金搜索引擎2.0</span></li>`);
     console.groupEnd()//搜索信息详情Group关闭
 

@@ -22,6 +22,12 @@ var mx = {
   version:VersionNumber,
   /* System interface function */
   Api: {
+    // Temp Function
+    productAlert:()=>{
+      $('body #app').append(`
+        
+      `)
+    },
     jqOnloadFunction:(e)=>{e()},
     jqOnload:(e)=>{
       if(typeof jQuery == 'undefined'){
