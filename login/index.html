@@ -177,44 +177,48 @@
     } else {
       console.log("[Login Pattern]","default")
       if(mx.Api.GetQueryString("k")){
-      var k = localStorage.getItem("userinfo");
-      if(k == "fail"){
-        mx.alert("提示","用户名或密码错误");
-      }else if(k){
-        mx.alert("提示","登录成功",false,function(){
-          if(mx.Api.GetQueryString("url")){
+        var k = localStorage.getItem("userinfo");
+        if(k == "fail"){
+          mx.alert("提示","用户名或密码错误");
+        }else if(k){
+          mx.alert("提示","登录成功",false,function(){
+            if(mx.Api.GetQueryString("url")){
+              location.href = mx.Api.GetQueryString("url")
+            }
+          });
+        }else{
+          mx.alert("提示","登录失败")
+        }
+      } else {
+        var k = localStorage.getItem("userinfo");
+        if(mx.Api.GetQueryString('s') == "st"){
+          console.log('[systemLogin]')
+        }
+        else if(k == "fail"){
+          mx.alert("提示","用户名或密码错误");
+        }else if(k){
+          mx.alert("提示","您已登录，是否仍要登录？",true,function(){},function(){
             location.href = mx.Api.GetQueryString("url")
-          }
-        });
-      }else{
-        mx.alert("提示","登录失败")
+          },"继续登录","返回")
+        }
       }
-    } else{
-      var k = localStorage.getItem("userinfo");
-      if(k == "fail"){
-        mx.alert("提示","用户名或密码错误");
-      }else if(k){
-        mx.alert("提示","您已登录，是否仍要登录？",true,function(){},function(){
-          location.href = mx.Api.GetQueryString("url")
-        },"继续登录","返回")
-      }
-    }
-    var qrcode = new QRCode("qrcode");
-    qrcode.makeCode(mx.Api.getRandomString(100))
-    $("#p-login-button").click(function () {
-      var username = $("#username").val();
-      var password = $("#password").val();
-      if (username == "" || password == "") {
-        mx.alert("提示","用户名或密码不能为空！")
-      }
-      else if (mx.Api.checksSpecialCharator(username) || mx.Api.checksSpecialCharator(password)) {
-        mx.alert("提示","用户名或密码不能含有非法字符！\n如!@#$%^&*()_+等");
-      }
-      else {
-        var url =  mx.Api.GetQueryString("url")
-        window.location.replace("/Api/login.htm?u="+md5(username)+"&p="+md5(password)+"&k=md5&i=citri&l="+"/login/"+"&url="+url);
-      }
-    })
+      var qrcode = new QRCode("qrcode");
+      qrcode.makeCode(mx.Api.getRandomString(100))
+      $("#p-login-button").click(function () {
+        var username = $("#username").val();
+        var password = $("#password").val();
+        if (username == "" || password == "") {
+          mx.alert("提示","用户名或密码不能为空！")
+        }
+        else if (mx.Api.checksSpecialCharator(username) || mx.Api.checksSpecialCharator(password)) {
+          mx.alert("提示","用户名或密码不能含有非法字符！\n如!@#$%^&*()_+等");
+        }
+        else {
+          var url =  mx.Api.GetQueryString("url")
+          var u = "/Api/login.htm?u="+md5(username)+"&p="+md5(password)+"&k=md5&i=citri&l="+"/login/"+"&url="+url
+          window.location.replace(u);
+        }
+      })
     }
   </script>
 </body>
