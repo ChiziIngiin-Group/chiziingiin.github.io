@@ -201,6 +201,19 @@
     "date":0,
     "img":[]
   },
+  {
+    "title":"八年六班课程表",
+    "description":"最新版课程表（2022.2.28）",
+    "pType":"bk",
+    "pId":"r2KK5ZCDey",
+    "url":"/Api/pdf/viewer.html?file=/sharepage/bxkb.pdf",
+    "author":"八年六班同学群组织委员会 BCGOC",
+    "authorId":"BCGOC",
+    "read":3,
+    "comment":1,
+    "date":0,
+    "img":[]
+  },
 
 
 
