@@ -80,26 +80,21 @@ var mx = {
       return pwd;
     },
     GetQueryString:(name)=>{
-      // var t1 = window.location.href;
-      // if (t1) var t2 = t1.split("?")[1];
-      // if (t2) var t3 = t2.split(name + "=")[1];
-      // if (t3) var t4 = t3.split("&")[0];
-      // if (t4) var t5 = t4;
-      // console.log(t4)
-      // if (t4) if(t4.indexOf('+')>-1) {t5=t4.replace(RegExp('+','g'),' ');}
-      // if (t5) return t5;
-      // return null;
-      var url=window.location.href;
-      if(url.indexOf('+')>-1){console.log('包含“ ”');url=url.replace(/\+/g,' ')}
-      url=decodeURIComponent(url)
-      if(url.indexOf('?')>-1) url=url.split('?')[1];
-      if(url.indexOf('&'))url=url.split('&')
-      else url=[url]
-      for(var i=0;i<url.length;i++){
-        if(url[i].split('=')[0]==name){
-          return url[i].split('=')[1]
+      var u=window.location.href,r=null;
+      if(u.indexOf('?')>-1) u=u.split('?')[1];
+      if(u.indexOf('&'))u=u.split('&')
+      else u=[u]
+      for(var i=0;i<u.length;i++){
+        if(u[i].split('=')[0]==name){
+          r=u[i].split('=')[1];break;
         }
-      }return null;
+      }
+      if(r){
+        if(r.indexOf('+')>-1){console.log('包含“ ”');r=r.replace(/\+/g,' ')}
+        r=decodeURIComponent(r)
+        return r;
+      }
+      return null;
     },
     checksSpecialCharator:(newName)=>{
       let regEn = /[`!@#$%^&*()_+<>?:"{},.\/;'[\]]/im,
