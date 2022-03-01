@@ -159,8 +159,8 @@ $.ajax({
     $("#cm-news-list").html("<!-- 成功加载 -->")
     console.log("[搜索数据 文章数据搜索完成]",searchlist)
     var list = [], tlist = searchlist,
-    glist=['BCGOC','IGBK','CZIG'],
-    zlist=['TTSCLUB'];
+    glist=['BCGOC'/*八六群组织*/,'BP'/*政协*/,'BO'/*发改委*/,'BL'/*八年六班*/,'IGBK'/*英金百科*/,'CZIG'/*赤子英金*/,'CZIGCBC'/*英金出版社*/],
+    zlist=['TTSCLUB','zhangxinyue'/*张新越个人账号*/];
 
     function compare(property,desc) {
       return function (a, b) {
