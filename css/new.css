@@ -684,6 +684,13 @@
   flex-wrap: wrap;
   transition: .1s;
 }
+.pd-Swiper section{
+  overflow: hidden;
+  position: relative;
+}
+.section-content{
+  width:100%;
+}
 .pd-panel__title{
   padding:0 15px;
   color: #0f416a;
@@ -705,13 +712,13 @@
   padding-top: 16px;
   transition: .1s;
 }
-.pd-panel__content .pd-panel__buttonbox{
+.pd-panel__buttonbox{
   padding-top: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-.pd-panel__content .pd-panel__button{
+.pd-panel__button{
   margin-right: 18px;
   margin-bottom: 18px;
   font-family: montserrat,sans-serif;
@@ -727,7 +734,7 @@
   background: #dfdbf1;
   cursor: pointer;
 }
-.pd-panel__content .pd-panel__button.active{
+.pd-panel__button.active{
   color:#fff;
   background-color: #5425f1;
 }
@@ -768,8 +775,20 @@
   line-height: 20px;
   opacity: 0.7;
 }
+.center_side-right-bottom_img{
+  text-align: center;
+}
+.center_side-right-bottom_img img{
+  max-width: 85%;
+  width:280px;
+  border-radius: 20px;
+  box-shadow: 0 10px 29px 0 rgb(68 88 144 / 10%)
+}
+/* .pd-panel__button:last-child{
+  !important;
+} */
 @media (max-width: 500px){
-  .pd-panel__content .pd-panel__buttonbox{
+  .pd-panel__buttonbox{
     padding-top: 24px;
   }
   .pd-panel__button{
@@ -810,7 +829,7 @@
     margin-bottom: 40px;
     line-height: 47px;
   }
-  .pd-panel__content .pd-panel__buttonbox{
+  .pd-panel__buttonbox{
     padding-top: 14px;
     justify-content: flex-start;
   }

@@ -88,129 +88,133 @@ $.ajax({
     pdata = res;
     console.log("[搜索参考列表]", pdata);
     var searchlist = [];
-
-    if(p!='' && p!=' '){
-      var ilist={};
-      for (var i = 0; i < pdata.length; i++) {
-        var r=false,y=false;
-        // 添加拼音推荐
-        if(!pdata[i].searchText||typeof pdata[i].searchText!='object')pdata[i].searchText=[];
-        var f=pdata[i].searchText.length
-        for(var j=0;j<f;j++){
-          pdata[i].searchText.push(pinyin.getFullChars(pdata[i].searchText[j]).toLowerCase())
-          pdata[i].searchText.push(pinyin.getCamelChars(pdata[i].searchText[j]).toLowerCase())
+    $.ajax({
+      url:'https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web',
+      jsonp: 'cb',
+      data: {wd: p},
+      dataType: 'jsonp',
+      success: function (data) {
+        console.log('[百度搜索推荐]',data)
+        if(data.g){
+          for(var i=0;i<data.g.length;i++){
+            pdata.push({title:data.g[i].q,description:'',KeyNumber:-1,searchText:[p],author:"搜索推荐",authorId:"BaiduSearch",url:`https://www.baidu.com/s?wd=${encodeURIComponent(data.g[i].q)}`,pType:'bd',pId:mx.Api.getRandomString(12)})
+          }
         }
-        pdata[i].searchText.push(pinyin.getFullChars(pdata[i].title).toLowerCase())
-        pdata[i].searchText.push(pinyin.getFullChars(pdata[i].description).toLowerCase())
-        pdata[i].searchText.push(pinyin.getCamelChars(pdata[i].title).toLowerCase())
-        pdata[i].searchText.push(pinyin.getCamelChars(pdata[i].description).toLowerCase())
-        //
 
-        // 优先级初始化
-        if(!pdata[i].KeyNumber)pdata[i].KeyNumber=0;
-        if(!pdata[i].titleEnd)pdata[i].titleEnd='';
-        // 英金百科
-        if(pdata[i].pType=='bk')pdata[i].KeyNumber+=2;
-        // 仅搜索列表
-        if(pdata[i].onlySearchText){
-          for(var j=0;j<pdata[i].searchText.length;j++){
-          console.log('命令模式',pdata[i].searchText[j]==p)
-          if(pdata[i].searchText[j]==p){
-              pdata[i].KeyNumber+=20
-              r=true
+        if(p!='' && p!=' '){
+          var ilist={};
+          for (var i = 0; i < pdata.length; i++) {
+            var r=false,y=false;
+            // 添加拼音推荐
+            if(pdata[i].pType!='bd'){
+              if(!pdata[i].searchText||typeof pdata[i].searchText!='object')pdata[i].searchText=[];
+              var f=pdata[i].searchText.length
+              for(var j=0;j<f;j++){
+                pdata[i].searchText.push(pinyin.getFullChars(pdata[i].searchText[j]).toLowerCase())
+                pdata[i].searchText.push(pinyin.getCamelChars(pdata[i].searchText[j]).toLowerCase())
+              }
+              pdata[i].searchText.push(pinyin.getFullChars(pdata[i].title).toLowerCase())
+              pdata[i].searchText.push(pinyin.getFullChars(pdata[i].description).toLowerCase())
+              pdata[i].searchText.push(pinyin.getCamelChars(pdata[i].title).toLowerCase())
+              pdata[i].searchText.push(pinyin.getCamelChars(pdata[i].description).toLowerCase())
             }
-          }
-        } else {
-          // 绝对等于 
-          if(pdata[i].title == p || pdata[i].description == p) {
-            pdata[i].KeyNumber+=20;
-            console.log(ilist.key,pdata[i].KeyNumber,(ilist.key < pdata[i].KeyNumber),pdata[i].description)
-            if(ilist.key) if(ilist.key < pdata[i].KeyNumber) pdata[ilist.u].titleEnd='',ilist.u=i,ilist.key=pdata[i].KeyNumber,y=1
-            else ilist.u=i,ilist.key=pdata[i].KeyNumber,y=1;
-            r=true
-          }
-          else if (pdata[i].title.indexOf(p) > -1 || pdata[i].description.indexOf(p) > -1) r=true
-          // 关键词列表
-          if (pdata[i].searchText){
-            for(var j=0;j<pdata[i].searchText.length;j++){
-              if(pdata[i].searchText[j].indexOf(p) > -1){
-                y=2,r=true
+            // 优先级初始化
+            if(!pdata[i].KeyNumber)pdata[i].KeyNumber=0;
+            if(!pdata[i].titleEnd)pdata[i].titleEnd='';
+            // 英金百科
+            if(pdata[i].pType=='bk')pdata[i].KeyNumber+=2;
+            // 仅搜索列表
+            if(pdata[i].onlySearchText){
+              for(var j=0;j<pdata[i].searchText.length;j++){
+              console.log('命令模式',pdata[i].searchText[j]==p)
+              if(pdata[i].searchText[j]==p){
+                  pdata[i].KeyNumber+=20
+                  r=true
+                }
+              }
+            } else {
+              // 绝对等于 
+              if(pdata[i].title == p || pdata[i].description == p) {
+                pdata[i].KeyNumber+=20;
+                console.log(ilist.key,pdata[i].KeyNumber,(ilist.key < pdata[i].KeyNumber),pdata[i].description)
+                if(ilist.key) if(ilist.key < pdata[i].KeyNumber) pdata[ilist.u].titleEnd='',ilist.u=i,ilist.key=pdata[i].KeyNumber,y=1
+                else ilist.u=i,ilist.key=pdata[i].KeyNumber,y=1;
+                r=true
+              }
+              else if (pdata[i].title.indexOf(p) > -1 || pdata[i].description.indexOf(p) > -1) r=true
+              // 关键词列表
+              if (pdata[i].searchText){
+                for(var j=0;j<pdata[i].searchText.length;j++){
+                  if(pdata[i].searchText[j].indexOf(p) > -1){
+                    console.log(pdata[i].searchText[j])
+                    y=2,r=true
+                  }
+                }
               }
             }
+            // 提交
+            if(r){
+              searchlist.push(pdata[i])
+              if (pdata[i].runFunction) new Function(pdata[i].runFunction)();
+            }
+            if(pdata[i].pType!='bd'){
+              if(y==1) pdata[i].titleEnd='<span class="search-ts">最佳答案</span>'
+              else if(y==2) pdata[i].titleEnd+='<span class="search-ts">智能推荐</span>'
+            }
+          }
+          //查询结束
+          if(searchlist.length==0){
+            $('#news-title').html('没有找到相关结果').css({'text-align':"center"})
+          } else {
+            $('#news-title').html('搜索结果').css({'text-align':"left"})
+          }
+        } else {
+          $('#news-title').html('输入关键词开始查询').css({'text-align':"center"})
+        }
+        $("#cm-news-list").html("<!-- 成功加载 -->")
+        console.log("[搜索数据 文章数据搜索完成]",searchlist)
+        var list = [], tlist = searchlist,
+        glist=['BCGOC'/*八六群组织*/,'BP'/*政协*/,'BO'/*发改委*/,'BL'/*八年六班*/,'IGBK'/*英金百科*/,'CZIG'/*赤子英金*/,'CZIGCBC'/*英金出版社*/],
+        zlist=['TTSCLUB','zhangxinyue'/*张新越个人账号*/];
+
+        function compare(property,desc) {
+          return function (a, b) {
+            var value1 = a[property];
+            var value2 = b[property];
+            if(desc==true){
+              return value1 - value2; //升序
+            }else{
+              return value2 - value1; //降序
+            }
           }
         }
-        // 提交
-        if(r){
-          searchlist.push(pdata[i])
-          if (pdata[i].runFunction) new Function(pdata[i].runFunction)();
+        console.group('搜索信息详情')
+        for(var i=0;i<tlist.length;i++){
+          tlist[i].KeyNumber+=(tlist[i].title.split(p).length-1)+(tlist[i].description.split(p).length-1)
+          var e=tlist[i].title.split(p),w='';for(var j=0;j<e.length;j++){w+=`${e[j]}`;if(j!=e.length-1)w+=`<span class="high">${p}</span>`}tlist[i].title=w
+          var e=tlist[i].description.split(p),w='';for(var j=0;j<e.length;j++){w+=`${e[j]}`;if(j!=e.length-1)w+=`<span class="high">${p}</span>`}tlist[i].description=w
+          tlist[i].title+=tlist[i].titleEnd || ''
         }
-        if(y==1) pdata[i].titleEnd='<span class="search-ts">最佳答案</span>'
-        else if(y==2) pdata[i].titleEnd+='<span class="search-ts">智能推荐</span>'
-      }
-      //查询结束
-      if(searchlist.length==0){
-        $('#news-title').html('没有找到相关结果').css({'text-align':"center"})
-      } else {
-        $('#news-title').html('搜索结果').css({'text-align':"left"})
-      }
-    } else {
-      $('#news-title').html('输入关键词开始查询').css({'text-align':"center"})
-    }
-    $("#cm-news-list").html("<!-- 成功加载 -->")
-    console.log("[搜索数据 文章数据搜索完成]",searchlist)
-    var list = [], tlist = searchlist,
-    glist=['BCGOC'/*八六群组织*/,'BP'/*政协*/,'BO'/*发改委*/,'BL'/*八年六班*/,'IGBK'/*英金百科*/,'CZIG'/*赤子英金*/,'CZIGCBC'/*英金出版社*/],
-    zlist=['TTSCLUB','zhangxinyue'/*张新越个人账号*/];
-
-    function compare(property,desc) {
-      return function (a, b) {
-        var value1 = a[property];
-        var value2 = b[property];
-        if(desc==true){
-          return value1 - value2; //升序
-        }else{
-          return value2 - value1; //降序
+        list=tlist.sort(compare('KeyNumber',false)) // 按照相关度排序
+        for(var i=0;i<list.length;i++){
+          var j=``,k=`i0`
+          if(list[i].img){
+          if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
+          else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
+          }
+          url=list[i].url
+          AuthorType="",d='',id=mx.Api.getRandomString(12),that=list[i].pId;
+          if(list[i].read && list[i].comment){d=`<span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span>`}
+          for(var j2=0;j2<glist.length;j2++){if(list[i].authorId==glist[j2]){AuthorType='g';}}
+          for(var j3=0;j3<zlist.length;j3++){if(list[i].authorId==zlist[j3]){AuthorType='z'}}
+          console.log('[文章代码]',{str:list[i]},'相关度',list[i].KeyNumber,'作者',list[i].authorId)
+          $("#cm-news-list").append(`<a target="_blank" pid="${list[i].pId}" id=${id} purl="${url}" href="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>${d}</span></a>`)
+          $(`a#${id}`).on('click',()=>{debounce(clickHistory(that),1000)})
         }
+        $("#cm-news-list").append(`<li class="ts"><span>赤子英金搜索引擎2.0</span></li>`);
+        console.groupEnd()//搜索信息详情Group关闭
       }
-    }
-    console.group('搜索信息详情')
-    for(var i=0;i<tlist.length;i++){
-      tlist[i].KeyNumber+=(tlist[i].title.split(p).length-1)+(tlist[i].description.split(p).length-1)
-      var e=tlist[i].title.split(p),w='';for(var j=0;j<e.length;j++){w+=`${e[j]}`;if(j!=e.length-1)w+=`<span class="high">${p}</span>`}tlist[i].title=w
-      var e=tlist[i].description.split(p),w='';for(var j=0;j<e.length;j++){w+=`${e[j]}`;if(j!=e.length-1)w+=`<span class="high">${p}</span>`}tlist[i].description=w
-      tlist[i].title+=tlist[i].titleEnd || ''
-      // var e=tlist[i].description.split(p),w='';for(var j=0;j<e.length;j++) if(j!=e.length-1) w+=`${e[j]}<span class="high">${p}</span>`;tlist[i].description=w
-    }
-    list=tlist.sort(compare('KeyNumber',false)) // 按照相关度排序
-    for(var i=0;i<list.length;i++){
-      var j=``,k=`i0`
-      if(list[i].img){
-       if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
-       else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
-      }
-      url=list[i].url
-      AuthorType="",d='',id=mx.Api.getRandomString(12),that=list[i].pId;
-      if(list[i].read && list[i].comment){d=`<span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span>`}
-      for(var j2=0;j2<glist.length;j2++){if(list[i].authorId==glist[j2]){AuthorType='g';}}
-      for(var j3=0;j3<zlist.length;j3++){if(list[i].authorId==zlist[j3]){AuthorType='z'}}
-      console.log('[文章代码]',{str:list[i]},'相关度',list[i].KeyNumber,'作者',list[i].authorId)
-      $("#cm-news-list").append(`<a pid="${list[i].pId}" id=${id} purl="${url}" href="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>${d}</span></a>`)
-      $(`a#${id}`).on('click',()=>{debounce(clickHistory(that),1000)})
-    }
-    // $.ajax({
-    //   url:`https://baidu.com/sugrec`,
-    //   async: true,
-    //   type:"jsonp",
-    //   success:(e)=>{
-    //     console.log(e)
-    //   },
-    //   fail:(e)=>{
-    //     console.error(e)
-    //   }
-    // })
-    $("#cm-news-list").append(`<li class="ts"><span>赤子英金搜索引擎2.0</span></li>`);
-    console.groupEnd()//搜索信息详情Group关闭
-
+    });
   },
   fail: function (res) {
     console.warn("[搜索参考列表读取]","Fail")

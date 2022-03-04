@@ -103,8 +103,8 @@
                     </div>
                     <div class="pd-panel__content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
                       <div class="pd-panel__buttonbox">
-                        <a class="pd-panel__button active" href="./download.html">下载 v0.0.1.109</a>
-                        <a class="pd-panel__button" href="more">详细信息</a>
+                        <a class="pd-panel__button active" href="./download.html">下载 v0.0.1</a>
+                        <a class="pd-panel__button" href="./video.html">观看视频</a>
                       </div>
                     </div>
                   </div>
@@ -112,22 +112,54 @@
               </div>
             </div>
           </section>
-          <section class="swiper-slide">
+          <section class="swiper-slide" style="flex-direction: column;justify-content: flex-start">
             <header class="section-header">
               <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">小，却大有可为</h2>
               <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">依托chromeium框架和mx等开源组件的强大支持，软件体积小运行速度快</h3>
             </header>
+            <div class="section-content">
+              <div class="center_side-right-bottom_img">
+                <img src="./image/611c0640582cf710cc837835f2ffb8e.jpg" alt="">
+              </div>
+            </div>
           </section>
-          <section class="swiper-slide dark">
+          <section class="swiper-slide dark" style="flex-direction: column;justify-content: flex-start">
             <header class="section-header">
-              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">隐私 全面防护</h2>
-              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">依托赤子英金安全框架beta和百度安全分析，为您的浏览保驾护航</h3>
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">权限 尽在掌握</h2>
+              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">可以自定义每一个网站的设置，更好的浏览体验</h3>
             </header>
+            <div class="section-content">
+              <div class="center_side-right-bottom_img">
+                <img src="./image/e3f4482ab0e890da9049513806b5e37.jpg" alt="">
+              </div>
+            </div>
           </section>
-          <section class="swiper-slide dark">
+          <section class="swiper-slide dark" style="flex-direction: column;justify-content: flex-start">
+            <header class="section-header">
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s">快捷 指尖掌握</h2>
+              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">设置多个快速搜索引擎切换，足以满足您的日常需求</h3>
+            </header>
+            <div class="section-content">
+              <div class="center_side-right-bottom_img">
+                <img src="./image/df65276bf0aa69d8aa8122c240f2790.jpg" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="swiper-slide dark" style="flex-direction: column;justify-content: flex-start">
             <header class="section-header">
               <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>暗</span>&nbsp;<span>同样精彩</span></h2>
               <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"></h3>
+            </header>
+            <div class="section-content">
+              <div class="center_side-right-bottom_img">
+                <img src="./image/495f5dd317353f1dcade562447fe967.jpg" alt="">
+              </div>
+            </div>
+          </section>
+          <section class="swiper-slide" style="flex-direction: column;justify-content: space-around">
+            <header class="section-header">
+              <h2 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>开始体验</span></h2>
+              <h3 class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s"><a class="pd-panel__button active" style="margin-right:0;" href="./download.html">下载 v0.0.1</a></h3>
             </header>
           </section>
         </div>
@@ -184,10 +216,10 @@
         slideChangeTransitionStart: function(){
           console.log(this.realIndex);
           setTimeout(()=>{
-            if(this.realIndex==2){
+            if(this.realIndex==2 || this.realIndex==3){
               $('.nav,.m-nav').addClass('dark')
               $('#app').css('background-color','rgb(30,18,59)')
-            } else if (this.realIndex==3){
+            } else if (this.realIndex==4){
               $('.nav,.m-nav').addClass('dark')
               $('#app').css('background-color','rgb(24,23,26)')
             }else{
