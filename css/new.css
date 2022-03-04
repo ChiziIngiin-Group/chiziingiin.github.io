@@ -784,9 +784,9 @@
   border-radius: 20px;
   box-shadow: 0 10px 29px 0 rgb(68 88 144 / 10%)
 }
-.pd-panel__button:last-child{
-  margin-right:0 !important;
-}
+/* .pd-panel__button:last-child{
+  !important;
+} */
 @media (max-width: 500px){
   .pd-panel__buttonbox{
     padding-top: 24px;
