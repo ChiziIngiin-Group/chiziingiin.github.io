@@ -62,19 +62,19 @@
       <div class="cm-sm-panel">
         <ul>
           <li class="date-panel">
-            <span class="d">2月7日</span>
+            <span class="d">3月1日</span>
             <span class="t">
               <span>班级</span>
               <span>新闻</span>
             </span>
           </li>
           <li>
-            <span class="t">2.7步征即将起航</span>
-            <span class="c">TTS俱乐部</span>
+            <span class="t">开学第一天</span>
+            <span class="c">八年六班</span>
           </li>
           <li>
-            <span class="t">猿题库战区招兵</span>
-            <span class="c">猿题库赤峰六中战区</span>
+            <span class="t">开学第一课</span>
+            <span class="c">八年六班</span>
           </li>
         </ul>
       </div>
@@ -100,8 +100,8 @@
 
   <style id="headstyle"></style>
   <script>
-    glist=['BCGOC'];
-    zlist=['TTSCLUB'];
+    glist=['BCGOC'/*八六群组织*/,'BP'/*政协*/,'BO'/*发改委*/,'BL'/*八年六班*/,'IGBK'/*英金百科*/,'CZIG'/*赤子英金*/,'CZIGCBC'/*英金出版社*/],
+    zlist=['TTSCLUB','zhangxinyue'/*张新越个人账号*/];
     function headstyle(e){
       $("#headstyle").html(`.cm-head::after{background-image: linear-gradient(${-(270 - Math.atan(window.innerWidth/e) * (180/Math.PI))}deg, #DA0101 50%, transparent 50%);}`)
     };headstyle(28)
@@ -114,7 +114,7 @@
       list=JSON.parse(e)
       $("#cm-news-list").html("")
       for(var i=0;i<list.length;i++){
-        if(list[i].pType=='msg'){
+        if(list[i].pType=='psg'){
           if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
           else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
           else{var j=``,k=`i0`};

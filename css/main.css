@@ -545,6 +545,7 @@ nav.nav-fixed{
     background-color: #0004;
   }
   #head .nav .container{
+    padding: 0;
     position: absolute;
     top:0;
     width: 70%;
@@ -1480,7 +1481,7 @@ ul.panel-list li span{
   .document-box h1{
     font-size: 25px;
     margin-bottom: 25px;
-    margin-top: 40px;
+    margin-top: 24px;
   }
   .document-box h2{
     font-size: 18px;
@@ -1496,8 +1497,8 @@ ul.panel-list li span{
 }
 @media (max-width:730px) {
   .content .container{
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-top: 50px !important;
   }
   .panel-box .panel-content {
