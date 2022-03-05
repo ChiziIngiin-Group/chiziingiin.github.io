@@ -790,6 +790,7 @@
 @media (max-width: 500px){
   .pd-panel__buttonbox{
     padding-top: 24px;
+    
   }
   .pd-panel__button{
     width:90%;
