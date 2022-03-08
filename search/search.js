@@ -121,8 +121,9 @@ $.ajax({
             // 优先级初始化
             if(!pdata[i].KeyNumber)pdata[i].KeyNumber=0;
             if(!pdata[i].titleEnd)pdata[i].titleEnd='';
-            // 英金百科
+            // 加分
             if(pdata[i].pType=='bk')pdata[i].KeyNumber+=2;
+            if(pdata[i].pType=='pd')pdata[i].KeyNumber+=4;
             // 仅搜索列表
             if(pdata[i].onlySearchText){
               for(var j=0;j<pdata[i].searchText.length;j++){

@@ -56,7 +56,7 @@ mx.js will be permanently open source for everyone to learn and use
 
     <!-- 页头区域 -->
     <div id="head">
-      <nav class="nav nav-fixed nobg light">
+      <nav class="nav nav-fixed nobg dark">
         <div class="m-nav-backgound"></div>
         <div class="container">
           <div class="nav-list">
@@ -143,7 +143,7 @@ mx.js will be permanently open source for everyone to learn and use
                   </div>
                   <div class="pd-panel__content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
                     <div class="pd-panel__buttonbox">
-                      <a class="pd-panel__button active" href="/product/browser/">即将发布</a>
+                      <a class="pd-panel__button active" href="/product/browser/">了解详情</a>
                       <a class="pd-panel__button" href="/product/browser/video.html">观看视频</a>
                     </div>
                   </div>
@@ -153,23 +153,32 @@ mx.js will be permanently open source for everyone to learn and use
           </div>
         </section>
         <section class="home-panel">
+          <div class="ad-panel">
+            <picture></picture>
+            <div class="ad-content">
+              <h2>国家反诈中心</h2>
+              <p>国家反诈中心是国务院打击治理电信网络新型违法犯罪工作部际联席会议合成作战平台，集资源整合、情报研判、侦查指挥为一体，在打击、防范、治理电信网络诈骗等新型违法犯罪中发挥着重要作用。</p>
+            </div>
+          </div>
+        </section>
+        <section class="home-panel">
           <div class="pd-panel">
             <div class="pd-panel__bg"></div>
             <div class="pd-panel__box">
               <div class="pd-panel-box">
                 <div class="pd-panel-description ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.4s" swiper-animate-delay="0.1s">
                   <div class="pd-panel-description__bg">
-                    <img src="/image/pdpanel-browser.svg" alt="">
+                    <img src="/image/" alt="">
                   </div>
                 </div>
                 <div class="pd-panel-content ani">
                   <div class="pd-panel__title">
-                    <h1 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">轻 浏览器</h1>
-                    <h3 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.4s">轻，致力于打造洁净，流畅，方便，体积小的浏览器。整洁且有趣的UI设计，让您的浏览不再单调或杂乱。</h3>
+                    <h1 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">英金气象</h1>
+                    <h3 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.4s">英金气象致力于打造快捷准确的台风、气象灾害预警程序。</h3>
                   </div>
                   <div class="pd-panel__content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
                     <div class="pd-panel__buttonbox">
-                      <a class="pd-panel__button" href="/product/browser/video.html">了解详情</a>
+                      <a class="pd-panel__button" href="/product/">了解详情</a>
                     </div>
                   </div>
                 </div>
@@ -184,18 +193,18 @@ mx.js will be permanently open source for everyone to learn and use
               <div class="pd-panel-box">
                 <div class="pd-panel-description ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.4s" swiper-animate-delay="0.1s">
                   <div class="pd-panel-description__bg">
-                    <img src="/image/pdpanel-browser.svg" alt="">
+                    <img src="/image/Munox.png" alt="">
                   </div>
                 </div>
                 <div class="pd-panel-content ani">
                   <div class="pd-panel__title">
-                    <h1 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">轻 浏览器</h1>
-                    <h3 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.4s">轻，致力于打造洁净，流畅，方便，体积小的浏览器。整洁且有趣的UI设计，让您的浏览不再单调或杂乱。</h3>
+                    <h1 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.2s">Munox.js</h1>
+                    <h3 class="ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.4s">Write less do more</h3>
                   </div>
                   <div class="pd-panel__content ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s">
                     <div class="pd-panel__buttonbox">
                       <!-- <a class="pd-panel__button active" href="/product/browser/"></a> -->
-                      <a class="pd-panel__button" href="/product/browser/video.html">了解详情</a>
+                      <a class="pd-panel__button" href="/product/">了解详情</a>
                     </div>
                   </div>
                 </div>
@@ -273,19 +282,19 @@ mx.js will be permanently open source for everyone to learn and use
       else $("#homepanel__style").html(".head-panel{background-size:100% auto;}")
     }
     if ($(window).scrollTop()> window.innerHeight) {
-      $("nav.nav").removeClass("nobg light")
-      $("nav.m-nav").removeClass("nobg light")
+      $("nav.nav").removeClass("nobg dark")
+      $("nav.m-nav").removeClass("nobg dark")
     } else {
-      $("nav.nav").addClass("nobg light")
-      $("nav.m-nav").addClass("nobg light")
+      $("nav.nav").addClass("nobg dark")
+      $("nav.m-nav").addClass("nobg dark")
     }
     $(window).scroll(()=>{
       if ($(window).scrollTop()> window.innerHeight) {
-        $("nav.nav").removeClass("nobg light")
-        $("nav.m-nav").removeClass("nobg light")
+        $("nav.nav").removeClass("nobg dark")
+        $("nav.m-nav").removeClass("nobg dark")
       } else {
-        $("nav.nav").addClass("nobg light")
-        $("nav.m-nav").addClass("nobg light")
+        $("nav.nav").addClass("nobg dark")
+        $("nav.m-nav").addClass("nobg dark")
       }
     })
     $(".scroll-down-div").click(()=>{ $('html, body').animate({ scrollTop: window.innerHeight }, 1000); })
