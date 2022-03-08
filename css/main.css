@@ -1342,6 +1342,9 @@ ul.panel-list li span{
 .-doc.-nav-fixed{
   margin-top: 122px;;
 }
+.-document {
+  margin-bottom: -80px;
+}
 .-document .container{
   padding-top:2px!important;
 }
