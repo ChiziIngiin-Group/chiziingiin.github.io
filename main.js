@@ -79,16 +79,16 @@ var mx = {
           pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
         } return pwd;
       }
-      var str = getpwd(),k=randomlist.length
-      for(var i=0;i<k;i++){
-        if(str == randomlist[i]) {
-          console.log('有重复')
-          str = getpwd();
-          i=0;
-        } else {
-          randomlist.push(str)
-        }
-      }
+      var str = getpwd()
+      // for(var i=0;i<k;i++){
+      //   if(str == randomlist[i]) {
+      //     console.log('有重复')
+      //     str = getpwd();
+      //     i=0;
+      //   } else {
+      //     randomlist.push(str)
+      //   }
+      // }
       return str;
     },
     GetQueryString:(name)=>{
@@ -197,12 +197,15 @@ var mx = {
       }
     },
     autoPage:(mode,firstpage,secondpage)=>{
+      if(!mx.Api.getFileName(0)){
+        throw console.error(mx.alert('警告','ERROR OF MX.API.AUTOPAGE GETFILENAME()'))
+      }
       if(mode  == 'mp'){
         console.log(mx.Api.getFileName(0))
         if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
           if(mx.Api.getFileName(0)!=firstpage.split('?')[0])
-            if(mx.Api.GetQueryString('from') != 'pc')  
-              window.location.href=firstpage
+            if(mx.Api.GetQueryString('from') != 'pc')  {}
+              // window.location.href=firstpage
         } else {
           if(mx.Api.getFileName(0)!=secondpage.split('?')[0])
             window.location.href=secondpage
@@ -288,6 +291,9 @@ var mx = {
 
 /* jq加载成功 */
 mx.Api.jqOnload(()=>{
+  $(()=>{
+    $('body').append(`<czi><img src="/image/czi_sm.png"></czi>`)
+  })
   /* Login Button */
   $(()=>{
     if(localStorage.getItem("userinfo") == "fail" || !localStorage.getItem("userinfo")){
