@@ -201,7 +201,8 @@ var mx = {
         console.log(mx.Api.getFileName(0))
         if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
           if(mx.Api.getFileName(0)!=firstpage.split('?')[0])
-            window.location.href=firstpage
+            if(mx.Api.GetQueryString('from') != 'pc')  
+              window.location.href=firstpage
         } else {
           if(mx.Api.getFileName(0)!=secondpage.split('?')[0])
             window.location.href=secondpage
