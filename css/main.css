@@ -1,5 +1,6 @@
-/*  */
+
 @charset "UTF-8";
+
 html {
   /* --PageBg:#f1f4fa; */
   --PageBg:#f6f6f6;
@@ -607,7 +608,7 @@ nav.nav-fixed{
   .m-nav-more__logo{
     display: block;
     height:90px;
-    background-image: url(/image/赤子英金.png);
+    background-image: url(/image/logo_cn_en.png);
     background-size: auto 45%;
     background-repeat: no-repeat;
     background-position: center;
@@ -2143,6 +2144,7 @@ czi{
   box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%);
   -webkit-box-shadow: 0 2px 6px 0 var(--Shadow);
   box-shadow: 0 2px 6px 0 var(--Shadow);
+  display:none;
 }
 czi img{
   height:100%;

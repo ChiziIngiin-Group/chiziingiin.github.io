@@ -167,6 +167,7 @@ var mx = {
       if(str) return `rgb(${r},${g},${b})`
       return {r:r,g:g,b:b}
     },
+    adblocked:false,
     ifImageDark:(imgurl)=>{
       var rgb=mx.Api.getImageColor(imgurl,false),t=0;
       if(rgb.r>128) t++
@@ -197,7 +198,7 @@ var mx = {
       }
     },
     autoPage:(mode,firstpage,secondpage)=>{
-      if(!mx.Api.getFileName(0)){
+      if(!mx.Api.getFileName(0) && mx.Api.getFileName(0) != ''){
         throw console.error(mx.alert('警告','ERROR OF MX.API.AUTOPAGE GETFILENAME()'))
       }
       if(mode  == 'mp'){
@@ -294,6 +295,9 @@ var mx = {
 
 /* jq加载成功 */
 mx.Api.jqOnload(()=>{
+  var mxadsforgoogle = mxadsforgoogle || false
+  if(!mxadsforgoogle)
+    mx.Api.adblocked = true
   $(()=>{
     $('body').append(`<czi><img src="/image/czi_sm.png"></czi>`)
   })
