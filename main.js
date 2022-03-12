@@ -8,7 +8,7 @@
 /* declare constant */
 const LoginPage = "./login/index.html";
 const VersionNumber = "0.2.0.007";
-
+var randomlist = [''];
 
 /* Version Info */
 console.log(`%cmx.js%cv${VersionNumber}`,`color: #fff; background-color:#007bff;padding:4px 6px;padding-right:3px;border-top-left-radius:5px;border-bottom-left-radius:5px;`, `color: #fff; background-color:#00a826;padding:4px 6px;padding-left:3px;border-top-right-radius:5px;border-bottom-right-radius:5px;`);
@@ -70,14 +70,26 @@ var mx = {
       }
     },
     getRandomString:(len)=>{
-      len = len || 32;
-      var $chars = 'AmSTnpN5Rz2EcdCKMXZabersYDW4xtwPBFGy36fhHJQijk78'; 
-      var maxPos = $chars.length;
-      var pwd = '';
-      for (i = 0; i < len; i++) {
-        pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+      function getpwd() {
+        len = len || 32;
+        var $chars = 'AmSTnpN5Rz2EcdCKMXZabersYDW4xtwPBFGy36fhHJQijk78'; 
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (i = 0; i < len; i++) {
+          pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        } return pwd;
       }
-      return pwd;
+      var str = getpwd(),k=randomlist.length
+      for(var i=0;i<k;i++){
+        if(str == randomlist[i]) {
+          console.log('有重复')
+          str = getpwd();
+          i=0;
+        } else {
+          randomlist.push(str)
+        }
+      }
+      return str;
     },
     GetQueryString:(name)=>{
       var u=window.location.href,r=null;
@@ -181,6 +193,18 @@ var mx = {
         if(f='0'){
           obj.css({'width':'100%','height':'auto'})
           console.log(2)
+        }
+      }
+    },
+    autoPage:(mode,firstpage,secondpage)=>{
+      if(mode  == 'mp'){
+        console.log(mx.Api.getFileName(0))
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+          if(mx.Api.getFileName(0)!=firstpage.split('?')[0])
+            window.location.href=firstpage
+        } else {
+          if(mx.Api.getFileName(0)!=secondpage.split('?')[0])
+            window.location.href=secondpage
         }
       }
     }
