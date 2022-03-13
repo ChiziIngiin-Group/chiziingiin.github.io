@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>包涵加密系统</title>
+  <meta name="description" content="赤子英金" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- Javascript -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vue.js"></script>
+  <script src="/js/md5.js"></script>
+  <script src="/main.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/new.css" />
+</head>
+<body>
+  <input type="text" placeholder="输入待加密/解密文本" id="f">
+  <a href="javascript:$('#f').val(window.btoa($('#f').val()))">加密</a>
+  <a href="javascript:$('#f').val(window.atob($('#f').val()))">解密</a>
+</body>
+</html>
