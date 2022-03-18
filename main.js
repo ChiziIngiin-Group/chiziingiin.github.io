@@ -217,6 +217,13 @@ var mx = {
       }
     }
   },
+  document:()=>{
+    $(()=>{
+      setTimeout(()=>{
+        $('.load').fadeOut()
+      },500)
+    })
+  },
   /* System basic function */
   system: {
     /* login: This function is used to automatically verify the login status */
@@ -295,6 +302,7 @@ var mx = {
 
 /* jq加载成功 */
 mx.Api.jqOnload(()=>{
+  $('.-document').append('<script>mx.alert("提示","维护中")</script>')
   var mxadsforgoogle = mxadsforgoogle || false
   if(!mxadsforgoogle)
     mx.Api.adblocked = true
