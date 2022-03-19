@@ -861,20 +861,39 @@ nav.nav-fixed{
   text-align: center;
   box-sizing: border-box;
   min-height: 560px;
-  background-color: rgb(19, 19, 26);
   border-bottom: solid 1px #ddd;
   margin-bottom: 90px;
-  background-image: url(http://munox.gitee.io/image/banner.jpg);
-  background-image: url(/image/banner.jpg);
+  overflow: hidden;
+
+}
+.head-panel::after{
+  content: '';
+  position: absolute;
+  top:-100%;
+  left:-100%;
+  width:300%;
+  height:300%;
+  z-index: -1;
+  background-image: linear-gradient(0deg,#667eea 10%,#764ba2 90%);
   background-position: center;
+  transform-origin:center;
   background-repeat: no-repeat;
+  animation: homepanel 3s ease-in-out infinite;
+}
+@keyframes homepanel {
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
 }
 .head-panel__content{
   height:270px;
   padding:70px 0;
   position: absolute;
   width:100%;
-  background-image: radial-gradient(closest-side,#0005 8%,#0000 92%);
+  /* background-image: radial-gradient(closest-side,#0005 8%,#0000 92%); */
 }
 .head-panel__content h1{
   font-size: 48px;
@@ -1355,6 +1374,7 @@ ul.panel-list li span{
   list-style-type: disc;
   list-style-position: outside;
   padding-left: 18px;
+  margin-bottom: 8px;
 }
 .order_list li, .unorder_list li {
   list-style: inherit;
