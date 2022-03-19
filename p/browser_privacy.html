@@ -106,7 +106,7 @@
                 <span id="read">浏览 5</span>
               </span>
             </div>
-            <div class="header-user">
+            <div class="header-user" authorId="CZIG">
               <div class="header-user-info">
                 <div class="header-user-img"><img src="/image//header//chiziingiin.jpg" alt=""></div>
                 <div class="header-user-ifm">
@@ -115,7 +115,7 @@
                 </div>
               </div>
               <div class="header-user-flw">
-                <a href="">
+                <a id="user-flw">
                   <span class="mxicontg">
                     <svg style="width:16px;height:16px" class="normal" viewBox="0 0 24 24">
                       <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
@@ -128,6 +128,13 @@
                 </a>
               </div>
             </div>
+            <script>
+              $('#user-flw').click(()=>{
+                mx.system.login('alert',()=>{
+                  
+                })
+              })
+            </script>
           </header>
           <section>
 

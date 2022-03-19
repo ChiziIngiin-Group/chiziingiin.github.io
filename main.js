@@ -215,6 +215,19 @@ var mx = {
             window.location.href=secondpage
         }
       }
+    },
+    OpenLoginAlert:(f)=>{
+      $('body').append('<login><iframe src="/login/?iframe=true"></iframe></login>')
+      setInterval(function(){
+        if(sessionStorage.getItem('login') == 'sus'){
+          $('login').fadeOut(500)
+          setTimeout(() => {
+            $('login').remove()
+            console.log(typeof f,f)
+            if(f) f()
+          }, 600);
+        }
+      },500)
     }
   },
   document:()=>{
@@ -227,7 +240,7 @@ var mx = {
   /* System basic function */
   system: {
     /* login: This function is used to automatically verify the login status */
-    login:(e)=>{
+    login:(e,f)=>{
       /* Judgment: verify whether the environment is safe */
       if (mx.system.security()) {
         /* Judgment: verify whether the user is logged in */
@@ -239,10 +252,12 @@ var mx = {
             // window.location.href = LoginPage + "?url=" + encodeURIComponent(window.location.href);
           } else if (e == "alert") {
             /* Log in as a pop-up */
-            mx.Api.OpenLoginAlert();
+            mx.Api.OpenLoginAlert(f);
           }
         } else {
-          console.log("[Login] The user is already logged in")
+          console.log("[Login] The user is already logged in");
+          if(f) f()
+          return true;
         }
       }
     },
@@ -302,6 +317,7 @@ var mx = {
 
 /* jq加载成功 */
 mx.Api.jqOnload(()=>{
+
   $('.-document').append('<script>mx.alert("提示","维护中")</script>')
   var mxadsforgoogle = mxadsforgoogle || false
   if(!mxadsforgoogle)
