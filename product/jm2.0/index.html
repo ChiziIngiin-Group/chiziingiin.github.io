@@ -4,8 +4,8 @@
 <head>
   <!-- Basic configuration -->
   <meta charset="UTF-8" />
-  <title>赤子英金2.0加密解密系统</title>
-  <meta name="description" content="赤子英金2.0加密解密系统" />
+  <title>身份验证</title>
+  <meta name="description" content="身份验证" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -101,17 +101,17 @@
       <div class="container">
         <div class="document-box">
           <header class="news-basic">
-            <h1>赤子英金2.0加密解密系统</h1>
-            <div class="header-info">
-              <span class="header-info-over">
-                <span id="time">2022-03-20 9:55:32</span>
-                <span id="read">浏览 14</span>
-              </span>
-            </div>
+            <h1>身份验证 · 赤子英金2.0加密解密系统</h1>
           </header>
           <section class="">
-            <p>本系统依照《赤子英金2.0加密算法（修订版）》制作</p>
-            <iframe src="/bhfrs.html" style="width:100%;min-height:300px;" frameborder="0"></iframe>
+            <p><a href="/login/?url=/product/jm2.0">重新登陆</a></p>
+            <script>
+              if(JSON.parse(localStorage.getItem('userinfo')).uname == '赤峰六中八年六班学生号' || JSON.parse(localStorage.getItem('userinfo')).uname == 'The dreams'){
+                window.location.href = './bhfrs.html'
+              } else {
+                mx.alert('警告','无权访问!',false)
+              }
+            </script>
           </section>
         </div>
       </div>
