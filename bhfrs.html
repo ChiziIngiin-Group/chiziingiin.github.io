@@ -39,9 +39,10 @@
           b3 = b % p;  //求最大倍数的余数
           s += a[b3] + a[b2] + a[b1];  //根据余数值映射到密钥中对应下标位置的字符
       }
-      return s;  //返回这些映射的字符
+      return window.btoa(s);  //返回这些映射的字符
     } 
     var fromCode = function (str) {
+      str = window.atob(str)
     //定义密钥，36个字母和数字
       var key = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       var p = key.length;  //获取密钥的长度
