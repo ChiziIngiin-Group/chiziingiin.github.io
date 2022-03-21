@@ -1,6 +1,28 @@
 
 @charset "UTF-8";
 
+
+/* 历史网站默哀 */
+/*
+  
+  2022-2-5
+  2022-3-21  东航失事
+*/
+
+html{
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-filter: grey;
+  filter: gray;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}
+
+
+
+
 html {
   /* --PageBg:#f1f4fa; */
   --PageBg:#f6f6f6;
@@ -539,6 +561,7 @@ nav.nav-fixed{
     width:100%;
     height:100%;
     background-color: #0004;
+    background-color: rgba(0,0,0,0.267);    
     z-index: 201;
     opacity: 0;
     transition: opacity 0.2s ease,visibility 0.2s ease;
@@ -548,6 +571,7 @@ nav.nav-fixed{
     width:100%;
     height:100%;
     background-color: #0004;
+    background-color: rgba(0,0,0,0.267);    
   }
   #head .nav .container{
     padding: 0;
@@ -2022,6 +2046,7 @@ html{
   overflow: auto;
   margin: 0;
   background: #000000cc;
+  background-color: rgba(0,0,0,0.267);
   z-index: 999999;
   width:100%;
   height:100%;
