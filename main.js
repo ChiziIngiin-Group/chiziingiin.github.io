@@ -13,7 +13,6 @@ var randomlist = [''];
 /* Version Info */
 console.log(`%cmx.js%cv${VersionNumber}`,`color: #fff; background-color:#007bff;padding:4px 6px;padding-right:3px;border-top-left-radius:5px;border-bottom-left-radius:5px;`, `color: #fff; background-color:#00a826;padding:4px 6px;padding-left:3px;border-top-right-radius:5px;border-bottom-right-radius:5px;`);
 
-
 /* Main Function */
 var mx = {
   data:{
@@ -232,6 +231,15 @@ var mx = {
   },
   document:()=>{
     $(()=>{
+      sessionStorage.setItem('st',$('.document-box header h1').text().substring(0,15))
+      sessionStorage.setItem('sc',$('.document-box section').text().substring(0,120))
+      sessionStorage.setItem('su',top.location.href)
+      $('#saveimage').click(()=>{
+        $('body').append(`<iframe src="/api/docshareimage/index.html" class="shareifm" frameborder="0"></iframe><div id="closeifm"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+        </svg></div>`)
+      $('#closeifm').click(()=>{$('.shareifm').remove();$('#closeifm').remove()})
+      })
       setTimeout(()=>{
         $('.load').fadeOut()
       },500)
