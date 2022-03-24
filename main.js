@@ -235,7 +235,7 @@ var mx = {
       sessionStorage.setItem('sc',$('.document-box section').text().substring(0,120))
       sessionStorage.setItem('su',top.location.href)
       $('#saveimage').click(()=>{
-        $('body').append(`<iframe src="/api/docshareimage/index.html" class="shareifm" frameborder="0"></iframe><div id="closeifm"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        $('body').append(`<iframe src="/Api/docshareimage/index.html" class="shareifm" frameborder="0"></iframe><div id="closeifm"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
           <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
         </svg></div>`)
       $('#closeifm').click(()=>{$('.shareifm').remove();$('#closeifm').remove()})

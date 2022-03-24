@@ -1575,7 +1575,7 @@ login iframe{
 }
 .doc-operation{
   margin-bottom: 17px;
-  padding:10px 0;
+  padding:18px 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -1586,9 +1586,10 @@ login iframe{
 .opr-item a{
   display: block;
   margin:auto;
-  width:50px;
-  height:50px;
-  background-color: #fafafa;
+  width:45px;
+  height:45px;
+  /* background-color: #fafafa; */
+  border:1px solid #ededed;
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -1605,6 +1606,7 @@ login iframe{
   text-align: center;
   margin-top: 8px;
 }
+
 .shareimgboxt{
   width:400px;
   padding:30px 22px;
@@ -1635,6 +1637,11 @@ login iframe{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   margin-bottom: 10px;
+  font-family: 'mxfont';
+
+}
+.shareimgboxt .ctbox .ct{
+  font-family: 'mxfont';
 }
 .shareimgboxt .srtxt{
   margin-top: 24px;
@@ -1643,7 +1650,8 @@ login iframe{
   align-items: center;
   align-content: center;
   width:100%;
-  padding:0px 14px
+  padding:0px 14px;
+  font-size: 12px;
 }
 .shareimgboxt .srtxt div:first-child{
   display: flex;
@@ -1651,7 +1659,7 @@ login iframe{
   color:#999
 }
 .shareimgboxt .srtxt div:first-child span:first-child{
-  margin-bottom:4px;
+  margin-bottom:8px;
 }
 .shareimgboxt .srtxt div:last-child{
   width:60px;
@@ -1667,6 +1675,8 @@ login iframe{
   width:100%;
   height:100%;
   top:0;left:0;
+  right:0;bottom:0;
+  margin:auto;
   padding-top: 80px;
   background-color: #fff;
   z-index: 10000;
