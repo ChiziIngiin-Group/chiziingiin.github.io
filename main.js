@@ -8,11 +8,10 @@
 /* declare constant */
 const LoginPage = "./login/index.html";
 const VersionNumber = "0.2.0.007";
-
+var randomlist = [''];
 
 /* Version Info */
 console.log(`%cmx.js%cv${VersionNumber}`,`color: #fff; background-color:#007bff;padding:4px 6px;padding-right:3px;border-top-left-radius:5px;border-bottom-left-radius:5px;`, `color: #fff; background-color:#00a826;padding:4px 6px;padding-left:3px;border-top-right-radius:5px;border-bottom-right-radius:5px;`);
-
 
 /* Main Function */
 var mx = {
@@ -70,14 +69,26 @@ var mx = {
       }
     },
     getRandomString:(len)=>{
-      len = len || 32;
-      var $chars = 'AmSTnpN5Rz2EcdCKMXZabersYDW4xtwPBFGy36fhHJQijk78'; 
-      var maxPos = $chars.length;
-      var pwd = '';
-      for (i = 0; i < len; i++) {
-        pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+      function getpwd() {
+        len = len || 32;
+        var $chars = 'AmSTnpN5Rz2EcdCKMXZabersYDW4xtwPBFGy36fhHJQijk78'; 
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (i = 0; i < len; i++) {
+          pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        } return pwd;
       }
-      return pwd;
+      var str = getpwd()
+      // for(var i=0;i<k;i++){
+      //   if(str == randomlist[i]) {
+      //     console.log('有重复')
+      //     str = getpwd();
+      //     i=0;
+      //   } else {
+      //     randomlist.push(str)
+      //   }
+      // }
+      return str;
     },
     GetQueryString:(name)=>{
       var u=window.location.href,r=null;
@@ -106,7 +117,7 @@ var mx = {
     },
     getFileName:(n)=>{
       var t1 = window.location.href;
-      if (t1 && t1.indexOf('?') >-1) var t2 = t1.split("/");
+      if (t1) var t2 = t1.split("/");
       if (t2) return t3 = t2[t2.length-(1+parseInt(n))].split("?")[0].split("#")[0];
       return null
     },
@@ -155,6 +166,7 @@ var mx = {
       if(str) return `rgb(${r},${g},${b})`
       return {r:r,g:g,b:b}
     },
+    adblocked:false,
     ifImageDark:(imgurl)=>{
       var rgb=mx.Api.getImageColor(imgurl,false),t=0;
       if(rgb.r>128) t++
@@ -183,12 +195,60 @@ var mx = {
           console.log(2)
         }
       }
+    },
+    autoPage:(mode,firstpage,secondpage)=>{
+      if(!mx.Api.getFileName(0) && mx.Api.getFileName(0) != ''){
+        throw console.error(mx.alert('警告','ERROR OF MX.API.AUTOPAGE GETFILENAME()'))
+      }
+      if(mode  == 'mp'){
+        console.log(mx.Api.getFileName(0))
+        if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))){
+          if(mx.Api.getFileName(0)!=firstpage.split('?')[0]){
+            if(mx.Api.GetQueryString('from') != 'pc')  {
+              window.location.href=firstpage
+              console.log('k',mx.Api.getFileName(0)!=firstpage.split('?')[0])
+            }
+          }
+        } else {
+          if(mx.Api.getFileName(0)!=secondpage.split('?')[0])
+            window.location.href=secondpage
+        }
+      }
+    },
+    OpenLoginAlert:(f)=>{
+      $('body').append('<login><iframe src="/login/?iframe=true"></iframe></login>')
+      setInterval(function(){
+        if(sessionStorage.getItem('login') == 'sus'){
+          $('login').fadeOut(500)
+          setTimeout(() => {
+            $('login').remove()
+            console.log(typeof f,f)
+            if(f) f()
+          }, 600);
+        }
+      },500)
     }
+  },
+  document:()=>{
+    $(()=>{
+      sessionStorage.setItem('st',$('.document-box header h1').text().substring(0,15))
+      sessionStorage.setItem('sc',$('.document-box section').text().substring(0,120))
+      sessionStorage.setItem('su',top.location.href)
+      $('#saveimage').click(()=>{
+        $('body').append(`<iframe src="/Api/docshareimage/index.html" class="shareifm" frameborder="0"></iframe><div id="closeifm"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+        </svg></div>`)
+      $('#closeifm').click(()=>{$('.shareifm').remove();$('#closeifm').remove()})
+      })
+      setTimeout(()=>{
+        $('.load').fadeOut()
+      },500)
+    })
   },
   /* System basic function */
   system: {
     /* login: This function is used to automatically verify the login status */
-    login:(e)=>{
+    login:(e,f)=>{
       /* Judgment: verify whether the environment is safe */
       if (mx.system.security()) {
         /* Judgment: verify whether the user is logged in */
@@ -200,10 +260,12 @@ var mx = {
             // window.location.href = LoginPage + "?url=" + encodeURIComponent(window.location.href);
           } else if (e == "alert") {
             /* Log in as a pop-up */
-            mx.Api.OpenLoginAlert();
+            mx.Api.OpenLoginAlert(f);
           }
         } else {
-          console.log("[Login] The user is already logged in")
+          console.log("[Login] The user is already logged in");
+          if(f) f()
+          return true;
         }
       }
     },
@@ -263,6 +325,14 @@ var mx = {
 
 /* jq加载成功 */
 mx.Api.jqOnload(()=>{
+
+  $('.-document').append('<script>mx.alert("提示","维护中")</script>')
+  var mxadsforgoogle = mxadsforgoogle || false
+  if(!mxadsforgoogle)
+    mx.Api.adblocked = true
+  $(()=>{
+    $('body').append(`<czi><img src="/image/czi_sm.png"></czi>`)
+  })
   /* Login Button */
   $(()=>{
     if(localStorage.getItem("userinfo") == "fail" || !localStorage.getItem("userinfo")){

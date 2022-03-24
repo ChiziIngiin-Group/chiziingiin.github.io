@@ -14,10 +14,14 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/md5.js"></script>
   <script src="/main.js"></script>
+  <script src="/js/qrcode.js"></script>
+  <script src="/js/html2canvas.min.js"></script>
+  <script>
+    mx.document();
+  </script>
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/css/colorpicker.css">
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/new.css" />
   <!-- Preload -->
   <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
@@ -84,91 +88,154 @@
           <a class="m-nav-logo">
             <img src="/image/赤子英金.png" alt="">
           </a>
-          <a href="/user.html" id="m-login-button" class="m-nav-user">
-            <!-- <img title=" "/> -->
-          </a>
+          <a href="/user.html" id="m-login-button" class="m-nav-user"></a>
         </div>
       </nav>
     </div>
     <!-- 内容区域 -->
-    <div id="content" class="content -nav-fixed">
-
+    <div id="content" class="content -nav-fixed -document">
+      <div class="load">
+        <img src="/image/load.gif" alt="赤子英金" srcset="">
+        <span>加载中...</span>
+      </div>
       <div class="container">
-        <div class="box-content">
-          <div class="content-box">
-            <div class="document-box">
-              <h1>隐私政策</h1>
-              <p><strong>最后更新日期：2022年2月5日</strong></p>
-              <p>轻浏览器 （以及下文提到的“我们”、“我们的”或“本app”）是由主体 赤子英金信息技术、Net凌空 提供的网络产品。</p>
-              <p><strong>产品名称：</strong>轻浏览器（Qing Browser）</p>
-              <p><strong>产品类别</strong>：APP</p>
-              <p><strong>网址：</strong><a href="https://chiziingiin.github.io/product/browser">chiziingiin.github.io/product/browser</a></p>
-              <p><br/></p>
-              <p>如果您决定使用我们产品提供的服务，本协议用于告知我们对于用户的隐私如何收集、使用和披露。</p>
-              <p>如果您选择使用我们提供的服务，则表示您同意收集和使用与此政策相关的信息。我们收集的个人信息用于提供和改进服务。除非本隐私政策中另有说明，否则我们不会与任何人一起使用或分享您的信息。</p>
-              
-              <h2 s>1&nbsp;收集信息</h2>
-              <p>我们收集您提供给我们的部分或全部信息， 以及您使用网站和应用程序的数据，但我们将主要使用收集的数据为您提供满意的服务，并提高您的使用体验。</p>
-              <p>我们不会主动收集您的隐私信息（包括但不限于姓名、性别、地区、联系方式等），但需要身份验证的服务除外，我们会在这类服务开始之前向您提示我们将要收集哪些信息，如您不同意我们将终止这类服务。</p>
-              <h3 s>1.1&nbsp;设备和技术信息的收集</h3>
-              <p>我们可能会收集您使用我们的应用程序所需的数据， 我们可以维护和分析应用程序的功能, 并对应用程序的内容进行个性化设置。但这些数据不会上传到云端。</p>
-              <p>我们可能会自动获得有关您的设备的某些信息，包括 IP 地址，时区会话开始/停止时间；IDFVs，语言；网络状态 (无线等)，浏览器插件类型和版本；平台，SDK 版本，时间戳；技术设备信息 (如设备型号和名称、操作系统名称和版本、CPU 信息、存储大小、屏幕大小、固件、应用程序的软件 API 密钥标识符、推送通知令牌。虽然这些信息(如IDFV、IP地址)可能唯一地标识您的设备，但此信息并没有亲自识别您。</p>
-              <h3 s>1.2&nbsp;个人基础信息收集</h3>
-              <p>当您使用需要身份验证的服务前我们会给予您相应的提示，如果您统一，我们将会收集可能包括但不限于以下信息</p>
-              <ul class="unorder_list">
-                <li>头像，昵称，性别</li>
-                <li>电子邮件地址</li>
-                <li>地区（精确到地级市）</li>
-              </ul>
-              <h3 s>1.3&nbsp;个人敏感信息收集</h3>
-              <p>根据国家相关政策要求，当您使用某些服务的时候，我们会在征求您同意的情况下收集以下信息</p>
-              <ul class="unorder_list">
-                <li>姓名及身份证号</li>
-                <li>详细地址</li>
-                <li>详细的联系方式</li>
-              </ul>
+        <div class="document-box">
+          <header class="news-basic">
+            <h1>轻浏览器 隐私政策</h1>
+            <div class="header-info">
+              <span class="header-info-over">
+                <span id="time">2022-03-15 21:55:32</span>
+                <span id="read">浏览 5</span>
+              </span>
+            </div>
+            <div class="header-user" authorId="CZIG">
+              <div class="header-user-info">
+                <div class="header-user-img"><img src="/image/header/chiziingiin.jpg" alt=""></div>
+                <div class="header-user-ifm">
+                  <div class="header-user-name">赤子英金集团</div>
+                  <div class="header-user-sign">梦想只是开始，探索永不止步</div>
+                </div>
+              </div>
+              <div class="header-user-flw">
+                <a id="user-flw">
+                  <span class="mxicontg">
+                    <svg style="width:16px;height:16px" class="normal" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                    <svg style="width:16px;height:16px" class="active" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                  </span>
+                  <span>关注</span>
+                </a>
+              </div>
+            </div>
+            <script>
+              $('#user-flw').click(()=>{
+                mx.system.login('alert',()=>{
+                  
+                })
+              })
+            </script>
+          </header>
+          <section class="">
 
-              <h2 s>2&nbsp;如何使用收集的信息</h2>
-              <p>我们将收集到的信息用于以下目的</p>
-              <ul class="unorder_list">
-                <li>提供和维护服务</li>
-                <li>提供分析或有价值的信息，以便我们改进服务</li>
-                <li>检测，预警，分析风险问题</li>
-                <li>为您提供支持</li>
-              </ul>
+            <p><strong>最后更新日期：2022年2月5日</strong></p>
+            <p>轻浏览器 （以及下文提到的“我们”、“我们的”或“本app”）是由主体 赤子英金信息技术、Net凌空 提供的网络产品。</p>
+            <p><strong>产品名称：</strong>轻浏览器（Qing Browser）</p>
+            <p><strong>产品类别</strong>：APP</p>
+            <p><strong>网址：</strong><a href="https://chiziingiin.github.io/product/browser">chiziingiin.github.io/product/browser</a></p>
+            <p><br/></p>
+            <p>如果您决定使用我们产品提供的服务，本协议用于告知我们对于用户的隐私如何收集、使用和披露。</p>
+            <p>如果您选择使用我们提供的服务，则表示您同意收集和使用与此政策相关的信息。我们收集的个人信息用于提供和改进服务。除非本隐私政策中另有说明，否则我们不会与任何人一起使用或分享您的信息。</p>
+            
+            <h2 s>1&nbsp;收集信息</h2>
+            <p>我们收集您提供给我们的部分或全部信息， 以及您使用网站和应用程序的数据，但我们将主要使用收集的数据为您提供满意的服务，并提高您的使用体验。</p>
+            <p>我们不会主动收集您的隐私信息（包括但不限于姓名、性别、地区、联系方式等），但需要身份验证的服务除外，我们会在这类服务开始之前向您提示我们将要收集哪些信息，如您不同意我们将终止这类服务。</p>
+            <h3 s>1.1&nbsp;设备和技术信息的收集</h3>
+            <p>我们可能会收集您使用我们的应用程序所需的数据， 我们可以维护和分析应用程序的功能, 并对应用程序的内容进行个性化设置。但这些数据不会上传到云端。</p>
+            <p>我们可能会自动获得有关您的设备的某些信息，包括 IP 地址，时区会话开始/停止时间；IDFVs，语言；网络状态 (无线等)，浏览器插件类型和版本；平台，SDK 版本，时间戳；技术设备信息 (如设备型号和名称、操作系统名称和版本、CPU 信息、存储大小、屏幕大小、固件、应用程序的软件 API 密钥标识符、推送通知令牌。虽然这些信息(如IDFV、IP地址)可能唯一地标识您的设备，但此信息并没有亲自识别您。</p>
+            <h3 s>1.2&nbsp;个人基础信息收集</h3>
+            <p>当您使用需要身份验证的服务前我们会给予您相应的提示，如果您统一，我们将会收集可能包括但不限于以下信息</p>
+            <ul class="unorder_list">
+              <li>头像，昵称，性别</li>
+              <li>电子邮件地址</li>
+              <li>地区（精确到地级市）</li>
+            </ul>
+            <h3 s>1.3&nbsp;个人敏感信息收集</h3>
+            <p>根据国家相关政策要求，当您使用某些服务的时候，我们会在征求您同意的情况下收集以下信息</p>
+            <ul class="unorder_list">
+              <li>姓名及身份证号</li>
+              <li>详细地址</li>
+              <li>详细的联系方式</li>
+            </ul>
 
-              <h2 s>3&nbsp;您的信息</h2>
-              <h3 s>3.1&nbsp;信息安全</h3>
-              <p>本app所使用的所有网站都使用https协议加密以保障您的数据传输安全</p>
-              <p style="display: flex;text-indent: 0px;">
-                <img l src="https://anquan.baidu.com/console/static/img/favicons.ico" alt=" ">百度安全
-                和
-                <img l src="/image/Munox.png" alt=" ">赤子英金Munox安全团队
-                提供安全支持和分析
-              </p>
-              <h3 s>3.2&nbsp;链接到其他网站</h3>
-              <p>我们的服务可能包含指向非我们运营的其他网站的链接。如果您点击第三方链接，您将被引导至该第三方的网站。我们强烈建议您查看您访问的每个站点的隐私政策。 我们无法控制任何第三方网站或服务的内容，隐私政策或做法，也不承担任何责任。</p>
-              <h3 s>3.3&nbsp;儿童信息</h3>
-              <p>我们非常重视对未成年人个人信息的保护。如果你是14周岁以下的未成年人，在使用我们的服务前，应确保事先取得监护人的同意，如果你是已满14不满18岁的未成年人，在使用我们服务前，应确保事先取得本人或监护人的同意。</p>
-              <h3 s>3.4&nbsp;删除信息</h3>
-              <p>当您的信息上传至我们的数据库，我们将有权删除它。或者当不再需要信息时，我们将使用合理的措施删除它，以保护信息不被未经授权的访问或使用。用户上传的内容如果涉嫌黄色、暴力不受欢迎内容我们将有权进行删除。</p>
-              <p></p>
+            <h2 s>2&nbsp;如何使用收集的信息</h2>
+            <p>我们将收集到的信息用于以下目的</p>
+            <ul class="unorder_list">
+              <li>提供和维护服务</li>
+              <li>提供分析或有价值的信息，以便我们改进服务</li>
+              <li>检测，预警，分析风险问题</li>
+              <li>为您提供支持</li>
+            </ul>
 
-              <h2 s>4&nbsp;Cookies及相关技术政策</h2>
-              <p>请参阅<a href="https://chiziingiin.github.io/cookies.html">赤子英金关于Cookies及相关技术政策</a></p>
+            <h2 s>3&nbsp;您的信息</h2>
+            <h3 s>3.1&nbsp;信息安全</h3>
+            <p>本app所使用的所有网站都使用https协议加密以保障您的数据传输安全</p>
+            <p style="text-indent: 0px;">
+              <img style="height:20px;vertical-align: center;" src="https://anquan.baidu.com/console/static/img/favicons.ico" alt=" ">百度安全
+              和
+              <img style="height:20px;vertical-align: center;" src="/image/Munox.png" alt=" ">赤子英金Munox安全团队
+              提供安全支持和分析
+            </p>
+            <h3 s>3.2&nbsp;链接到其他网站</h3>
+            <p>我们的服务可能包含指向非我们运营的其他网站的链接。如果您点击第三方链接，您将被引导至该第三方的网站。我们强烈建议您查看您访问的每个站点的隐私政策。 我们无法控制任何第三方网站或服务的内容，隐私政策或做法，也不承担任何责任。</p>
+            <h3 s>3.3&nbsp;儿童信息</h3>
+            <p>我们非常重视对未成年人个人信息的保护。如果你是14周岁以下的未成年人，在使用我们的服务前，应确保事先取得监护人的同意，如果你是已满14不满18岁的未成年人，在使用我们服务前，应确保事先取得本人或监护人的同意。</p>
+            <h3 s>3.4&nbsp;删除信息</h3>
+            <p>当您的信息上传至我们的数据库，我们将有权删除它。或者当不再需要信息时，我们将使用合理的措施删除它，以保护信息不被未经授权的访问或使用。用户上传的内容如果涉嫌黄色、暴力不受欢迎内容我们将有权进行删除。</p>
+            <p></p>
 
-              <h2 s>5&nbsp;第三方统计分析</h2>
-              <p>我们产品使用第三方统计，您需要一并同意第三方服务商提供的隐私政策；</p>
-              <p><a href="https://tongji.baidu.com/web/help/article?id=330&type=0">百度分析隐私政策</a></p>
-              <p>使用目的和范围：仅用于统计日活、新增用户、功能的使用频率等。</p>
+            <h2 s>4&nbsp;Cookies及相关技术政策</h2>
+            <p>请参阅<a href="https://chiziingiin.github.io/cookies.html">赤子英金关于Cookies及相关技术政策</a></p>
 
-              <h2 s>6&nbsp;本协议的变更</h2>
-              <p>我们将会更新本《隐私政策》，以反映我们在实际操作和服务方面的变更。在发布本《隐私政策》的变更时，我们会修改本《隐私政策》文首的“最后更新日期”。如果我们对隐私信息的收集、使用及/或储存方式做出任何重大变更，我们将在您登录或使用服务时，将变更通知显示于显眼位置，以此向您发出通知。我们建议您不时查阅此页面，以得知本《隐私政策》或我们其他政策的任何变更。</p>
+            <h2 s>5&nbsp;第三方统计分析</h2>
+            <p>我们产品使用第三方统计，您需要一并同意第三方服务商提供的隐私政策；</p>
+            <p><a href="https://tongji.baidu.com/web/help/article?id=330&type=0">百度分析隐私政策</a></p>
+            <p>使用目的和范围：仅用于统计日活、新增用户、功能的使用频率等。</p>
 
-              <h2 s>7&nbsp;支持</h2>
-              <p>如您对本协议有任何疑问，请联系：cfzxycn@163.com</p>
+            <h2 s>6&nbsp;本协议的变更</h2>
+            <p>我们将会更新本《隐私政策》，以反映我们在实际操作和服务方面的变更。在发布本《隐私政策》的变更时，我们会修改本《隐私政策》文首的“最后更新日期”。如果我们对隐私信息的收集、使用及/或储存方式做出任何重大变更，我们将在您登录或使用服务时，将变更通知显示于显眼位置，以此向您发出通知。我们建议您不时查阅此页面，以得知本《隐私政策》或我们其他政策的任何变更。</p>
 
-
+            <h2 s>7&nbsp;支持</h2>
+            <p>如您对本协议有任何疑问，请联系：cfzxycn@163.com</p>
+          </section>
+          <div class="doc-operation">
+            <div class="opr-item">
+              <a id="saveimage">
+                <svg style="width:30px;height:30px"  viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="70%">
+                      <stop offset="0%" style="stop-color:#ff9b0f;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#ff402e;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#grad1)" d="M8.5,13.5L11,16.5L14.5,12L19,18H5M21,19V5C21,3.89 20.1,3 19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19Z" />
+                </svg>
+              </a>
+            </div>
+            <div class="opr-item">
+              <a id="copylink">
+                <svg style="width:28px;height:28px"  viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="70%">
+                      <stop offset="0%" style="stop-color:#0f8bff;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#2e54ff;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#grad2)" d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -194,7 +261,7 @@
           </div>
         </div>
       </div>
-      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰六中八年六班">八年六班</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
 

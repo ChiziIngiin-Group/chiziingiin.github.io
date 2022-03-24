@@ -18,6 +18,7 @@ mx.js will be permanently open source for everyone to learn and use
   <title>赤子英金</title>
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="赤子英金是一个由中学生组成的社区，旨在服务学生群体，分享技术内容，传播社会正能量。赤子英金社区是一个面向学生的科技、影视、娱乐社区。它由 ChiziIngiin 团队和 munox 运营。" />
+  <meta name="og:description" content="赤子英金是一个由中学生组成的社区，旨在服务学生群体，分享技术内容，传播社会正能量。赤子英金社区是一个面向学生的科技、影视、娱乐社区。它由 ChiziIngiin 团队和 munox 运营。" />
   <meta name="keywords" content="赤子英金, chiziingiin, CITRI, ci, czyj, czig, 赤子英金集团, 赤子英金社区, 轻浏览器, munox">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -39,20 +40,30 @@ mx.js will be permanently open source for everyone to learn and use
   <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <!-- Share -->
   <!-- 暂未开放 -->
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6253158297867597"
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div id="app" class="wrap">
 
     <!-- 大画面区域 -->
-    <div id="homepanel" class="head-panel">
+    <!-- <div id="homepanel" class="head-panel">
+      <-- <div class="panel-icon-box">
+        <div class="head-panel-icon">
+          <svg t="1647695528067" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2288" width="120" height="120"><path d="M950.857143 128l0 640q0 28.571429-19.428571 50.857143t-49.142857 34.571429-59.142857 18.285714-55.142857 6-55.142857-6-59.142857-18.285714-49.142857-34.571429-19.428571-50.857143 19.428571-50.857143 49.142857-34.571429 59.142857-18.285714 55.142857-6q60 0 109.714286 22.285714l0-306.857143-438.857143 135.428571 0 405.142857q0 28.571429-19.428571 50.857143t-49.142857 34.571429-59.142857 18.285714-55.142857 6-55.142857-6-59.142857-18.285714-49.142857-34.571429-19.428571-50.857143 19.428571-50.857143 49.142857-34.571429 59.142857-18.285714 55.142857-6q60 0 109.714286 22.285714l0-552.571429q0-17.714286 10.857143-32.285714t28-20.285714l475.428571-146.285714q6.857143-2.285714 16-2.285714 22.857143 0 38.857143 16t16 38.857143z" p-id="2289" fill="#ffffff"></path></svg>
+        </div>
+        <div class="head-panel-icon"></div>
+        <div class="head-panel-icon"></div>
+      </div> --
       <div class="head-panel__content" style="top:145px">
         <h1>赤子英金社区</h1>
         <p>/*&nbsp;<span id="head-panel__text">Chizi Ingiin Technology Community.</span>&nbsp;*/</p>
       </div>
       <div class="scroll-down-div"><i class="iconfont icon-back"></i></div>
       <style id="homepanel__style">.head-panel{background-size:auto 100%;}</style>
-    </div>
+    </div> -->
 
     <!-- 页头区域 -->
     <div id="head">
@@ -124,8 +135,10 @@ mx.js will be permanently open source for everyone to learn and use
 
     <!-- 内容区域 -->
     <div id="content" class="content -nav-fixed">
-      <!-- 产品介绍 -->
       <div class="box-container">
+        <!-- 首页大轮播图 -->
+
+        <!-- 轻浏览器 -->
         <section class="home-panel">
           <div class="pd-panel">
             <div class="pd-panel__bg"></div>
@@ -152,15 +165,38 @@ mx.js will be permanently open source for everyone to learn and use
             </div>
           </div>
         </section>
+        <!-- 国家反诈中心 -->
         <section class="home-panel">
           <div class="ad-panel">
             <picture></picture>
             <div class="ad-content">
-              <h2>国家反诈中心</h2>
-              <p>国家反诈中心是国务院打击治理电信网络新型违法犯罪工作部际联席会议合成作战平台，集资源整合、情报研判、侦查指挥为一体，在打击、防范、治理电信网络诈骗等新型违法犯罪中发挥着重要作用。</p>
+              <div class="container" style="position:relative;">
+                <span style="top:40px;opacity: 0.5;">公益宣传</span>
+                <h2>国家反诈中心</h2>
+                <p>国家反诈中心是国务院打击治理电信网络新型违法犯罪工作部际联席会议合成作战平台，集资源整合、情报研判、侦查指挥为一体，在打击、防范、治理电信网络诈骗等新型违法犯罪中发挥着重要作用。</p>
+                <p><a href="https://baike.baidu.com/item/%E5%9B%BD%E5%AE%B6%E5%8F%8D%E8%AF%88%E4%B8%AD%E5%BF%83/55975989?fr=aladdin">了解详情</a></p>
+              </div>
             </div>
+            <style>
+              .ad-content{
+                background-color: rgb(21,98,212);
+                padding:40px 0;
+                color:#fff;
+              }
+              .ad-content h2{
+                font-size: 30px;
+                line-height: 45px;
+                margin-bottom: 20px;
+              }
+              .ad-content p{
+                font-size: 16px;
+                line-height: 23px;
+                margin-bottom: 8px;
+              }
+            </style>
           </div>
         </section>
+        <!-- 英金气象 -->
         <section class="home-panel">
           <div class="pd-panel">
             <div class="pd-panel__bg"></div>
@@ -186,6 +222,7 @@ mx.js will be permanently open source for everyone to learn and use
             </div>
           </div>
         </section>
+        <!-- Munox.js -->
         <section class="home-panel">
           <div class="pd-panel">
             <div class="pd-panel__bg"></div>
@@ -234,7 +271,7 @@ mx.js will be permanently open source for everyone to learn and use
           </div>
         </div>
       </div>
-      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰六中八年六班">八年六班</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
 
   </div>

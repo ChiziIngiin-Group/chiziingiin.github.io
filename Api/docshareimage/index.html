@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chiziingiin share page</title>
+  <script src="/js/jquery.1.11.0.min.js"></script>
+  <script src="/main.js"></script>
+  <script src="/js/html2canvas.min.js"></script>
+  <script src="/js/qrcode.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/new.css">
+</head>
+<body>
+  <section>
+    <div class="sharebox"></div>
+    <canvas id="cj"></canvas>
+    <img id="mj" src="" alt="">
+  </section>
+  <!-- <h1 style="margin-top: 80px;text-align: center;font-size: 24px;font-weight: 500;">长按保存图片</h1> -->
+  <div class="doc-operation" style="margin-top:40px;">
+    <div class="opr-item">
+      <a id="dimg">
+        <svg style="width:28px;height:28px"  viewBox="0 0 24 24">
+          <defs>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="70%">
+              <stop offset="0%" style="stop-color:#0f8bff;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#2e54ff;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#grad2)" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"  />
+        </svg>
+      </a>
+    </div>
+  </div>
+  <style>
+    .shareimgboxt .srtxt img,.shareimgboxt .srtxt canvas{
+      width:60px;
+      height:60px;
+    }
+    body{
+      max-width: 450px;
+      margin:auto;
+    }
+  </style>
+  <script>
+    $('.sharebox').html(
+      `<div class="shareimgboxt" id="sibf"><img logo src="/image/logo_cn_en.png"><div class="ctbox"><div class="titlet">${sessionStorage.getItem('st')}</div><div class="ctt">${sessionStorage.getItem('sc')}...</div></div><div class="srtxt"><div><span>扫描二维码查看原文</span><span>文章来自赤子英金</span></div><div id="qrcd"></div></div></div>`
+    )
+    var qrcode = new QRCode("qrcd");
+    qrcode.makeCode(sessionStorage.getItem('su')+'?s=web',{
+      width:60,
+      height:60
+    })
+    // $('canvas').css({'width':parseInt($('div').css('width'))*2+'px','height':parseInt($('div').css('height'))*2+'px'})
+    setInterval(()=>{
+      // console.log($('#cj').css('width'),
+      //   $('#cj').css('height'))
+    })
+    setTimeout(()=>{
+
+
+      // html2canvas($(".shareimgboxt"),{onrendered:function (canvas) {
+      //   var imgUri = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); // 获取生成的图片的url
+      //   window.location.href = imgUri; // 下载图片
+      //   console.log(imgUri)
+      // }});
+
+      // var canvas2 = document.createElement("canvas");
+      var canvas2 = document.getElementById('cj');
+      // let _canvas = document.querySelector('div');
+      let _canvas = document.getElementById('sibf');
+      var w = parseInt(window.getComputedStyle(_canvas).width);
+      var h = parseInt(window.getComputedStyle(_canvas).height);
+      console.log(w,h)
+      //将canvas画布放大若干倍，然后盛放在较小的容器内，就显得不模糊了
+      canvas2.width = (w * 5);
+      canvas2.height = (h * 5);
+      
+      console.log(canvas2)
+      //可以按照自己的需求，对context的参数修改,translate指的是偏移量
+      //var context = canvas2.getContext("2d");
+      //context.translate(0,0);
+      var context = canvas2.getContext("2d");
+      context.scale(5,5);
+      html2canvas(document.querySelector('div'), { canvas: canvas2,width:w,heigth:w }).then(function(canvas) {
+        //document.body.appendChild(canvas);
+        //canvas转换成url，然后利用a标签的download属性，直接下载，绕过上传服务器再下载
+        
+        function dataURLtoFile(dataurl, filename = '下载') {
+          let arr = dataurl.split(',')
+          let mime = arr[0].match(/:(.*?);/)[1]
+          let suffix = mime.split('/')[1]
+          let bstr = atob(arr[1])
+          let n = bstr.length
+          let u8arr = new Uint8Array(n)
+          while (n--) {
+            u8arr[n] = bstr.charCodeAt(n)
+          }
+          return new File([u8arr], `${filename}.${suffix}`, {
+            type: mime
+          })
+        }
+
+        $('#dimg').click(()=>{
+          // window.open(canvas.toDataURL())
+          // top.location.href = ''+canvas.toDataURL()
+          let file = dataURLtoFile(canvas.toDataURL())
+          console.log(dataURLtoFile(canvas.toDataURL()))
+          let aTag = document.createElement('a');//创建一个a标签
+          aTag.download = file.name;
+          let href = URL.createObjectURL(file);//获取url
+          aTag.href = href;
+          aTag.click();
+          URL.revokeObjectURL(href);//释放url
+          // var pom = document.createElement('a');
+          // pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+          // pom.setAttribute('download', filename);
+          // if (document.createEvent) {
+          //   var event = document.createEvent('MouseEvents');
+          //   event.initEvent('click', true, true);
+          //   pom.dispatchEvent(event);
+          // } else {
+          //   pom.click();
+          // }
+          // mx.Api.download('下载',dataURLtoFile(canvas.toDataURL()));
+        })
+        $('img#mj').attr('src',canvas.toDataURL())
+        // document.getElementById('cj').style.width=document.getElementById('cj').width
+        // document.getElementById('cj').style.height=document.getElementById('cj').height
+        $('#cj').css('width',$('#cj').attr('width'))
+        $('#cj').css('height',$('#cj').attr('height'))
+      })
+      $('.load').css('display','none')
+    },200)
+  </script>
+  <style>
+  body{
+    min-width: 400px;
+  }section{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }.sharebox{
+    position: absolute;
+    left:0;
+    top:-800px;
+  }canvas#cj{
+    display: none;
+  }img#mj{
+    /* display: none; */
+    max-width: 100%;;
+    /* position: absolute; */
+    top:0px;
+    left:0;
+    max-width: 100%;
+    opacity:1
+  }</style>
+</body>
+</html>

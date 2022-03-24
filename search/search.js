@@ -200,8 +200,8 @@ $.ajax({
         for(var i=0;i<list.length;i++){
           var j=``,k=`i0`
           if(list[i].img){
-          if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
-          else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
+            if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
+            else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
           }
           url=list[i].url
           AuthorType="",d='',id=mx.Api.getRandomString(12),that=list[i].pId;

@@ -15,9 +15,15 @@
   <!-- Javascript -->
   <script src="/js/jquery.js"></script>
   <script src="/js/md5.js"></script>
+  <script src="/js/qrcode.js"></script>
+  <script src="/js/html2canvas.min.js"></script>
   <script src="/main.js"></script>
+  <script>
+    mx.document();
+  </script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/new.css" />
   <!-- Preload -->
   <link rel="preload" href="https://at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 </head>
@@ -87,12 +93,45 @@
         <div class="document-box">
 
 
-          <!-- 主要内容 -->
-
-
-
-              <h1>李翼安</h1>
-              <hr/>
+          <header class="news-basic">
+            <h1>李翼安</h1>
+            <div class="header-info">
+              <span class="header-info-over">
+                <span id="time">2022-03-15 21:55:32</span>
+                <span id="read">浏览 5</span>
+              </span>
+            </div>
+            <div class="header-user" authorId="IGBK">
+              <div class="header-user-info">
+                <div class="header-user-img"><img src="/image/header/chiziingiin.jpg" alt=""></div>
+                <div class="header-user-ifm">
+                  <div class="header-user-name">英金百科</div>
+                  <div class="header-user-sign">梦想只是开始，探索永不止步</div>
+                </div>
+              </div>
+              <div class="header-user-flw">
+                <a id="user-flw">
+                  <span class="mxicontg">
+                    <svg style="width:16px;height:16px" class="normal" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                    <svg style="width:16px;height:16px" class="active" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                  </span>
+                  <span>关注</span>
+                </a>
+              </div>
+            </div>
+            <script>
+              $('#user-flw').click(()=>{
+                mx.system.login('alert',()=>{
+                  
+                })
+              })
+            </script>
+          </header>
+          <section class="sm">
               <img src="" alt="">
               <h2>概述</h2>
               <p>李翼安，男，别名“土逗”，内蒙古自治区赤峰市人，2008年生。第一、二届八年六班政治协商委员会主任委员，赤子英金信息技术协会副会长。</p>
@@ -102,7 +141,17 @@
 
 
 
-              <!-- 主要内容结束 -->
+              </section>
+          <div class="doc-operation">
+            <div class="opr-item">
+              <a id="saveimage" style="background-image: linear-gradient(-45deg, #ff402e 0%, #ff9b0f 100%);">
+                <svg style="width:30px;height:30px" viewBox="0 0 24 24">
+                  <path fill="#fff" d="M8.5,13.5L11,16.5L14.5,12L19,18H5M21,19V5C21,3.89 20.1,3 19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19Z" />
+                </svg>
+              </a>
+              <span>保存分享图</span>
+            </div>
+          </div>
 
 
 
@@ -130,7 +179,7 @@
           </div>
         </div>
       </div>
-      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰六中八年六班">八年六班</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
   <script>

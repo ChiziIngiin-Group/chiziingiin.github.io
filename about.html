@@ -14,11 +14,11 @@
   <meta name="baidu-site-verification" content="code-8Ibrjegsyx" />
   <!-- Javascript -->
   <script src="/js/jquery.js"></script>
-  <script src="/js/typed.js"></script>
   <script src="/js/md5.js"></script>
   <script src="/main.js"></script>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/new.css" />
   <!-- Preload -->
   <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
     crossorigin="anonymous">
@@ -96,44 +96,92 @@
     </div>
     
     <!-- 内容区域 -->
-    <div id="content" class="content -nav-fixed">
+    <div id="content" class="content -nav-fixed -document">
       <div class="container">
-        <div class="box-content">
-          <div class="document-box">
+        <div class="document-box">
+          <header class="news-basic">
             <h1>关于我们</h1>
-            <hr/>
+            <div class="header-info">
+              <span class="header-info-over">
+                <span id="time">2022-03-15 21:55:32</span>
+                <span id="read">浏览 687</span>
+              </span>
+            </div>
+            <div class="header-user" authorId="CZIG">
+              <div class="header-user-info">
+                <div class="header-user-img"><img src="/image/header/chiziingiin.jpg" alt=""></div>
+                <div class="header-user-ifm">
+                  <div class="header-user-name">赤子英金集团</div>
+                  <div class="header-user-sign">梦想只是开始，探索永不止步</div>
+                </div>
+              </div>
+              <div class="header-user-flw">
+                <a id="user-flw">
+                  <span class="mxicontg">
+                    <svg style="width:16px;height:16px" class="normal" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                    <svg style="width:16px;height:16px" class="active" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                    </svg>
+                  </span>
+                  <span>关注</span>
+                </a>
+              </div>
+            </div>
+            <script>
+              $('#user-flw').click(()=>{
+                mx.system.login('alert',()=>{
+                  
+                })
+              })
+            </script>
+          </header>
+          <section>
             <h2>赤子英金是谁？</h2>
-            <p>赤子英金是一个由中学生组成的社会性集团，旨在服务学生群体，分享技术内容，传播社会正能量。赤子英金社区是一个以赤子英金集团为主体面向学生的技术、影视、娱乐社区。目前由 ChiziIngiin 集团和 munox 运营。</p>
+            <p>赤子英金是一个由中学生组成的社会性集团，创办于2021年，旨在服务学生群体，分享技术内容，传播社会正能量。赤子英金社区是一个以赤子英金集团为主体面向学生的技术、影视、娱乐社区。目前由 ChiziIngiin 集团运营。</p>
+            <p>赤子英金诞生于美丽的英金河畔，怀着一颗赤子之心，为用户创造更好的产品。</p>
+            <p><img src="/image/e48586edbd0cfeab4b59da8133549ed.jpg" alt=""></p>
+            <p style="text-align:center;font-size:14px;margin-top:-8px;font-family: Arial, Helvetica, sans-serif;">图 美丽的英金河畔 李翼安摄</p>
             <h2>管理人员</h2>
             <p>赤子英金创始人兼总负责人：<a href="https://chiziingiin.github.io/p/bk/etGzTKpm33AY.html">张新越</a></p>
             <p>赤子英金创始人兼副总负责人：李翼安</p>
             <h2>致谢</h2>
+            <h3>为赤子英金的发展无私奉献的人们</h3>
             <p style="display:flex;flex-wrap: wrap;">
-              <a class="usernamebox" title=""><img src="/image/header/The dreams.jpg"><span>The dreams</span></a>
-              <a class="usernamebox" title=""><img src="/image/header/todo.jpg"><span>todo</span></a>
               <a class="usernamebox" title=""><img src="/image/header/lxy.jpg"><span>吕雪阳</span></a>
               <a class="usernamebox" title=""><img src="/image/header/hemiao.jpg"><span>何苗</span></a>
               <a class="usernamebox" title=""><img src="/image/header/zyx.jpg"><span>张宇轩</span></a>
               <a class="usernamebox" title=""><img src="/image/header/bh.jpg"><span>包涵</span></a>
-              <a class="usernamebox" title=""><img src="/image/header/chiziingiin.jpg"><span>赤子英金</span></a>
               <a class="usernamebox" title=""><img src="/image/header/zhaopengze.png"><span>赵鹏泽</span></a>
               <a class="usernamebox" title=""><img src="/image/header/xyt.jpg"><span>夏宇彤</span></a>
               <a class="usernamebox" title=""><img src="/image/header/zwx.jpg"><span>赵伟旭</span></a>
               <a class="usernamebox" title=""><img src="/image/header/yfz.jpg"><span>由福泽</span></a>
               <a class="usernamebox" title=""><img src="/image/header/lk.jpg"><span>凌空</span></a>
             </p>
+            <p style="text-align: center;">And More......</p>
+            <h3>为赤子英金的发展提供过帮助的组织</h3>
+            <ul class="unorder_list">
+              <li>赤峰实验小学</li>
+              <li>赤峰第六中学</li>
+            </ul>
+            <h3>特殊致谢</h3>
+            <ul class="unorder_list">
+              <li>Github Co,Ltd</li>
+              <li>阿里巴巴集团</li>
+              <li>深圳市腾讯计算机系统有限公司</li>
+            </ul>
             <h2>写在后面</h2>
             <p style="padding:180px 0;line-height:40px;font-size:26px;letter-spacing:4px;font-style:italic;text-align:center;font-family:'Courier New', Courier, monospace">梦想只是开始，探索永不止步</p>
             <p></p>
-            <h1 id="Lianxiwomen">联系我们</h1>
-            <hr>
+            <h2 id="Lianxiwomen">联系我们</h2>
             <p>本页面已开源在github:<a href="https://github.com/ChiziIngiin-Group/chiziingiin.github.io">ChiziIngiin-Group/chiziingiin.github.io</a></p>
             <p><a href="http://chiziingiin.github.io/community/">赤子英金官方社区</a></p>
-            <p><a href="mailto:chiziingiin@126.com">赤子英金官方邮箱：chiziingiin@126.com</a></p>
-            <p><a href="mailto:cfzxycn@163.com">赤子英金负责人邮箱：cfzxycn@163.com</a></p>
+            <p>赤子英金官方邮箱：<a href="mailto:chiziingiin@126.com">chiziingiin@126.com</a></p>
+            <p>赤子英金负责人邮箱：<a href="mailto:cfzxycn@163.com">cfzxycn@163.com</a></p>
             <p style="text-align: center;margin:16px 0">赤子英金公众号</p>
-            <p style="text-align: center;"><img src="/image/qrcode_mp.jpg" style="height:180px;width:180px;border-radius: 19px;box-shadow: 0 0 9px rgba(0,0,0,0.15);box-sizing: content-box;padding:5px" alt=""></p>
-          </div>
+            <p style="text-align: center;"><img src="/image/qrcode_mp.jpg" style="height:180px;width:180px;border-radius: 19px;box-shadow: 0 0 9px rgba(0,0,0,0.11);box-sizing: content-box;padding:5px" alt=""></p>
+          </section>
         </div>
       </div>
     </div>
@@ -157,7 +205,7 @@
           </div>
         </div>
       </div>
-      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰第六中学八年六班政治协商委员会">八六信息技术协会</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
+      <div class="copyright ifpc"><span><span>©CHZIINGIIN</span><span><a href="" title="赤峰六中八年六班">八年六班</a></span><span>官方网站</span></span><span>赤子英金版权所有</span></div>
     </div>
   </div>
   <script>

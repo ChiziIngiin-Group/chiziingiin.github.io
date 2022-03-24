@@ -8,27 +8,236 @@
   <meta name="description" content="赤子英金" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <!-- <meta name="viewport" content="initial-scale=1.0" /> -->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <!-- Javascript -->
   <script src="/js/jquery.js"></script>
+  <script src="/js/vue.js"></script>
   <script src="/js/md5.js"></script>
-  <script src="/js/swiper-bundle.min.js"> </script>
   <script src="/main.js"></script>
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/swiper-bundle.min.css">
-  <link rel="stylesheet" href="/css/colorpicker.css">
   <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/new.css" />
   <!-- Preload -->
   <link rel="preload" href="//at.alicdn.com/t/font_3138748_nd2po8v3fk.woff2" as="font" type="font/woff2"
     crossorigin="anonymous">
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6253158297867597"
+     crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-light -com-page">
+  <noscript>
+    <div class="m-modal__wrapper" id="noscript"><div class="m-modal__container onlytrue" style="width: 30%; margin-top: 15vh;"><div class="m-modal__header">  <span class="m-modal__title">提示</span><button class="m-modal__headerbtn"><i class="m-modal__close iconfont icon-close"></i></button></div><div class="m-modal__body">  <div>您没有开启javascript或浏览器版本过低，可能会导致体验不佳</div></div></div></div>
+  </noscript>
+  <script>
+    mx.Api.autoPage('mp','mobile.html','index.html?f=mpc')
+  </script>
   <div id="app" class="wrap">
-    <script>
-      window.location.href="./mobile.html"
-    </script>
+
+    <!-- 页头区域 -->
+    <div id="head">
+      <nav class="nav nav-fixed" style="box-shadow: none;">
+        <div class="m-nav-backgound"></div>
+        <div class="container">
+          <div class="nav-list">
+            <div class="m-nav-more__logo"></div>
+            <!-- <div class="m-nav-more__button"><span></span></div> -->
+            <ul class="nav-list__box">
+              <li class="nav-item m-nav-item">
+                <a href="/">首页</a>
+              </li>
+              <li class="nav-item nav-item__img">
+                <a href="/"><img src="/image/赤子英金.png" alt="赤子英金"></a>
+              </li>
+              <li class="nav-item active">
+                <a href="/community">社区</a>
+              </li>
+              <li class="nav-item">
+                <a href="/product">产品</a>
+              </li>
+            </ul>
+            <ul class="nav-list__box">
+              <li class="nav-item nav-item__search">
+                <div class="nav-search-bar">
+                  <form class="nav-search-box" action="https://chiziingiin.github.io/search/">
+                    <input placeholder="大家都在搜..." id="nav-search" class="nav-search-input" type="text" name="wd"
+                      aria-label="搜索" />
+                    <button class="nav-search-btn"><i class="iconfont icon-search"> </i></button>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item m-nav-item">
+                <a href="/search/">搜索</a>
+              </li>
+              <li class="nav-item">
+                <a id="login-button" href="/login?url=/chiziingiin">登录</a>
+              </li>
+              <li class="nav-item">
+                <a id="reg-button" href="/login?author=reg&url=/chiziingiin">注册</a>
+              </li>
+            </ul>
+            <div class="m-nav-alert">
+              <div class="m-title"><span>提示</span></div>
+              <div class="m-content">
+                <p id="r" style="display:none">我们希望使用分析型Cookies和类似技术 (“Cookies”) 来改善我们的网站。 Cookies收集的信息不会识别您个人。有关我们使用的Cookies的类型以及您的偏好选项（包括如何更改您的偏好设置）的更多信息，请查看此处的<a class="m-sm-link" href="/cookies.html">Cookies政策</a>。</p>
+                <p>此页面正在您的许可范围内使用cookie<a class="m-r-more" href="javascript:$('#r').toggle()"></a></p>
+                <p><small>Chiziingiin智能云安全引擎</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="m-nav nav-fixed">
+        <div class="m-nav-box">
+          <a class="m-nav-more" id="m-button-more" href="javascript:void(0)">
+            <span class="btn-more"></span>
+          </a>
+          <a class="m-nav-logo">
+            <img src="/image/logo.png" alt="">
+          </a>
+          <a href="/user.html" id="m-login-button" class="m-nav-user">
+            <img title=" "/>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 内容区域 -->
+    <div id="content" class="content -nav-fixed">
+      <div class="container">
+        <div class="com-container">
+          <div class="com-box" id="com-box">
+            <div class="com-box__tabs">
+              <ul>
+                <li>
+                  <span class="mxicontg">
+                    <svg style="width:24px;height:24px" class="normal" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M20 5L20 19L4 19L4 5H20M20 3H4C2.89 3 2 3.89 2 5V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V5C22 3.89 21.11 3 20 3M18 15H6V17H18V15M10 7H6V13H10V7M12 9H18V7H12V9M18 11H12V13H18V11Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px" class="active" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M20 3H4C2.89 3 2 3.89 2 5V19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V5C22 3.89 21.11 3 20 3M5 7H10V13H5V7M19 17H5V15H19V17M19 13H12V11H19V13M19 9H12V7H19V9Z" />
+                    </svg>
+                  </span> 
+                  <span class="title-text">新闻</span>
+                </li>
+                <li>
+                  <span class="mxicontg">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z" />
+                    </svg>
+                  </span> 
+                  <span class="title-text">技术</span>
+                </li>
+                <li>
+                  <span class="mxicontg">
+                    <svg style="width:24px;height:24px" class="normal" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M15,10.5C15,11.3 14.3,12 13.5,12C14.3,12 15,12.7 15,13.5V15A2,2 0 0,1 13,17H9V7H13A2,2 0 0,1 15,9V10.5M13,15V13H11V15H13M13,11V9H11V11H13M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px" class="active" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M15,10.5V9A2,2 0 0,0 13,7H9V17H13A2,2 0 0,0 15,15V13.5C15,12.7 14.3,12 13.5,12C14.3,12 15,11.3 15,10.5M13,15H11V13H13V15M13,11H11V9H13V11Z" />
+                    </svg>
+                  </span> 
+                  <span class="title-text">八六</span>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <span class="mxicontg">
+                    <svg style="width:24px;height:24px" class="normal" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M10,22C9.75,22 9.54,21.82 9.5,21.58L9.13,18.93C8.5,18.68 7.96,18.34 7.44,17.94L4.95,18.95C4.73,19.03 4.46,18.95 4.34,18.73L2.34,15.27C2.21,15.05 2.27,14.78 2.46,14.63L4.57,12.97L4.5,12L4.57,11L2.46,9.37C2.27,9.22 2.21,8.95 2.34,8.73L4.34,5.27C4.46,5.05 4.73,4.96 4.95,5.05L7.44,6.05C7.96,5.66 8.5,5.32 9.13,5.07L9.5,2.42C9.54,2.18 9.75,2 10,2H14C14.25,2 14.46,2.18 14.5,2.42L14.87,5.07C15.5,5.32 16.04,5.66 16.56,6.05L19.05,5.05C19.27,4.96 19.54,5.05 19.66,5.27L21.66,8.73C21.79,8.95 21.73,9.22 21.54,9.37L19.43,11L19.5,12L19.43,13L21.54,14.63C21.73,14.78 21.79,15.05 21.66,15.27L19.66,18.73C19.54,18.95 19.27,19.04 19.05,18.95L16.56,17.95C16.04,18.34 15.5,18.68 14.87,18.93L14.5,21.58C14.46,21.82 14.25,22 14,22H10M11.25,4L10.88,6.61C9.68,6.86 8.62,7.5 7.85,8.39L5.44,7.35L4.69,8.65L6.8,10.2C6.4,11.37 6.4,12.64 6.8,13.8L4.68,15.36L5.43,16.66L7.86,15.62C8.63,16.5 9.68,17.14 10.87,17.38L11.24,20H12.76L13.13,17.39C14.32,17.14 15.37,16.5 16.14,15.62L18.57,16.66L19.32,15.36L17.2,13.81C17.6,12.64 17.6,11.37 17.2,10.2L19.31,8.65L18.56,7.35L16.15,8.39C15.38,7.5 14.32,6.86 13.12,6.62L12.75,4H11.25Z" />
+                    </svg>
+                    <svg style="width:24px;height:24px" class="active" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                    </svg>
+                  </span> 
+                  <span class="title-text">设置</span>
+                </li>
+              </ul>
+            </div>
+            <div class="com-box__wrap">
+              <div class="cm-news-list com-tg">
+                <div class="news-title">最新资讯</div>
+                <ul id="com-box_list0"></ul>
+              </div>
+              <div class="cm-news-list com-tg">
+                <div class="news-title">技术</div>
+                <ul id="com-box_list1"></ul>
+              </div>
+              <div class="cm-news-list com-tg">
+                <div class="news-title">八年六班新闻</div>
+                <ul id="com-box_list2"></ul>
+              </div>
+              <div class="cm-news-list com-tg" id="setting">
+                <div class="news-title">设置</div>
+                <ul id="com-box_list2"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    glist=['BCGOC'/*八六群组织*/,'BP'/*政协*/,'BO'/*发改委*/,'BL'/*八年六班*/,'IGBK'/*英金百科*/,'CZIG'/*赤子英金*/,'CZIGCBC'/*英金出版社*/],
+    zlist=['TTSCLUB','zhangxinyue'/*张新越个人账号*/];
+    $(".com-box__wrap .com-tg").hide()
+    var f = parseInt(mx.Api.GetQueryString('page')) || 0
+    $('.com-box__tabs ul').eq(0).children('li').eq(f).addClass("active").siblings().removeClass("active").parent().siblings().children().removeClass('active');
+    $('.com-box__wrap .com-tg').eq(f).show().siblings().hide()
+    $('.com-box__tabs ul').eq(0).children('li').click(function (){
+      $(this).addClass("active").siblings().removeClass("active");$(this).parent('ul').siblings().children('li').removeClass('active');
+      $('.com-box__wrap .com-tg').eq($(this).index()).show().siblings().hide()
+    })
+    $('.com-box__tabs ul').eq(1).children('li').click(function (){
+      $(this).addClass("active").siblings().removeClass("active");$(this).parent('ul').siblings().children('li').removeClass('active');
+      $('.com-box__wrap .com-tg#setting').show().siblings().hide()
+    })
+    $.ajax({url:"/p/news.json",dataType:"text",success:(e)=>{
+      list=JSON.parse(e)
+      $('#com-box_list0').html()
+      for(var i=0;i<list.length;i++){
+        if(list[i].pType=='psg'){
+          var j=``,k=`i0`
+          if(list[i].img){
+            if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
+            else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
+          }
+          url=list[i].url
+          AuthorType="",d='',id=mx.Api.getRandomString(12),that=list[i].pId;
+          if(list[i].read && list[i].comment){d=`<span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span>`}
+          for(var j2=0;j2<glist.length;j2++){if(list[i].authorId==glist[j2]){AuthorType='g';}}
+          for(var j3=0;j3<zlist.length;j3++){if(list[i].authorId==zlist[j3]){AuthorType='z'}}
+          console.log('[文章代码]',{str:list[i]},'相关度',list[i].KeyNumber,'作者',list[i].authorId)
+          $("#com-box_list0").append(`<a target="_blank" pid="${list[i].pId}" id="${id}" purl="${url}" href="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>${d}</span></a>`)
+          $(`a#${id}`).on('click',()=>{debounce(clickHistory(that),1000)})
+          $(`#${id} i`).css('height',parseInt($(`#${list[i].pId} i`).css('width'))*9/16)
+        }
+      }
+    }})
+    $.ajax({url:"/p/data.json",dataType:"text",success:(e)=>{
+      list=JSON.parse(e)
+      $('#com-box_list2').html()
+      for(var i=0;i<list.length;i++){
+        if(list[i].pType=='psg'){
+          var j=``,k=`i0`
+          if(list[i].img){
+            if(list[i].img.length>=3){var k=`i3`, j=`<div class="i-box"><i style="background-image:url(${list[i].img[0]});" class="i"></i><i style="background-image:url(${list[i].img[1]});" class="i"></i><i style="background-image:url(${list[i].img[2]});" class="i"></i></div>`}
+            else if(list[i].img.length>=1){var k=`i1`, j=`<i style="background-image:url(${list[i].img[0]})" class="i"></i>`}
+          }
+          url=list[i].url
+          AuthorType="",d='',id=mx.Api.getRandomString(12),that=list[i].pId;
+          if(list[i].read && list[i].comment){d=`<span class="d">${list[i].read}阅读 · ${list[i].comment}评论</span>`}
+          for(var j2=0;j2<glist.length;j2++){if(list[i].authorId==glist[j2]){AuthorType='g';}}
+          for(var j3=0;j3<zlist.length;j3++){if(list[i].authorId==zlist[j3]){AuthorType='z'}}
+          console.log('[文章代码]',{str:list[i]},'相关度',list[i].KeyNumber,'作者',list[i].authorId)
+          $("#com-box_list2").append(`<a target="_blank" pid="${list[i].pId}" id="${id}" purl="${url}" href="${url}" class="${k}"><span class="ba">  <span class="t">${list[i].title}</span>  <span class="c">${list[i].description}</span></span>${j}<span class="da">  <span class="a" ${AuthorType} authorId="${list[i].authorId}">${list[i].author}</span>${d}</span></a>`)
+          $(`a#${id}`).on('click',()=>{debounce(clickHistory(that),1000)})
+          $(`#${id} i`).css('height',parseInt($(`#${list[i].pId} i`).css('width'))*9/16)
+        }
+      }
+    }})
+   
+  </script>
 </body>
 </html>
